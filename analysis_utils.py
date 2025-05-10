@@ -1,15 +1,14 @@
-import scipy
-from scipy.stats import wilcoxon
-import statsmodels.api as sm
-
 import matplotlib.pyplot as plt
 import numpy as np
-
-from tqdm.auto import trange
+import scipy
+import statsmodels.api as sm
 import torch
-
 from drn import crps
+from scipy.stats import wilcoxon
+from tqdm.auto import trange
+
 # from drn import *
+
 
 # Quantile Residuals and Calibration
 def quantile_residuals(y, F_, interval):
@@ -23,6 +22,7 @@ def quantile_residuals(y, F_, interval):
             idx_up = i + 1
             return 0.5 * (F_[idx_low] + F_[idx_up])
 
+
 def quantile_points(cdfs, response, grid):
     response = np.array(response)
     GLM_points = [[0]] * len(response)
@@ -33,21 +33,32 @@ def quantile_points(cdfs, response, grid):
 
     for k in trange(len(response)):
         # GLM
-        GLM_points[k] = quantile_residuals(response[k], cdfs["GLM"][:, k].detach().numpy(), grid.detach().numpy())
+        GLM_points[k] = quantile_residuals(
+            response[k], cdfs["GLM"][:, k].detach().numpy(), grid.detach().numpy()
+        )
 
         # CANN
-        CANN_points[k] = quantile_residuals(response[k], cdfs["CANN"][:, k].detach().numpy(), grid.detach().numpy())
+        CANN_points[k] = quantile_residuals(
+            response[k], cdfs["CANN"][:, k].detach().numpy(), grid.detach().numpy()
+        )
 
         # MDN
-        MDN_points[k] = quantile_residuals(response[k], cdfs["MDN"][:, k].detach().numpy(), grid.detach().numpy())
+        MDN_points[k] = quantile_residuals(
+            response[k], cdfs["MDN"][:, k].detach().numpy(), grid.detach().numpy()
+        )
 
         # DDR
-        DDR_points[k] = quantile_residuals(response[k], cdfs["DDR"][:, k].detach().numpy(), grid.detach().numpy())
+        DDR_points[k] = quantile_residuals(
+            response[k], cdfs["DDR"][:, k].detach().numpy(), grid.detach().numpy()
+        )
 
         # DRN
-        DRN_points[k] = quantile_residuals(response[k], cdfs["DRN"][:, k].detach().numpy(), grid.detach().numpy())
+        DRN_points[k] = quantile_residuals(
+            response[k], cdfs["DRN"][:, k].detach().numpy(), grid.detach().numpy()
+        )
 
-    return(GLM_points, MDN_points, DDR_points, DRN_points, CANN_points)
+    return (GLM_points, MDN_points, DDR_points, DRN_points, CANN_points)
+
 
 def quantile_residuals_plots(model_points):
     quantiles = [0] * len(model_points)
@@ -72,18 +83,21 @@ def quantile_residuals_plots(model_points):
     axes[1, 1].set_title("DRN", fontsize=45, color="black")
     axes[1, 1].set_ylim(-4, 4)
     axes[1, 1].set_xlim(-3.2, 3.2)
-    
+
     # Set font size for all axes labels and tick labels
     for ax in axes.flat:
         # Set the font size of axis labels
-        ax.set_xlabel('Theoretical Quantiles', fontsize=45)  # Adjust fontsize as needed
-        ax.set_ylabel('Sample Quantiles', fontsize=45)  # Adjust fontsize as needed
-        
-        # Set the font size of tick labels
-        ax.tick_params(axis='both', which='major', labelsize=40)  # Adjust labelsize as needed
+        ax.set_xlabel("Theoretical Quantiles", fontsize=45)  # Adjust fontsize as needed
+        ax.set_ylabel("Sample Quantiles", fontsize=45)  # Adjust fontsize as needed
 
-    figure.suptitle("Quantile Residuals", fontsize=60, y=0.99) #fontweight="bold"
+        # Set the font size of tick labels
+        ax.tick_params(
+            axis="both", which="major", labelsize=40
+        )  # Adjust labelsize as needed
+
+    figure.suptitle("Quantile Residuals", fontsize=60, y=0.99)  # fontweight="bold"
     plt.tight_layout(pad=2)
+
 
 # Find the index (from the list lst_new) that gives the closest value to the given scalar y
 def closest_index(y, lst_new):
@@ -102,6 +116,7 @@ def closest_index(y, lst_new):
     else:
         return high
 
+
 def calibration_plot_stats(cdfs_, grid, responses):
     Q_predicted = [[0]] * len(responses)
     Q_empirical = [[0]] * len(responses)
@@ -118,6 +133,7 @@ def calibration_plot_stats(cdfs_, grid, responses):
         Q_empirical[k] = np.sum(all_quantiles) / len(responses)
 
     return (Q_predicted, Q_empirical)
+
 
 def calibration_plot(cdfs_, y, grid):
     responses = np.array(y)
@@ -138,18 +154,18 @@ def calibration_plot(cdfs_, y, grid):
         cdfs_["DRN"].detach().numpy(), grid.detach().numpy(), responses
     )
 
-    GLM_STATS = np.sum((np.array(Q_predicted_GLM) - np.array(Q_empirical_GLM)) ** 2) / len(
-        responses
-    )
+    GLM_STATS = np.sum(
+        (np.array(Q_predicted_GLM) - np.array(Q_empirical_GLM)) ** 2
+    ) / len(responses)
     CANN_STATS = np.sum(
         (np.array(Q_predicted_CANN) - np.array(Q_empirical_CANN)) ** 2
     ) / len(responses)
-    MDN_STATS = np.sum((np.array(Q_predicted_MDN) - np.array(Q_empirical_MDN)) ** 2) / len(
-        responses
-    )
-    DDR_STATS = np.sum((np.array(Q_predicted_DDR) - np.array(Q_empirical_DDR)) ** 2) / len(
-        responses
-    )
+    MDN_STATS = np.sum(
+        (np.array(Q_predicted_MDN) - np.array(Q_empirical_MDN)) ** 2
+    ) / len(responses)
+    DDR_STATS = np.sum(
+        (np.array(Q_predicted_DDR) - np.array(Q_empirical_DDR)) ** 2
+    ) / len(responses)
     DRN_STATS = np.sum(
         (np.array(Q_predicted_DRN) - np.array(Q_empirical_DRN)) ** 2
     ) / len(responses)
@@ -194,74 +210,97 @@ def calibration_plot(cdfs_, y, grid):
     plt.xlabel("Predicted: $\hat{p}$", fontsize=30)
     plt.ylabel("Empirical: $p$", fontsize=30)
     plt.title("Calibration Plot", fontsize=30)
-    legend = plt.legend(prop={"size": 15}, scatterpoints=1)  # Increase scatterpoints for larger marker
+    legend = plt.legend(
+        prop={"size": 15}, scatterpoints=1
+    )  # Increase scatterpoints for larger marker
     for handle in legend.legend_handles:
-        handle.set_sizes([40]) 
+        handle.set_sizes([40])
 
 
 # Wilcoxon Test
 
-def print_wilcoxon_test(glm_metrics, cann_metrics, mdn_metrics, ddr_metrics, drn_metrics):
+
+def print_wilcoxon_test(
+    glm_metrics, cann_metrics, mdn_metrics, ddr_metrics, drn_metrics
+):
     # Perform the Wilcoxon Signed-Rank Test
-    stat, p_value = wilcoxon(drn_metrics, glm_metrics, alternative='less')
+    stat, p_value = wilcoxon(drn_metrics, glm_metrics, alternative="less")
     print("DRN < GLM")
     print("Wilcoxon Signed-Rank Test statistic:", stat)
     print("P-value:", p_value)
 
-    stat, p_value = wilcoxon(drn_metrics, cann_metrics, alternative='less')
+    stat, p_value = wilcoxon(drn_metrics, cann_metrics, alternative="less")
     print("DRN < CANN")
     print("Wilcoxon Signed-Rank Test statistic:", stat)
     print("P-value:", p_value)
 
-    stat, p_value = wilcoxon(drn_metrics, mdn_metrics, alternative='less')
+    stat, p_value = wilcoxon(drn_metrics, mdn_metrics, alternative="less")
     print("DRN < MDN")
     print("Wilcoxon Signed-Rank Test statistic:", stat)
     print("P-value:", p_value)
 
-    stat, p_value = wilcoxon(drn_metrics, ddr_metrics, alternative='less')
+    stat, p_value = wilcoxon(drn_metrics, ddr_metrics, alternative="less")
     print("DRN < DDR")
     print("Wilcoxon Signed-Rank Test statistic:", stat)
     print("P-value:", p_value)
 
 
-def nll_wilcoxon_test(dists, Y_target, dataset = 'Test'):
-    # NLL data 
-    nll_model_glm = -dists['GLM'].log_prob(Y_target).squeeze().detach().numpy() 
-    nll_model_cann = -dists['CANN'].log_prob(Y_target).squeeze().detach().numpy() 
-    nll_model_mdn = -dists['MDN'].log_prob(Y_target).squeeze().detach().numpy() 
-    nll_model_ddr = -dists['DDR'].log_prob(Y_target).squeeze().detach().numpy() 
-    nll_model_drn = -dists['DRN'].log_prob(Y_target).squeeze().detach().numpy() 
+def nll_wilcoxon_test(dists, Y_target, dataset="Test"):
+    # NLL data
+    nll_model_glm = -dists["GLM"].log_prob(Y_target).squeeze().detach().numpy()
+    nll_model_cann = -dists["CANN"].log_prob(Y_target).squeeze().detach().numpy()
+    nll_model_mdn = -dists["MDN"].log_prob(Y_target).squeeze().detach().numpy()
+    nll_model_ddr = -dists["DDR"].log_prob(Y_target).squeeze().detach().numpy()
+    nll_model_drn = -dists["DRN"].log_prob(Y_target).squeeze().detach().numpy()
 
     print("--------------------------------------------")
     print(f"{dataset} Data")
     print("--------------------------------------------")
 
-    print_wilcoxon_test(nll_model_glm, nll_model_cann, nll_model_mdn, nll_model_ddr, nll_model_drn)
+    print_wilcoxon_test(
+        nll_model_glm, nll_model_cann, nll_model_mdn, nll_model_ddr, nll_model_drn
+    )
 
 
-def crps_wilcoxon_test(cdfs_, Y_target, grid, dataset = 'Test'):
-    # CRPS data 
-    crps_model_drn =  crps(Y_target, grid, cdfs_['DRN']).squeeze().detach().numpy() 
-    crps_model_glm =  crps(Y_target, grid, cdfs_['GLM']).squeeze().detach().numpy() 
-    crps_model_cann =  crps(Y_target, grid, cdfs_['CANN']).squeeze().detach().numpy() 
-    crps_model_mdn =  crps(Y_target, grid, cdfs_['MDN']).squeeze().detach().numpy() 
-    crps_model_ddr =  crps(Y_target, grid, cdfs_['DDR']).squeeze().detach().numpy() 
+def crps_wilcoxon_test(cdfs_, Y_target, grid, dataset="Test"):
+    # CRPS data
+    crps_model_drn = crps(Y_target, grid, cdfs_["DRN"]).squeeze().detach().numpy()
+    crps_model_glm = crps(Y_target, grid, cdfs_["GLM"]).squeeze().detach().numpy()
+    crps_model_cann = crps(Y_target, grid, cdfs_["CANN"]).squeeze().detach().numpy()
+    crps_model_mdn = crps(Y_target, grid, cdfs_["MDN"]).squeeze().detach().numpy()
+    crps_model_ddr = crps(Y_target, grid, cdfs_["DDR"]).squeeze().detach().numpy()
 
     print("--------------------------------------------")
     print(f"{dataset} Data")
     print("--------------------------------------------")
 
-    print_wilcoxon_test(crps_model_glm, crps_model_cann, crps_model_mdn, crps_model_ddr, crps_model_drn)
-    
+    print_wilcoxon_test(
+        crps_model_glm, crps_model_cann, crps_model_mdn, crps_model_ddr, crps_model_drn
+    )
 
 
-def rmse_wilcoxon_test(dists_, Y_target, dataset = 'Test'):
-    # MSE data 
-    se_drn =  (dists_['DRN'].mean.squeeze().detach().numpy() - Y_target.squeeze().detach().numpy())**2
-    se_glm =  (dists_['GLM'].mean.squeeze().detach().numpy() - Y_target.squeeze().detach().numpy())**2
-    se_cann =  (dists_['CANN'].mean.squeeze().detach().numpy() - Y_target.squeeze().detach().numpy())**2
-    se_mdn =  (dists_['MDN'].mean.squeeze().detach().numpy() - Y_target.squeeze().detach().numpy())**2
-    se_ddr =  (dists_['DDR'].mean.squeeze().detach().numpy() - Y_target.squeeze().detach().numpy())**2
+def rmse_wilcoxon_test(dists_, Y_target, dataset="Test"):
+    # MSE data
+    se_drn = (
+        dists_["DRN"].mean.squeeze().detach().numpy()
+        - Y_target.squeeze().detach().numpy()
+    ) ** 2
+    se_glm = (
+        dists_["GLM"].mean.squeeze().detach().numpy()
+        - Y_target.squeeze().detach().numpy()
+    ) ** 2
+    se_cann = (
+        dists_["CANN"].mean.squeeze().detach().numpy()
+        - Y_target.squeeze().detach().numpy()
+    ) ** 2
+    se_mdn = (
+        dists_["MDN"].mean.squeeze().detach().numpy()
+        - Y_target.squeeze().detach().numpy()
+    ) ** 2
+    se_ddr = (
+        dists_["DDR"].mean.squeeze().detach().numpy()
+        - Y_target.squeeze().detach().numpy()
+    ) ** 2
 
     print("--------------------------------------------")
     print(f"{dataset} Data")
@@ -271,6 +310,7 @@ def rmse_wilcoxon_test(dists_, Y_target, dataset = 'Test'):
 
 
 # +
+
 
 def quantile_score_raw(y_true, y_pred, p):
     """
@@ -334,30 +374,91 @@ def quantile_losses_raw(
 
     return score
 
-def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset = 'Test'):
+
+def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
     glm, cann, mdn, ddr, drn = models
-    
-    # 90% QL data 
-    ql_glm =  quantile_losses_raw(0.9, glm, 'GLM', X_features, Y_target,
-                                        max_iter = 1000, tolerance = 1e-4,\
-                                        l = torch.Tensor([0]),\
-                                        u = torch.Tensor([np.max(y_train)+3*(np.max(y_train)-np.min(y_train))])).squeeze().detach().numpy()
-    ql_cann =  quantile_losses_raw(0.9, cann, 'CANN', X_features, Y_target,
-                                        max_iter = 1000, tolerance = 1e-4,\
-                                        l = torch.Tensor([0]),\
-                                        u = torch.Tensor([np.max(y_train)+3*(np.max(y_train)-np.min(y_train))])).squeeze().detach().numpy()
-    ql_mdn =  quantile_losses_raw(0.9, mdn, 'MDN', X_features, Y_target,
-                                        max_iter = 1000, tolerance = 1e-4,\
-                                        l = torch.Tensor([0]),\
-                                        u = torch.Tensor([np.max(y_train)+3*(np.max(y_train)-np.min(y_train))])).squeeze().detach().numpy()
-    ql_ddr =  quantile_losses_raw(0.9, ddr, 'DDR', X_features, Y_target,
-                                        max_iter = 1000, tolerance = 1e-4,\
-                                        l = torch.Tensor([0]),\
-                                        u = torch.Tensor([np.max(y_train)+3*(np.max(y_train)-np.min(y_train))])).squeeze().detach().numpy()
-    ql_drn =  quantile_losses_raw(0.9, drn, 'DRN', X_features, Y_target,
-                                        max_iter = 1000, tolerance = 1e-4,\
-                                        l = torch.Tensor([0]),\
-                                        u = torch.Tensor([np.max(y_train)+3*(np.max(y_train)-np.min(y_train))])).squeeze().detach().numpy()
+
+    # 90% QL data
+    ql_glm = (
+        quantile_losses_raw(
+            0.9,
+            glm,
+            "GLM",
+            X_features,
+            Y_target,
+            max_iter=1000,
+            tolerance=1e-4,
+            l=torch.Tensor([0]),
+            u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
+        )
+        .squeeze()
+        .detach()
+        .numpy()
+    )
+    ql_cann = (
+        quantile_losses_raw(
+            0.9,
+            cann,
+            "CANN",
+            X_features,
+            Y_target,
+            max_iter=1000,
+            tolerance=1e-4,
+            l=torch.Tensor([0]),
+            u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
+        )
+        .squeeze()
+        .detach()
+        .numpy()
+    )
+    ql_mdn = (
+        quantile_losses_raw(
+            0.9,
+            mdn,
+            "MDN",
+            X_features,
+            Y_target,
+            max_iter=1000,
+            tolerance=1e-4,
+            l=torch.Tensor([0]),
+            u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
+        )
+        .squeeze()
+        .detach()
+        .numpy()
+    )
+    ql_ddr = (
+        quantile_losses_raw(
+            0.9,
+            ddr,
+            "DDR",
+            X_features,
+            Y_target,
+            max_iter=1000,
+            tolerance=1e-4,
+            l=torch.Tensor([0]),
+            u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
+        )
+        .squeeze()
+        .detach()
+        .numpy()
+    )
+    ql_drn = (
+        quantile_losses_raw(
+            0.9,
+            drn,
+            "DRN",
+            X_features,
+            Y_target,
+            max_iter=1000,
+            tolerance=1e-4,
+            l=torch.Tensor([0]),
+            u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
+        )
+        .squeeze()
+        .detach()
+        .numpy()
+    )
 
     print("--------------------------------------------")
     print(f"{dataset} Data")
