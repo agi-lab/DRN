@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drn-paper-supplement"
+version = "0.1.0"
+description = "Dependencies for DRN paper supplement notebook"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "drn @ git+https://github.com/EricTianDong/drn.git",
+  "numpy>=1.21",
+  "pandas>=1.3",
+  "scipy>=1.7",
+  "statsmodels>=0.13",
+  "matplotlib>=3.4",
+  "seaborn>=0.11",
+  "torch>=1.10",
+  "scikit-optimize>=0.9",
+  "tqdm>=4.60",
+  "python-dotenv>=0.19"
+]
