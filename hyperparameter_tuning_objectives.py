@@ -33,10 +33,6 @@ def objective_cann(
 ):
     num_hidden_layers, hidden_size, dropout_rate, lr, batch_size = params
 
-    names = "num_hidden_layers, hidden_size, dropout_rate, lr, batch_size".split(", ")
-    for name, val in zip(names, params):
-        print(f"\tTrying {name} = {val} (type {type(val)}")
-
     num_hidden_layers = int(num_hidden_layers)
     hidden_size = int(hidden_size)
     batch_size = int(batch_size)
@@ -108,12 +104,6 @@ def objective_mdn(
         params
     )
 
-    names = "num_hidden_layers, hidden_size, dropout_rate, lr, num_components, batch_size".split(
-        ", "
-    )
-    for name, val in zip(names, params):
-        print(f"\tTrying {name} = {val} (type {type(val)}")
-
     num_hidden_layers = int(num_hidden_layers)
     hidden_size = int(hidden_size)
     batch_size = int(batch_size)
@@ -176,12 +166,6 @@ def objective_ddr(
     params, X_train, Y_train, X_val, Y_val, train_dataset, val_dataset, patience=30
 ):
     num_hidden_layers, hidden_size, dropout_rate, lr, proportion, batch_size = params
-
-    names = "num_hidden_layers, hidden_size, dropout_rate, lr, proportion, batch_size".split(
-        ", "
-    )
-    for name, val in zip(names, params):
-        print(f"\tTrying {name} = {val} (type {type(val)}")
 
     num_hidden_layers = int(num_hidden_layers)
     hidden_size = int(hidden_size)
@@ -271,13 +255,6 @@ def objective_drn(
         proportion,
         min_obs,
     ) = params
-
-    # Print out the current parameters line-by-line with the name beforehand
-    names = "num_hidden_layers, hidden_size, dropout_rate, lr, kl_alpha, mean_alpha, dv_alpha, batch_size, proportion, min_obs".split(
-        ", "
-    )
-    for name, val in zip(names, params):
-        print(f"\tTrying {name} = {val} (type {type(val)}")
 
     # Since those integer values are numpy.int64, and that breaks some things, manually convert to Python ints
     num_hidden_layers = int(num_hidden_layers)
