@@ -67,6 +67,9 @@ def objective_cann(
             batch_size=batch_size,
         )
         cann.update_dispersion(X_train, Y_train)
+        if not torch.isfinite(cann.dispersion):
+            raise ValueError("Dispersion is not finite")
+        
     except Exception as e:
         print(f"Training failed: {e}")
         return 1e6
