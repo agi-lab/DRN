@@ -1,0 +1,12 @@
+drn @ git+https://github.com/EricTianDong/drn.git
+numpy
+pandas
+scipy
+statsmodels
+matplotlib
+seaborn
+torch
+scikit-optimize
+tqdm
+python-dotenv
+jupyter
