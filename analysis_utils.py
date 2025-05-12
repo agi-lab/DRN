@@ -465,3 +465,58 @@ def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
     print("--------------------------------------------")
 
     print_wilcoxon_test(ql_glm, ql_cann, ql_mdn, ql_ddr, ql_drn)
+
+def generate_latex_table(
+    nlls_val,
+    crps_val,
+    rmse_val,
+    ql_90_val,
+    nlls_test,
+    crps_test,
+    rmse_test,
+    ql_90_test,
+    model_names,
+    label_txt="Evaluation Metrics Table",
+    caption_txt="Evaluation Metrics Table.",
+    scaling_factor=1.0,
+):
+    header_row = (
+        "\\begin{center}\n"
+        + "\captionof{table}{"
+        + f"{caption_txt}"
+        + "}\n"
+        + "\label{"
+        + f"{label_txt}"
+        + "}\n"
+        + "\scalebox{"
+        + f"{scaling_factor}"
+        + "}{\n"
+        + "\\begin{tabular}{l|cccc|cccc}\n\\toprule\n\\toprule\n"
+        + "&  \multicolumn{4}{c}{$\mathcal{D}_{\\text{Validation}}$}"
+        + "& \multicolumn{4}{c}{ $\mathcal{D}_{\\text{Test}}$}\\\\ \n"
+        + " \cmidrule{2-5}  \cmidrule{6-9} $\\text{Model}$ $\\backslash$ $\\text{Metrics}$"
+        + " & NLL & CRPS & RMSE & 90\% QL & NLL & CRPS & RMSE & 90\% QL \\\\ \\midrule"
+    )
+    rows = [header_row]
+
+    for name in model_names:
+        row = (
+            f"{name} &  {(nlls_val[name].mean()):.4f}"
+            f" &  {(crps_val[name].mean()):.4f} "
+            f" & {(rmse_val[name].mean()):.4f} "
+            f" & {(ql_90_val[name].mean()):.4f} "
+            f" & {(nlls_test[name].mean()):.4f} "
+            f" & {(crps_test[name].mean()):.4f} "
+            f" & {(rmse_test[name].mean()):.4f} "
+            f" & {(ql_90_test[name].mean()):.4f} \\\\ "
+        )
+        rows.append(row)
+
+    table = (
+        "\n".join(rows)
+        + "\n\\bottomrule\n\\bottomrule"
+        + "\n\\end{tabular}"
+        + "\n}"
+        + "\n\end{center}"
+    )
+    return table
