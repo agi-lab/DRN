@@ -1,3 +1,4 @@
+import random
 import numpy as np
 import torch
 from drn import (
@@ -17,6 +18,11 @@ from drn import (
     train,
 )
 
+def seed_everything(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
 
 # Objective function to minimize for CANN
 def objective_cann(
@@ -42,7 +48,6 @@ def objective_cann(
     else:
         device = torch.device("cpu")
 
-    torch.manual_seed(23)
     cann = CANN(
         glm,
         num_hidden_layers=num_hidden_layers,
@@ -51,7 +56,6 @@ def objective_cann(
     )
 
     try:
-        torch.manual_seed(23)
         train(
             cann,
             (
@@ -117,7 +121,6 @@ def objective_mdn(
     else:
         device = torch.device("cpu")
 
-    torch.manual_seed(23)
     mdn = MDN(
         X_train.shape[1],
         num_components=num_components,
@@ -128,7 +131,6 @@ def objective_mdn(
     )
 
     try:
-        torch.manual_seed(23)
         train(
             mdn,
             gaussian_mdn_loss if distribution == "gaussian" else gamma_mdn_loss,
@@ -190,7 +192,6 @@ def objective_ddr(
         p=proportion,
     )
 
-    torch.manual_seed(23)
     ddr_model = DDR(
         X_train.shape[1],
         cutpoints_DDR,
@@ -200,7 +201,6 @@ def objective_ddr(
     )
 
     try:
-        torch.manual_seed(23)
         train(
             ddr_model,
             ddr_loss,
@@ -281,7 +281,6 @@ def objective_drn(
         y=Y_train.detach().numpy(),
         min_obs=min_obs,
     )
-    torch.manual_seed(23)
     drn_model = DRN(
         num_features=X_train.shape[1],
         cutpoints=cutpoints,
@@ -293,7 +292,6 @@ def objective_drn(
 
     # Train the model with the provided hyperparameters
     try:
-        torch.manual_seed(23)
         train(
             model=drn_model,
             criterion=lambda pred, y: drn_loss(
