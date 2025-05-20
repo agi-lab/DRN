@@ -1,4 +1,3 @@
-import random
 import numpy as np
 import torch
 from torch.utils.data import TensorDataset
@@ -20,13 +19,6 @@ from drn import (
 )
 
 
-def seed_everything(seed):
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-
-
 def compute_crps(
     model: torch.nn.Module,
     X_val: torch.Tensor,
@@ -38,7 +30,6 @@ def compute_crps(
     grid_size = 3000
     grid = torch.linspace(0, y_train_max * 1.1, grid_size).unsqueeze(-1).to(device)
 
-    model.eval()
     with torch.no_grad():
         dists = model.distributions(X_val)
         cdfs = dists.cdf(grid)
@@ -49,7 +40,11 @@ def compute_crps(
 
 
 def objective_cann(
-    params,
+    num_hidden_layers,
+    hidden_size,
+    dropout_rate,
+    lr,
+    batch_size,
     glm,
     distribution,
     X_train: torch.Tensor,
@@ -59,8 +54,6 @@ def objective_cann(
     device: torch.device,
     patience: int,
 ):
-    num_hidden_layers, hidden_size, dropout_rate, lr, batch_size = params
-
     cann = CANN(
         glm,
         num_hidden_layers=num_hidden_layers,
@@ -91,13 +84,19 @@ def objective_cann(
 
     except Exception as e:
         print(f"Training failed: {e}")
-        return 1e6
+        return 1e10, None
 
-    return compute_crps(cann, X_val, Y_val, Y_train.max().item(), device)
+    crps_score = compute_crps(cann, X_val, Y_val, Y_train.max().item(), device)
+    return crps_score, cann
 
 
 def objective_mdn(
-    params,
+    num_hidden_layers,
+    hidden_size,
+    dropout_rate,
+    lr,
+    num_components,
+    batch_size,
     distribution,
     X_train: torch.Tensor,
     Y_train: torch.Tensor,
@@ -106,10 +105,6 @@ def objective_mdn(
     device: torch.device,
     patience: int,
 ):
-    num_hidden_layers, hidden_size, dropout_rate, lr, num_components, batch_size = (
-        params
-    )
-
     mdn = MDN(
         X_train.shape[1],
         num_components=num_components,
@@ -131,20 +126,23 @@ def objective_mdn(
             patience=patience,
             device=device,
         )
-        mdn.eval()
-
     except Exception as e:
         print(e)
         print(f"Training failed: {e}")
-        return 1e6
+        return 1e10, None
 
     crps_score = compute_crps(mdn, X_val, Y_val, Y_train.max().item(), device)
 
-    return crps_score
+    return crps_score, mdn
 
 
 def objective_ddr(
-    params,
+    num_hidden_layers,
+    hidden_size,
+    dropout_rate,
+    lr,
+    proportion,
+    batch_size,
     X_train: torch.Tensor,
     Y_train: torch.Tensor,
     X_val: torch.Tensor,
@@ -152,7 +150,6 @@ def objective_ddr(
     device: torch.device,
     patience: int,
 ):
-    num_hidden_layers, hidden_size, dropout_rate, lr, proportion, batch_size = params
 
     cutpoints = ddr_cutpoints(
         c_0=max(Y_train.min().item() * 1.05, 0),
@@ -161,7 +158,7 @@ def objective_ddr(
         n=X_train.shape[0],
     )
 
-    ddr_model = DDR(
+    ddr = DDR(
         X_train.shape[1],
         cutpoints,
         num_hidden_layers=num_hidden_layers,
@@ -171,7 +168,7 @@ def objective_ddr(
 
     try:
         train(
-            ddr_model,
+            ddr,
             ddr_loss,
             TensorDataset(X_train, Y_train),
             TensorDataset(X_val, Y_val),
@@ -183,14 +180,23 @@ def objective_ddr(
         )
     except Exception as e:
         print(f"Training failed: {e}")
-        return 1e6
+        return 1e10, ddr
 
-    crps_score = compute_crps(ddr_model, X_val, Y_val, Y_train.max().item(), device)
-    return crps_score
+    crps_score = compute_crps(ddr, X_val, Y_val, Y_train.max().item(), device)
+    return crps_score, ddr
 
 
 def objective_drn(
-    params,
+    num_hidden_layers,
+    hidden_size,
+    dropout_rate,
+    lr,
+    kl_alpha,
+    mean_alpha,
+    dv_alpha,
+    batch_size,
+    proportion,
+    min_obs,
     glm,
     kl_direction,
     criteria,
@@ -201,19 +207,6 @@ def objective_drn(
     device: torch.device,
     patience: int,
 ):
-    (
-        num_hidden_layers,
-        hidden_size,
-        dropout_rate,
-        lr,
-        kl_alpha,
-        mean_alpha,
-        dv_alpha,
-        batch_size,
-        proportion,
-        min_obs,
-    ) = params
-
     cutpoints = drn_cutpoints(
         c_0=max(Y_train.min().item() * 1.05, 0),
         c_K=Y_train.max().item() * 1.05,
@@ -222,7 +215,7 @@ def objective_drn(
         min_obs=min_obs,
     )
 
-    drn_model = DRN(
+    drn = DRN(
         num_features=X_train.shape[1],
         cutpoints=cutpoints,
         glm=glm,
@@ -233,7 +226,7 @@ def objective_drn(
 
     try:
         train(
-            model=drn_model,
+            model=drn,
             criterion=lambda pred, y: drn_loss(
                 pred,
                 y,
@@ -255,14 +248,16 @@ def objective_drn(
         )
     except Exception as e:
         print(f"Training failed: {e}")
-        return 1e6
+        return 1e10, None
 
     if criteria == "CRPS":
-        crps_score = compute_crps(drn_model, X_val, Y_val, Y_train.max().item(), device)
-        return crps_score
+        crps_score = compute_crps(drn, X_val, Y_val, Y_train.max().item(), device)
+        return crps_score, drn
     elif criteria == "NLL":
         with torch.no_grad():
-            dists = drn_model.distributions(X_val)
+            dists = drn.distributions(X_val)
             nll_score = -dists.log_prob(Y_val).mean().item()
             nll_score = nll_score if np.exp(-nll_score) > 0 else 1e10
-        return nll_score
+        return nll_score, drn
+    else:
+        raise ValueError(f"Unknown criteria: {criteria}")
