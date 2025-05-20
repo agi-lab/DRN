@@ -61,10 +61,6 @@ def objective_cann(
 ):
     num_hidden_layers, hidden_size, dropout_rate, lr, batch_size = params
 
-    num_hidden_layers = int(num_hidden_layers)
-    hidden_size = int(hidden_size)
-    batch_size = int(batch_size)
-
     cann = CANN(
         glm,
         num_hidden_layers=num_hidden_layers,
@@ -85,7 +81,7 @@ def objective_cann(
             epochs=2000,
             lr=lr,
             patience=patience,
-            batch_size=batch_size,
+            batch_size=int(batch_size),
             device=device,
         )
 
@@ -114,11 +110,6 @@ def objective_mdn(
         params
     )
 
-    num_hidden_layers = int(num_hidden_layers)
-    hidden_size = int(hidden_size)
-    batch_size = int(batch_size)
-    num_components = int(num_components)
-
     mdn = MDN(
         X_train.shape[1],
         num_components=num_components,
@@ -135,7 +126,7 @@ def objective_mdn(
             TensorDataset(X_train, Y_train),
             TensorDataset(X_val, Y_val),
             lr=lr,
-            batch_size=batch_size,
+            batch_size=int(batch_size),
             epochs=2000,
             patience=patience,
             device=device,
@@ -163,10 +154,6 @@ def objective_ddr(
 ):
     num_hidden_layers, hidden_size, dropout_rate, lr, proportion, batch_size = params
 
-    num_hidden_layers = int(num_hidden_layers)
-    hidden_size = int(hidden_size)
-    batch_size = int(batch_size)
-
     cutpoints = ddr_cutpoints(
         c_0=max(Y_train.min().item() * 1.05, 0),
         c_K=Y_train.max().item() * 1.05,
@@ -191,7 +178,7 @@ def objective_ddr(
             epochs=2000,
             lr=lr,
             patience=patience,
-            batch_size=batch_size,
+            batch_size=int(batch_size),
             device=device,
         )
     except Exception as e:
@@ -227,12 +214,6 @@ def objective_drn(
         min_obs,
     ) = params
 
-    # Since those integer values are numpy.int64, and that breaks some things, manually convert to Python ints
-    num_hidden_layers = int(num_hidden_layers)
-    hidden_size = int(hidden_size)
-    batch_size = int(batch_size)
-    min_obs = int(min_obs)
-
     cutpoints = drn_cutpoints(
         c_0=max(Y_train.min().item() * 1.05, 0),
         c_K=Y_train.max().item() * 1.05,
@@ -264,7 +245,7 @@ def objective_drn(
             ),
             train_dataset=TensorDataset(X_train, Y_train),
             val_dataset=TensorDataset(X_val, Y_val),
-            batch_size=batch_size,
+            batch_size=int(batch_size),
             epochs=2000,
             patience=patience,
             lr=lr,
