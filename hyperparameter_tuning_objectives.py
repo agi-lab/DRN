@@ -17,7 +17,7 @@ TRAINER_OPTS = {
     "devices": 1,
     "deterministic": True,
     "enable_model_summary": False,
-    "enable_progress_bar": True,
+    "enable_progress_bar": False,
 }
 
 def compute_crps(
