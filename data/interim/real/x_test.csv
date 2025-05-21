@@ -1,0 +1,654 @@
+Exposure,LicAge,VehAge,Gender,MariStat,SocioCateg,VehUsage,DrivAge,HasKmLimit,BonusMalus,VehBody,VehPrice,VehEngine,VehEnergy,VehMaxSpeed,VehClass,RiskVar
+0.916,39,2,Male,Alone,26,Private+trip to office,24,0,85,sedan,N,direct injection overpowered,diesel,8,M1,15
+0.499,100,8,Male,Alone,50,Private+trip to office,26,0,106,sedan,J,injection,regular,6,M1,16
+0.75,314,4,Female,Alone,50,Private+trip to office,45,0,67,other microvan,L,injection,regular,6,M2,16
+0.804,321,2,Male,Other,46,Professional,52,0,56,van,L,direct injection overpowered,diesel,4,0,19
+0.916,331,1,Male,Other,50,Private+trip to office,45,0,100,coupe,E,injection overpowered,regular,2,A,9
+0.583,425,6,Male,Other,1,Professional,70,0,50,sedan,K,direct injection overpowered,diesel,6,M2,10
+0.333,510,6,Female,Other,50,Private+trip to office,60,1,68,sedan,E,injection,regular,4,B,20
+0.363,524,0,Male,Other,6,Professional run,61,0,50,sedan,J,injection,regular,6,M1,10
+0.56,416,1,Male,Other,50,Professional,53,0,50,sedan,H,direct injection overpowered,diesel,5,B,13
+0.666,126,1,Male,Alone,50,Private+trip to office,29,0,85,sport utility vehicle,Q,direct injection overpowered,diesel,7,H,17
+1.0,228,11,Female,Alone,50,Private+trip to office,37,0,50,sedan,D,injection,regular,3,A,13
+0.491,357,1,Female,Other,50,Private+trip to office,49,1,50,sedan,F,injection,regular,5,B,19
+0.957,87,0,Female,Alone,26,Private+trip to office,26,0,68,sedan,H,direct injection overpowered,diesel,6,B,5
+0.741,184,8,Female,Other,50,Professional,40,0,58,van,G,injection,diesel,2,M1,16
+0.666,38,2,Female,Alone,26,Private+trip to office,23,0,90,cabriolet,I,injection,regular,8,B,16
+0.749,259,4,Female,Other,50,Private+trip to office,51,0,72,sedan,G,injection,regular,5,B,12
+0.155,476,4,Male,Other,55,Private,58,0,50,sedan,L,direct injection overpowered,diesel,8,M2,15
+0.192,176,0,Female,Alone,50,Professional run,33,0,100,sedan,H,direct injection overpowered,diesel,5,B,19
+0.611,53,0,Female,Alone,50,Private+trip to office,26,0,80,cabriolet,K,injection,regular,9,B,17
+0.407,228,2,Male,Other,55,Private+trip to office,57,0,50,other microvan,L,direct injection overpowered,diesel,6,M1,16
+0.166,277,5,Male,Other,50,Private+trip to office,41,0,85,other microvan,N,direct injection overpowered,diesel,5,H,10
+0.683,81,1,Male,Alone,26,Private+trip to office,26,0,95,sedan,M,direct injection overpowered,diesel,9,M1,13
+0.833,123,5,Female,Alone,50,Private+trip to office,38,1,100,sedan,G,injection,diesel,5,B,17
+0.749,466,1,Female,Other,60,Private,71,0,51,sedan,K,injection,regular,7,M1,16
+0.833,452,4,Female,Other,46,Professional,56,0,50,sedan,G,injection,regular,5,B,7
+0.75,49,2,Female,Alone,26,Private+trip to office,22,0,80,sedan,D,injection,regular,4,B,17
+0.441,102,2,Male,Alone,55,Private+trip to office,26,0,72,sedan,M,direct injection overpowered,diesel,9,M1,13
+0.997,600,4,Male,Other,50,Private+trip to office,68,0,50,sport utility vehicle,R,injection overpowered,diesel,5,H,17
+0.611,133,1,Male,Alone,66,Private+trip to office,29,0,76,sedan,L,direct injection overpowered,diesel,9,M1,16
+0.666,445,2,Female,Other,50,Professional run,56,0,50,sedan,L,direct injection overpowered,diesel,6,M1,16
+1.0,196,5,Female,Alone,50,Private+trip to office,34,0,57,sedan,E,injection,regular,4,B,18
+0.166,523,8,Male,Other,60,Private,71,0,50,sedan,I,injection,regular,6,M2,9
+0.249,508,6,Male,Other,60,Private,64,0,85,sedan,E,injection,regular,4,B,10
+0.666,600,5,Male,Other,60,Private,68,0,50,cabriolet,V,injection,regular,10,H,4
+0.75,517,6,Male,Other,1,Private+trip to office,61,0,50,sedan,J,injection,regular,6,M1,8
+0.083,487,3,Male,Other,50,Private+trip to office,58,0,50,other microvan,K,direct injection overpowered,diesel,4,M2,8
+0.455,534,5,Male,Other,60,Private,68,1,50,sedan,L,injection,regular,8,M2,17
+0.519,7,8,Male,Alone,26,Private+trip to office,19,0,100,sedan,G,injection,regular,5,M1,18
+0.583,301,1,Male,Other,50,Private+trip to office,43,0,50,van,E,injection,diesel,4,B,17
+0.71,181,1,Male,Other,50,Private+trip to office,33,0,85,sedan,L,direct injection overpowered,diesel,6,B,15
+0.375,295,3,Male,Other,50,Private+trip to office,42,0,52,microvan,J,injection,regular,5,M1,12
+0.583,562,2,Male,Other,50,Professional,64,0,50,sedan,Q,injection,regular,10,H,17
+0.499,249,2,Male,Other,50,Private+trip to office,42,0,54,other microvan,L,direct injection overpowered,diesel,5,M1,19
+0.916,239,1,Male,Other,50,Professional,47,0,77,sedan,R,direct injection overpowered,diesel,9,H,5
+0.5,451,4,Female,Alone,50,Private+trip to office,56,0,50,sedan,K,injection,regular,8,M2,13
+0.416,131,1,Male,Alone,50,Private,30,1,57,sedan,K,injection,regular,5,B,11
+0.333,44,1,Female,Other,50,Private+trip to office,39,0,90,sedan,L,direct injection overpowered,diesel,6,B,11
+0.874,513,1,Male,Other,42,Professional run,61,0,62,sedan,K,direct injection overpowered,diesel,8,M2,14
+0.676,497,0,Male,Other,50,Professional,60,0,50,microvan,K,injection,regular,7,M1,17
+0.833,231,8,Male,Other,1,Private+trip to office,37,0,50,other microvan,N,injection overpowered,diesel,6,H,20
+0.941,453,8,Male,Other,50,Private,55,0,50,station wagon,Q,injection,regular,9,H,4
+0.916,297,5,Female,Other,37,Private,43,1,50,sedan,J,injection,regular,8,M1,16
+0.955,183,8,Male,Alone,50,Private,37,1,50,sedan,H,injection overpowered,diesel,5,B,19
+0.6,112,2,Female,Alone,50,Private+trip to office,27,0,60,sedan,I,direct injection overpowered,diesel,6,B,15
+0.749,501,0,Male,Other,1,Professional,60,0,52,coupe,P,injection,regular,10,M2,9
+0.666,718,2,Male,Other,60,Private,81,1,50,sedan,I,injection,regular,7,M1,16
+0.532,247,5,Male,Alone,55,Private+trip to office,41,1,50,sedan,G,injection,regular,7,B,19
+0.333,181,3,Male,Other,50,Professional,33,0,64,sedan,G,injection,diesel,5,B,5
+0.958,579,4,Male,Other,60,Private,66,0,50,station wagon,L,injection,regular,9,M2,15
+0.942,321,1,Male,Other,50,Professional,46,0,50,sedan,N,direct injection overpowered,diesel,9,M1,8
+0.583,562,2,Male,Other,50,Professional,64,0,50,sedan,Q,injection,regular,10,H,17
+0.166,308,11,Male,Other,50,Private,46,0,80,sedan,T,injection,regular,10,H,3
+1.0,288,2,Male,Other,50,Professional,44,0,68,van,E,injection,diesel,4,B,19
+0.666,386,2,Female,Other,50,Private+trip to office,53,0,50,sedan,M,direct injection overpowered,diesel,8,M2,15
+0.916,92,2,Female,Other,50,Private+trip to office,33,0,100,sedan,D,injection,regular,5,B,15
+0.974,252,2,Male,Alone,50,Professional,39,0,50,van,F,injection,diesel,5,B,9
+0.861,13,4,Female,Other,50,Private,21,0,125,sedan,G,injection,regular,5,A,14
+0.583,403,3,Female,Other,55,Private+trip to office,54,0,61,sedan,K,injection,regular,7,M2,11
+0.91,292,3,Male,Other,46,Professional,44,0,50,microvan,L,direct injection overpowered,diesel,6,M1,19
+1.0,359,2,Male,Alone,50,Professional,50,0,50,cabriolet,X,injection,regular,10,H,7
+1.0,373,4,Male,Other,55,Professional,56,0,52,other microvan,K,injection,regular,6,M1,15
+0.271,362,6,Male,Other,50,Private+trip to office,50,0,50,sedan,R,injection,regular,10,H,16
+0.499,156,5,Male,Other,50,Professional,31,0,68,sedan,G,injection,regular,7,B,11
+0.249,536,1,Female,Other,42,Professional,67,0,50,sedan,G,direct injection overpowered,diesel,5,B,6
+0.666,175,0,Female,Other,50,Private+trip to office,33,0,80,microvan,L,direct injection overpowered,diesel,7,M1,16
+0.082,170,2,Male,Alone,1,Professional,33,0,52,cabriolet,J,injection,regular,9,B,8
+0.726,394,5,Female,Other,50,Private+trip to office,51,0,50,sport utility vehicle,L,injection,regular,5,M2,16
+1.0,404,1,Male,Other,6,Professional run,52,0,50,sedan,P,direct injection overpowered,diesel,9,H,17
+0.135,299,2,Male,Other,49,Professional,43,0,51,sport utility vehicle,N,injection,regular,5,0,16
+0.75,212,5,Female,Alone,55,Professional,36,0,70,microvan,L,direct injection overpowered,diesel,6,M1,7
+0.374,446,0,Female,Other,60,Private,75,1,50,sedan,I,injection,regular,6,M1,4
+0.333,81,2,Female,Alone,50,Private+trip to office,27,0,100,sedan,F,injection,diesel,4,B,16
+0.867,103,8,Male,Alone,50,Professional,31,0,85,sedan,H,injection,regular,5,M1,7
+0.407,137,3,Male,Other,50,Private+trip to office,34,0,60,other microvan,N,direct injection overpowered,diesel,5,H,10
+0.833,149,6,Female,Other,50,Private+trip to office,31,0,57,sedan,F,injection overpowered,diesel,5,B,15
+0.416,369,3,Male,Other,50,Private+trip to office,51,0,50,microvan,M,injection overpowered,regular,8,H,9
+0.23,665,5,Female,Other,60,Private,84,1,76,sedan,F,injection,regular,5,B,13
+0.166,481,5,Male,Other,60,Private,66,0,50,sedan,E,injection,regular,4,B,20
+0.899,80,5,Female,Alone,50,Private+trip to office,25,0,90,sedan,D,injection,regular,5,B,19
+1.0,509,6,Male,Other,60,Private,60,0,50,sedan,M,injection,regular,9,M2,8
+0.469,587,0,Male,Other,60,Private,74,0,50,sedan,S,injection overpowered,regular,10,H,2
+0.517,212,5,Male,Alone,50,Private+trip to office,37,0,51,sedan,H,injection,regular,6,M1,20
+0.833,597,6,Female,Other,60,Private,82,0,50,sedan,J,injection,regular,8,M2,7
+0.916,444,8,Female,Other,60,Private,56,0,57,sedan,O,injection,regular,8,H,7
+0.499,334,3,Male,Other,1,Professional,48,0,50,microvan,O,direct injection overpowered,diesel,6,H,18
+0.916,130,1,Male,Other,1,Private+trip to office,31,0,78,sedan,L,direct injection overpowered,diesel,7,M1,17
+0.5,77,1,Female,Other,37,Private,36,0,95,other microvan,H,injection,regular,5,M1,8
+0.928,101,3,Male,Other,50,Private+trip to office,28,0,80,sedan,K,direct injection overpowered,diesel,8,M2,20
+0.416,284,8,Male,Other,46,Professional,44,0,80,van,M,injection,diesel,2,0,19
+0.749,109,4,Male,Other,50,Private,29,0,95,sedan,J,injection,diesel,4,M1,18
+0.142,157,8,Female,Other,50,Private+trip to office,31,0,60,sedan,D,injection,regular,3,A,16
+0.749,259,4,Female,Other,50,Private+trip to office,51,0,72,sedan,G,injection,regular,5,B,12
+0.589,359,0,Female,Alone,50,Professional,49,0,53,van,G,direct injection overpowered,diesel,5,B,9
+0.25,770,1,Male,Other,60,Private,81,0,64,station wagon,J,direct injection overpowered,diesel,6,M1,10
+0.833,428,4,Male,Other,50,Private,57,0,50,sedan,K,injection,regular,7,M1,14
+1.0,75,6,Female,Alone,26,Private+trip to office,25,0,80,sedan,F,injection,regular,4,B,16
+0.666,322,1,Female,Other,50,Private,54,0,50,sedan,I,injection,regular,6,B,16
+1.0,458,8,Male,Other,50,Professional,56,0,50,station wagon,Q,injection,diesel,7,H,18
+1.0,201,2,Male,Alone,50,Professional,34,0,50,sport utility vehicle,R,direct injection overpowered,diesel,8,H,16
+1.0,228,1,Male,Other,50,Professional,37,0,50,other microvan,O,direct injection overpowered,diesel,6,H,16
+1.0,126,1,Male,Other,50,Private+trip to office,29,0,57,sedan,E,injection,regular,5,A,13
+0.083,542,3,Male,Other,60,Private,67,0,50,sedan,I,injection,regular,6,M1,12
+0.749,264,2,Female,Other,50,Private,40,0,100,sedan,K,direct injection overpowered,diesel,8,M1,16
+0.689,231,6,Male,Other,50,Private+trip to office,39,0,51,coupe,L,injection,regular,9,M2,15
+0.127,337,4,Male,Other,50,Private+trip to office,46,0,51,station wagon,O,direct injection overpowered,diesel,9,M2,9
+0.083,471,6,Male,Other,1,Professional,58,0,50,sedan,U,injection,regular,10,H,8
+0.861,13,4,Female,Other,50,Private,21,0,125,sedan,G,injection,regular,5,A,14
+0.91,438,0,Male,Other,50,Professional,54,0,50,microvan,M,direct injection overpowered,diesel,7,M2,17
+0.666,44,1,Female,Alone,26,Private+trip to office,21,0,156,sedan,G,injection,regular,5,B,15
+0.666,521,6,Female,Other,50,Private+trip to office,66,0,50,sedan,I,injection,diesel,4,M1,19
+0.558,70,0,Female,Alone,26,Private+trip to office,26,0,85,sedan,G,injection,regular,3,B,16
+1.0,359,2,Male,Alone,50,Professional,50,0,50,cabriolet,X,injection,regular,10,H,7
+0.28,625,1,Female,Other,50,Private+trip to office,74,0,50,sedan,H,injection,regular,5,B,15
+0.794,293,1,Male,Other,50,Professional,42,0,50,other microvan,L,injection,regular,8,M1,16
+0.616,149,1,Male,Other,50,Private+trip to office,30,0,51,microvan,J,injection,regular,7,M1,17
+0.916,228,2,Female,Alone,50,Private+trip to office,37,0,50,station wagon,M,direct injection overpowered,diesel,8,M2,9
+0.166,197,6,Male,Other,55,Private+trip to office,34,0,50,sedan,H,injection,regular,7,B,14
+0.333,368,1,Female,Alone,50,Private+trip to office,56,0,95,sedan,C,injection,regular,4,A,11
+0.502,434,6,Male,Other,50,Private+trip to office,54,0,76,sedan,I,injection,regular,6,M1,7
+0.519,283,2,Female,Other,50,Private,44,0,50,station wagon,N,direct injection overpowered,diesel,9,M2,17
+0.717,216,8,Male,Other,50,Private+trip to office,36,0,50,sedan,G,injection overpowered,diesel,5,B,17
+0.944,64,1,Female,Alone,50,Professional,24,0,76,sedan,F,injection,regular,5,B,18
+1.0,156,1,Male,Other,50,Private+trip to office,31,0,60,station wagon,P,direct injection overpowered,diesel,9,M2,16
+0.505,314,2,Male,Other,50,Professional,44,0,50,sedan,J,injection,regular,6,B,16
+0.5,746,6,Male,Other,60,Private,81,0,51,sedan,M,injection,diesel,6,M2,16
+0.583,450,3,Female,Other,50,Private+trip to office,57,0,93,sedan,G,injection,regular,5,A,16
+0.579,284,0,Female,Other,50,Private,49,1,85,microvan,I,injection,regular,5,M1,17
+0.833,173,3,Male,Alone,50,Professional,32,0,50,sedan,J,direct injection overpowered,diesel,6,M1,15
+0.166,413,4,Male,Other,50,Private+trip to office,54,0,50,coupe,Q,injection,regular,10,H,4
+0.468,515,0,Female,Other,60,Private,69,1,55,sedan,G,injection,regular,4,B,16
+0.499,149,5,Male,Other,50,Private,59,1,60,sedan,G,injection,regular,5,M1,14
+0.35,455,0,Male,Other,42,Private+trip to office,56,0,50,coupe,O,injection,regular,10,M2,11
+0.788,418,0,Male,Other,50,Private+trip to office,55,0,50,sedan,K,injection,regular,9,B,14
+0.499,419,2,Male,Other,50,Private+trip to office,56,0,50,sedan,H,injection,regular,7,M1,10
+1.0,502,1,Male,Other,50,Private,61,0,50,sedan,G,injection,regular,6,B,16
+0.5,104,8,Female,Alone,50,Private+trip to office,26,0,80,sport utility vehicle,L,injection,regular,5,M2,5
+0.583,224,3,Female,Alone,50,Private+trip to office,36,0,68,sedan,D,injection,regular,5,B,14
+0.833,82,3,Female,Alone,26,Private+trip to office,25,0,100,sedan,H,direct injection overpowered,diesel,5,B,5
+0.879,564,3,Male,Other,60,Private,69,0,50,sedan,I,injection,regular,8,M1,16
+0.83,192,3,Male,Alone,50,Professional,35,0,76,cabriolet,R,injection,regular,10,M2,2
+0.583,264,0,Male,Other,50,Private+trip to office,40,0,50,sport utility vehicle,R,direct injection overpowered,diesel,7,H,15
+0.416,432,6,Male,Other,1,Professional,70,0,50,sedan,K,direct injection overpowered,diesel,6,M2,10
+0.867,103,8,Male,Alone,50,Professional,31,0,85,sedan,H,injection,regular,5,M1,7
+1.0,433,8,Male,Other,65,Professional,54,0,50,sedan,K,injection,regular,6,B,7
+0.043,244,2,Female,Alone,50,Private+trip to office,38,0,60,sedan,J,injection,regular,7,0,16
+0.833,123,5,Female,Alone,50,Private+trip to office,38,1,100,sedan,G,injection,diesel,5,B,17
+0.994,321,5,Female,Other,50,Private+trip to office,45,0,50,sedan,F,injection,regular,5,B,16
+0.893,464,1,Male,Other,50,Professional,56,0,50,sedan,J,direct injection overpowered,diesel,6,B,8
+0.833,335,1,Male,Other,1,Professional,48,0,50,other microvan,J,injection,regular,6,M1,16
+0.833,259,0,Male,Other,42,Professional,39,0,50,microvan,P,direct injection overpowered,diesel,7,H,15
+0.428,94,6,Female,Other,50,Private+trip to office,32,0,95,sedan,G,injection,regular,6,M1,17
+1.0,651,6,Male,Other,60,Private,76,0,59,sedan,P,injection,regular,10,H,14
+0.916,145,6,Male,Alone,50,Private+trip to office,31,0,95,sedan,J,injection,regular,7,M2,20
+0.75,528,1,Female,Other,60,Private,64,0,50,sedan,K,direct injection overpowered,diesel,8,M2,10
+0.416,134,4,Male,Other,50,Private+trip to office,29,0,90,sedan,K,injection overpowered,diesel,6,M1,18
+0.833,407,1,Female,Other,46,Professional,53,0,50,van,J,direct injection overpowered,diesel,1,0,15
+0.833,120,1,Female,Alone,50,Private+trip to office,29,0,95,sedan,J,injection,regular,7,B,7
+0.5,629,8,Male,Other,60,Private,70,0,50,sedan,V,injection,regular,9,H,16
+0.833,198,2,Female,Other,50,Private,37,1,73,sedan,E,injection,regular,4,B,17
+0.673,619,0,Male,Other,60,Private,72,0,50,coupe,N,direct injection overpowered,diesel,9,M2,18
+0.416,534,2,Male,Other,66,Professional,63,0,58,sport utility vehicle,N,direct injection overpowered,diesel,5,H,9
+0.416,145,0,Male,Other,50,Professional,33,0,72,station wagon,G,injection,regular,4,M1,19
+0.453,582,3,Female,Other,60,Private,80,0,77,sedan,H,injection,regular,7,B,16
+0.743,477,0,Male,Other,66,Professional,58,0,50,bus,L,direct injection overpowered,diesel,7,M1,7
+0.631,171,2,Male,Other,55,Professional,33,0,52,other microvan,O,injection,regular,7,H,15
+0.249,237,5,Male,Alone,50,Professional,40,0,60,microvan,P,injection,regular,8,H,13
+0.848,368,3,Male,Other,47,Professional,49,0,50,station wagon,I,injection,diesel,4,M1,11
+0.416,179,2,Female,Other,37,Private,42,0,125,sport utility vehicle,L,injection,regular,6,H,20
+0.636,424,0,Female,Alone,1,Professional,68,0,67,sedan,G,injection,regular,3,B,13
+0.214,480,2,Female,Alone,55,Professional,58,0,50,sedan,D,injection,regular,5,B,15
+0.5,215,3,Male,Other,50,Private+trip to office,36,0,60,coupe,M,injection,regular,9,M2,19
+0.416,308,2,Male,Other,50,Private+trip to office,44,0,50,van,E,injection,diesel,4,B,17
+0.25,150,5,Female,Alone,1,Private+trip to office,30,0,85,coupe,D,injection overpowered,regular,2,A,9
+0.935,471,3,Male,Other,49,Professional,57,0,50,sedan,F,injection,regular,5,B,16
+0.926,227,3,Female,Alone,50,Private+trip to office,42,0,90,sedan,J,injection,regular,8,M1,10
+0.5,402,5,Female,Other,46,Private+trip to office,53,1,51,sedan,U,injection,regular,10,H,12
+0.422,409,4,Male,Other,60,Private,62,0,51,station wagon,J,injection,regular,7,M2,19
+0.756,224,0,Male,Other,50,Private+trip to office,37,0,50,sedan,L,direct injection overpowered,diesel,6,M2,13
+0.416,134,2,Male,Alone,50,Private+trip to office,33,0,95,sedan,G,injection,diesel,5,B,12
+1.0,433,8,Male,Other,65,Professional,54,0,50,sedan,K,injection,regular,6,B,7
+0.833,352,3,Female,Other,50,Private,48,1,50,sedan,E,injection,regular,4,B,17
+0.752,541,5,Male,Other,60,Private,63,0,95,sedan,O,injection,regular,9,H,12
+0.678,411,2,Female,Other,21,Professional,72,0,50,cabriolet,H,injection overpowered,regular,2,A,8
+1.0,314,0,Male,Other,50,Professional,44,0,50,sedan,O,direct injection overpowered,diesel,9,H,14
+0.5,446,1,Male,Other,50,Private+trip to office,59,0,50,sedan,I,direct injection overpowered,diesel,6,B,20
+0.716,529,1,Male,Alone,60,Private,62,0,50,sedan,G,injection,regular,7,B,15
+0.057,366,3,Male,Other,49,Professional,55,0,50,sport utility vehicle,L,injection,regular,5,H,17
+0.666,100,4,Male,Alone,55,Private,26,0,57,sedan,J,direct injection overpowered,diesel,6,M1,19
+0.091,87,8,Female,Other,50,Professional,25,0,64,sedan,D,injection,regular,4,B,3
+0.5,74,4,Female,Other,50,Private,24,0,95,sedan,E,injection,regular,4,B,19
+0.235,110,4,Male,Alone,55,Private+trip to office,27,0,64,coupe,L,injection,regular,9,M2,8
+0.803,44,1,Male,Alone,26,Private+trip to office,21,0,125,sedan,J,injection,regular,8,B,15
+0.666,211,0,Male,Other,50,Private,37,0,90,sedan,L,injection,regular,9,M2,5
+0.75,273,2,Male,Other,50,Professional,41,0,50,cabriolet,Y,injection,regular,10,H,8
+0.259,453,2,Male,Other,50,Private+trip to office,58,0,50,station wagon,S,injection,regular,10,H,12
+0.976,448,2,Male,Other,50,Private+trip to office,58,0,50,other microvan,O,direct injection overpowered,diesel,6,H,14
+0.321,196,8,Male,Other,50,Private+trip to office,38,0,58,sedan,F,injection,regular,6,B,13
+0.616,149,1,Male,Other,50,Private+trip to office,30,0,51,microvan,J,injection,regular,7,M1,17
+0.447,282,1,Male,Other,50,Private+trip to office,42,0,50,other microvan,I,injection,regular,6,M1,4
+0.833,167,2,Male,Alone,50,Private+trip to office,31,0,60,sedan,K,injection,regular,7,M1,11
+0.822,187,4,Male,Other,50,Private+trip to office,34,0,50,sport utility vehicle,R,injection,regular,6,H,12
+0.278,252,4,Male,Alone,50,Private+trip to office,39,0,50,sedan,E,injection,regular,5,B,12
+0.333,280,0,Male,Other,55,Private+trip to office,44,0,68,sedan,H,direct injection overpowered,diesel,5,B,18
+0.762,151,3,Female,Other,50,Private+trip to office,30,0,85,sedan,G,injection,diesel,5,B,19
+0.833,82,3,Female,Alone,26,Private+trip to office,25,0,100,sedan,H,direct injection overpowered,diesel,5,B,5
+0.404,384,1,Male,Other,46,Professional,51,0,80,cabriolet,F,injection overpowered,regular,2,A,2
+0.751,104,0,Male,Other,55,Private+trip to office,26,0,68,sedan,I,injection,regular,8,B,12
+0.833,266,2,Male,Other,50,Private,45,0,50,coupe,T,injection,regular,10,M2,13
+0.583,216,6,Male,Alone,50,Private+trip to office,36,0,50,sedan,G,injection,regular,7,M1,16
+0.911,72,1,Female,Alone,50,Private+trip to office,28,1,72,cabriolet,F,injection overpowered,regular,2,A,16
+0.333,268,0,Male,Other,1,Professional,41,0,60,microvan,L,injection,regular,8,M2,10
+0.833,160,2,Male,Alone,50,Private,32,0,95,sedan,H,direct injection overpowered,diesel,6,B,15
+0.358,451,0,Male,Other,1,Professional,56,0,50,sedan,N,direct injection overpowered,diesel,9,H,11
+1.0,406,2,Female,Other,66,Professional,52,0,69,sedan,J,injection,regular,8,B,16
+0.666,415,2,Female,Other,50,Professional,53,0,50,sedan,L,direct injection overpowered,diesel,7,0,6
+0.5,555,11,Male,Other,60,Private,67,1,50,sedan,H,injection,diesel,4,H,14
+0.825,211,0,Male,Other,50,Private,37,0,57,microvan,K,injection,regular,7,M1,16
+0.749,218,3,Female,Other,50,Private+trip to office,36,0,50,sedan,H,injection,regular,7,B,14
+0.368,293,0,Female,Other,50,Private,42,0,57,microvan,P,injection overpowered,regular,8,H,18
+1.0,420,11,Male,Other,66,Professional,54,0,50,sedan,S,injection,regular,7,H,17
+0.499,160,5,Female,Alone,50,Private+trip to office,32,1,51,sedan,K,injection,regular,5,B,11
+0.337,142,1,Male,Alone,50,Private+trip to office,29,0,85,coupe,N,direct injection overpowered,diesel,9,M2,2
+0.791,600,8,Male,Other,60,Private,71,0,50,sedan,H,injection,diesel,5,M1,13
+0.696,249,5,Male,Other,1,Professional,39,0,102,station wagon,M,injection,regular,8,M2,18
+0.307,337,6,Male,Other,50,Professional,46,0,57,microvan,P,injection,regular,7,H,9
+0.91,292,3,Male,Other,46,Professional,44,0,50,microvan,L,direct injection overpowered,diesel,6,M1,19
+0.666,66,2,Male,Other,50,Private+trip to office,23,0,76,sedan,G,direct injection overpowered,diesel,5,B,17
+0.841,582,5,Female,Other,60,Private,84,1,75,sedan,G,injection,regular,5,B,17
+0.416,114,5,Female,Other,50,Private,29,0,80,sedan,K,injection,regular,7,B,13
+0.392,89,4,Male,Alone,50,Private+trip to office,25,0,80,sedan,N,direct injection overpowered,diesel,9,M2,20
+0.083,238,1,Male,Other,19,Private+trip to office,38,0,50,microvan,L,direct injection overpowered,diesel,7,M1,20
+0.7,172,0,Male,Other,42,Private+trip to office,33,0,90,sedan,F,injection,regular,6,B,19
+0.25,558,2,Male,Other,60,Private,66,0,50,cabriolet,S,injection overpowered,regular,10,H,6
+0.423,491,0,Female,Other,50,Private+trip to office,59,0,50,sedan,G,injection,regular,5,B,4
+0.444,68,2,Female,Alone,26,Private+trip to office,24,0,76,cabriolet,E,injection overpowered,regular,2,A,16
+0.75,539,3,Female,Other,60,Private,72,0,62,sedan,F,injection,regular,5,B,8
+0.583,421,3,Male,Other,50,Private+trip to office,57,0,95,sedan,F,injection,regular,4,B,4
+0.583,463,0,Male,Other,50,Professional,60,0,50,van,N,direct injection overpowered,diesel,2,0,15
+0.666,185,3,Male,Other,50,Professional,33,0,71,sedan,G,injection,diesel,5,B,5
+0.132,470,6,Male,Other,50,Private+trip to office,57,0,50,other microvan,N,injection overpowered,diesel,6,H,20
+0.964,173,2,Male,Alone,50,Professional,33,0,80,sedan,H,injection,regular,6,M1,17
+0.236,438,5,Male,Other,50,Private+trip to office,54,0,50,sedan,L,injection,regular,6,B,16
+0.5,430,1,Male,Other,50,Professional,53,0,50,other microvan,O,direct injection overpowered,diesel,6,H,15
+0.461,428,2,Male,Other,50,Professional,55,0,50,sedan,O,injection overpowered,regular,9,H,7
+0.807,101,1,Female,Alone,50,Private+trip to office,32,0,95,sedan,F,injection,regular,5,B,11
+0.333,236,1,Male,Other,50,Private,37,0,51,sedan,L,injection,regular,6,B,5
+0.28,159,0,Male,Alone,50,Private+trip to office,32,0,54,cabriolet,L,injection,regular,9,M1,13
+0.966,375,0,Male,Other,6,Professional run,50,0,50,sedan,L,injection,regular,9,M1,16
+0.985,220,1,Male,Other,55,Private+trip to office,37,0,54,other microvan,K,injection,regular,6,M1,13
+0.666,511,0,Female,Other,50,Private+trip to office,64,0,50,sedan,E,injection,regular,4,A,15
+0.666,412,6,Male,Other,55,Private,53,0,50,sedan,D,injection,regular,4,A,14
+0.358,229,6,Male,Other,55,Private+trip to office,37,0,50,sedan,J,injection,regular,6,M2,8
+0.53,509,3,Female,Other,60,Private,81,0,86,sedan,G,injection,regular,4,B,14
+0.749,113,5,Female,Alone,50,Private+trip to office,28,0,76,sedan,C,injection,regular,4,A,19
+0.666,243,5,Male,Other,50,Private+trip to office,41,0,50,sedan,G,injection,diesel,4,B,10
+0.95,567,1,Female,Alone,60,Private,75,0,50,sedan,H,direct injection overpowered,diesel,5,B,15
+0.416,333,5,Male,Other,50,Professional,48,0,76,coupe,P,injection,regular,10,M2,9
+0.916,96,1,Male,Other,55,Private,34,0,76,sedan,K,injection,regular,9,M1,8
+0.749,174,6,Female,Other,50,Private+trip to office,33,0,60,sedan,I,injection,regular,6,M1,18
+0.035,119,6,Male,Other,50,Private+trip to office,36,0,85,other microvan,K,direct injection overpowered,diesel,6,M1,5
+0.749,52,6,Female,Alone,26,Private+trip to office,23,0,90,sedan,F,injection,regular,6,B,16
+0.916,433,2,Male,Other,50,Professional,54,0,62,sport utility vehicle,P,direct injection overpowered,diesel,4,H,9
+0.808,470,4,Male,Alone,55,Private+trip to office,58,0,50,sedan,J,injection,regular,8,M2,16
+0.833,135,2,Female,Alone,50,Private+trip to office,30,0,112,sedan,H,direct injection overpowered,diesel,5,B,16
+0.259,148,3,Male,Other,55,Private+trip to office,40,0,80,sedan,J,direct injection overpowered,diesel,6,M1,11
+0.794,376,0,Female,Other,50,Private,58,0,50,sedan,L,injection,regular,8,B,17
+0.75,561,5,Male,Other,50,Professional,66,0,88,sedan,N,injection,regular,7,M2,15
+0.749,222,4,Female,Alone,26,Private+trip to office,38,0,76,sedan,L,direct injection overpowered,diesel,8,M1,16
+0.513,299,0,Male,Alone,50,Private+trip to office,50,0,50,sedan,K,direct injection overpowered,diesel,7,M1,13
+0.916,89,2,Female,Alone,50,Private+trip to office,27,0,90,sedan,I,direct injection overpowered,diesel,6,B,12
+0.833,225,1,Female,Other,46,Private,38,0,50,other microvan,K,injection,regular,6,M1,9
+1.0,127,5,Male,Other,55,Professional,29,0,76,station wagon,L,injection overpowered,diesel,7,M2,7
+0.916,136,1,Female,Other,50,Private+trip to office,29,0,61,sedan,H,injection,regular,6,M1,15
+0.666,188,5,Female,Other,50,Private,34,1,50,sedan,F,injection,regular,4,B,16
+0.435,159,5,Male,Alone,26,Private+trip to office,33,0,68,sedan,G,injection,diesel,4,B,18
+0.796,353,4,Male,Other,55,Private,48,0,50,other microvan,Q,injection,regular,9,H,8
+0.565,190,1,Male,Other,37,Private,33,0,50,sedan,L,direct injection overpowered,diesel,9,M2,20
+0.762,285,2,Male,Other,50,Private,42,0,85,sport utility vehicle,T,injection,regular,6,H,8
+0.789,501,6,Male,Other,42,Private+trip to office,60,0,50,van,L,injection,diesel,2,0,1
+0.749,445,5,Male,Other,60,Private,76,0,60,sedan,G,injection,regular,7,B,17
+0.542,139,0,Male,Other,50,Professional,37,0,57,van,M,direct injection overpowered,diesel,5,0,11
+0.382,464,0,Male,Other,60,Private,60,0,90,sedan,K,direct injection overpowered,diesel,6,M1,19
+0.875,310,0,Female,Alone,50,Private+trip to office,44,0,50,sedan,F,injection,regular,5,B,14
+0.523,175,6,Female,Other,50,Private,49,0,100,sedan,J,injection,regular,8,H,9
+0.589,302,0,Female,Other,50,Private,45,0,50,microvan,P,injection,regular,9,H,13
+0.75,238,2,Female,Alone,50,Private+trip to office,39,0,85,sedan,D,injection,regular,4,A,14
+0.333,245,1,Female,Alone,50,Private+trip to office,39,1,68,sedan,E,injection,regular,4,B,16
+0.916,161,2,Male,Alone,50,Professional,31,0,51,sedan,K,injection,regular,9,M1,15
+0.784,143,3,Male,Other,48,Private+trip to office,38,0,64,sedan,H,direct injection overpowered,diesel,6,M1,11
+0.5,453,1,Male,Other,50,Professional,55,0,50,sport utility vehicle,R,direct injection overpowered,diesel,8,H,2
+0.5,274,2,Male,Other,48,Private+trip to office,44,0,90,van,J,injection,diesel,2,0,18
+0.916,145,6,Male,Alone,50,Private+trip to office,31,0,95,sedan,J,injection,regular,7,M2,20
+0.5,192,3,Male,Other,50,Private,35,0,56,sedan,J,injection,regular,5,B,16
+0.749,292,4,Male,Other,50,Professional,42,0,50,sedan,I,injection,regular,7,M1,18
+0.5,127,3,Female,Alone,50,Private+trip to office,29,0,85,sedan,D,injection,regular,4,A,18
+0.814,254,3,Female,Other,50,Private,39,0,59,microvan,Q,injection,regular,9,H,7
+0.583,95,5,Male,Other,1,Private,37,0,80,sedan,O,injection,regular,9,H,8
+0.166,81,4,Female,Other,50,Private+trip to office,59,0,80,microvan,K,injection,regular,7,M1,19
+0.129,118,4,Female,Other,50,Professional,29,0,85,sedan,F,injection,regular,5,B,17
+0.333,38,0,Male,Alone,55,Private+trip to office,23,0,85,sedan,H,injection,regular,7,B,20
+0.96,95,3,Female,Other,50,Private+trip to office,26,0,68,sedan,J,injection,regular,7,M1,16
+0.457,314,1,Female,Other,50,Private+trip to office,45,0,85,sport utility vehicle,M,injection,regular,7,M2,12
+0.858,428,11,Male,Other,1,Professional,54,0,50,sedan,K,injection,regular,8,H,13
+0.666,318,2,Female,Other,1,Professional,46,0,50,sedan,L,direct injection overpowered,diesel,6,B,11
+0.479,414,8,Male,Other,60,Private,63,0,58,sedan,G,injection,regular,4,B,20
+0.46,120,8,Female,Other,50,Private+trip to office,28,0,64,sedan,E,carburation,regular,4,B,7
+0.527,672,3,Male,Other,60,Private,74,0,90,sedan,M,direct injection overpowered,diesel,8,M2,16
+0.323,81,5,Male,Alone,50,Private+trip to office,24,0,85,sedan,G,injection,regular,6,M1,8
+0.993,275,5,Female,Alone,50,Private,47,0,50,sedan,I,injection,regular,7,M1,16
+0.75,355,11,Female,Other,50,Private+trip to office,57,0,57,sedan,J,carburation,regular,5,B,3
+0.804,165,2,Female,Alone,50,Private,36,0,90,sedan,G,injection,regular,5,B,18
+0.218,169,6,Male,Other,50,Private+trip to office,32,0,50,sedan,G,injection,diesel,5,B,19
+0.438,210,4,Female,Other,50,Private+trip to office,42,0,60,sedan,E,injection,regular,4,B,2
+0.666,385,2,Female,Other,50,Private+trip to office,50,0,95,sedan,F,injection,regular,5,B,18
+0.833,277,6,Female,Alone,46,Professional,46,0,64,sedan,E,injection,regular,4,B,2
+0.916,470,2,Male,Other,50,Private+trip to office,63,0,50,sedan,M,direct injection overpowered,diesel,9,M2,14
+0.5,145,2,Female,Alone,50,Private+trip to office,31,1,95,sedan,J,injection,regular,8,B,16
+0.833,453,0,Male,Other,60,Private,58,0,50,sedan,P,direct injection overpowered,diesel,10,M2,3
+0.75,199,4,Female,Alone,50,Private+trip to office,38,0,90,sedan,E,injection,regular,3,A,13
+0.916,239,1,Male,Other,50,Professional,47,0,77,sedan,R,direct injection overpowered,diesel,9,H,5
+0.083,487,3,Male,Other,50,Private+trip to office,58,0,50,other microvan,K,direct injection overpowered,diesel,4,M2,8
+0.916,212,4,Female,Alone,50,Private+trip to office,36,0,50,sedan,D,injection,regular,4,A,15
+0.893,493,11,Male,Other,50,Private+trip to office,62,1,50,sedan,G,injection,regular,7,B,20
+0.088,214,2,Male,Other,50,Private+trip to office,38,0,50,sedan,M,direct injection overpowered,diesel,9,M1,15
+0.614,195,4,Male,Alone,50,Professional,35,0,64,sedan,I,injection,regular,7,M1,17
+0.916,446,4,Male,Other,50,Private,55,0,52,sedan,P,injection,regular,10,H,5
+0.25,85,3,Female,Alone,26,Private+trip to office,25,0,76,sedan,L,direct injection overpowered,diesel,8,M1,17
+0.749,42,0,Male,Alone,1,Professional,22,0,100,coupe,F,injection overpowered,regular,2,A,16
+0.416,364,0,Female,Alone,50,Private+trip to office,50,0,50,sedan,L,direct injection overpowered,diesel,6,B,12
+0.18,284,3,Male,Other,50,Private+trip to office,41,0,50,sedan,N,direct injection overpowered,diesel,9,M2,15
+0.749,501,0,Male,Other,1,Professional,60,0,52,coupe,P,injection,regular,10,M2,9
+0.326,49,3,Female,Alone,26,Private+trip to office,22,0,85,sedan,E,injection,regular,4,B,16
+0.916,188,2,Female,Other,55,Private+trip to office,35,0,80,sedan,I,injection,regular,7,M1,19
+0.458,139,3,Male,Alone,50,Private+trip to office,30,0,91,cabriolet,O,injection overpowered,regular,10,M1,6
+0.833,437,2,Male,Other,50,Professional,56,0,50,sedan,M,injection,regular,9,M2,9
+0.726,88,6,Male,Alone,50,Private+trip to office,26,0,72,sedan,D,injection,regular,4,A,19
+0.151,156,6,Male,Other,50,Private,31,1,68,coupe,P,injection,regular,9,H,19
+0.666,239,2,Male,Other,49,Professional,38,0,50,van,M,direct injection overpowered,diesel,4,0,2
+0.749,163,3,Female,Alone,50,Private,31,0,85,coupe,E,injection overpowered,regular,2,A,9
+0.583,106,2,Female,Alone,26,Private+trip to office,29,0,118,sedan,F,injection,regular,4,B,5
+0.28,159,0,Male,Alone,50,Private+trip to office,32,0,54,cabriolet,L,injection,regular,9,M1,13
+0.662,390,4,Female,Other,50,Private,57,0,50,sedan,L,direct injection overpowered,diesel,7,H,15
+0.916,213,3,Male,Other,48,Private+trip to office,35,0,50,van,I,injection,diesel,3,M1,16
+0.811,309,5,Female,Other,1,Professional,49,0,80,microvan,N,injection overpowered,diesel,5,H,8
+0.166,299,2,Female,Other,55,Private+trip to office,43,0,50,sedan,D,injection,regular,4,A,12
+0.499,182,1,Male,Other,50,Private+trip to office,33,0,85,microvan,L,direct injection overpowered,diesel,6,M1,16
+0.345,405,0,Male,Other,66,Private+trip to office,52,0,50,sedan,G,injection,regular,5,A,16
+0.423,429,2,Female,Other,50,Private+trip to office,54,0,50,sedan,K,direct injection overpowered,diesel,6,B,5
+0.5,129,0,Male,Other,66,Professional,29,0,80,cabriolet,L,injection,regular,9,M1,14
+0.833,323,2,Male,Other,50,Private+trip to office,46,0,66,other microvan,L,direct injection overpowered,diesel,4,M1,13
+0.729,421,3,Male,Other,50,Private+trip to office,55,0,50,sedan,M,injection,regular,8,M2,16
+0.513,270,5,Female,Other,50,Private+trip to office,45,0,74,station wagon,I,injection,regular,7,M1,12
+0.666,343,4,Male,Alone,1,Professional,50,0,95,cabriolet,Q,injection overpowered,regular,9,H,2
+1.0,356,5,Female,Other,37,Private,56,0,50,sedan,D,injection,regular,4,A,16
+0.124,58,0,Female,Alone,50,Private+trip to office,24,0,80,sedan,G,injection,regular,5,B,18
+0.583,20,1,Female,Alone,50,Private+trip to office,28,0,95,sedan,G,direct injection overpowered,diesel,5,B,13
+0.396,89,1,Male,Other,50,Professional,26,0,76,sedan,H,injection,regular,7,B,19
+0.564,105,5,Male,Other,50,Private,27,1,64,sedan,M,injection,regular,9,M2,13
+0.233,454,8,Female,Other,1,Professional,60,0,50,sedan,G,injection,regular,6,B,9
+0.249,288,2,Male,Other,50,Professional run,42,0,50,van,I,direct injection overpowered,diesel,5,M1,16
+0.083,271,5,Male,Other,50,Private+trip to office,40,0,112,coupe,U,injection,regular,10,H,8
+0.833,295,0,Female,Other,50,Professional,42,0,50,station wagon,K,direct injection overpowered,diesel,7,M1,8
+1.0,404,1,Male,Other,6,Professional run,52,0,50,sedan,P,direct injection overpowered,diesel,9,H,17
+0.166,145,2,Female,Alone,50,Private+trip to office,31,0,100,sedan,H,direct injection overpowered,diesel,5,B,16
+0.74,384,4,Female,Other,50,Private+trip to office,52,0,50,sedan,L,injection,regular,9,M2,17
+0.271,362,6,Male,Other,50,Private+trip to office,50,0,50,sedan,R,injection,regular,10,H,16
+0.166,308,11,Male,Other,50,Private,46,0,80,sedan,T,injection,regular,10,H,3
+0.882,493,4,Male,Other,50,Professional,59,0,50,station wagon,H,injection,diesel,3,M1,9
+1.0,426,6,Male,Other,1,Private+trip to office,54,0,50,coupe,N,injection overpowered,regular,10,M2,16
+0.25,281,4,Male,Alone,48,Private+trip to office,41,0,62,cabriolet,Q,injection,regular,10,H,10
+0.542,316,0,Male,Other,66,Professional,44,0,50,sedan,Q,direct injection overpowered,diesel,9,H,16
+0.292,109,3,Male,Alone,50,Private+trip to office,28,0,95,sport utility vehicle,M,injection,regular,6,H,16
+0.708,391,3,Female,Other,50,Private+trip to office,50,0,62,sedan,E,injection,regular,5,B,15
+0.426,361,0,Female,Other,48,Professional,48,0,50,van,L,direct injection overpowered,diesel,4,0,17
+0.629,134,0,Male,Alone,50,Private+trip to office,29,0,57,sedan,J,direct injection overpowered,diesel,6,M1,16
+0.636,424,0,Female,Alone,1,Professional,68,0,67,sedan,G,injection,regular,3,B,13
+0.5,172,4,Male,Alone,50,Private+trip to office,32,0,80,sedan,H,injection,regular,8,M1,11
+1.0,579,0,Female,Other,60,Private,67,0,50,sedan,K,direct injection overpowered,diesel,7,M1,17
+0.833,179,2,Female,Other,50,Private,33,0,50,coupe,P,injection,regular,10,M2,6
+0.749,111,4,Male,Alone,50,Private+trip to office,27,0,68,station wagon,I,injection,regular,8,M1,17
+0.997,26,3,Female,Alone,50,Private+trip to office,25,0,118,sedan,H,injection,diesel,5,M1,20
+0.833,136,6,Male,Other,50,Private+trip to office,30,0,72,sedan,L,direct injection overpowered,diesel,7,H,13
+0.249,240,0,Female,Other,77,Professional,39,0,56,sedan,G,injection,regular,5,B,14
+0.424,318,2,Female,Other,50,Professional,44,0,50,sedan,E,injection,regular,5,A,7
+0.833,81,5,Male,Other,50,Professional,29,0,72,sedan,G,injection,regular,7,B,12
+0.818,337,8,Male,Other,50,Private+trip to office,49,0,55,other microvan,N,injection overpowered,diesel,6,H,14
+0.916,444,8,Female,Other,60,Private,56,0,57,sedan,O,injection,regular,8,H,7
+0.5,182,1,Male,Other,50,Private+trip to office,40,0,50,other microvan,K,direct injection overpowered,diesel,6,M1,17
+0.676,155,0,Male,Other,55,Private,31,0,100,cabriolet,J,injection,regular,8,B,4
+0.457,314,1,Female,Other,50,Private+trip to office,45,0,85,sport utility vehicle,M,injection,regular,7,M2,12
+0.666,412,6,Male,Other,55,Private,53,0,50,sedan,D,injection,regular,4,A,14
+0.499,133,4,Female,Other,50,Professional,29,0,54,sedan,F,injection,regular,5,B,15
+0.333,239,3,Female,Alone,1,Professional,38,0,68,sedan,J,injection,diesel,4,M1,11
+0.363,524,0,Male,Other,6,Professional run,61,0,50,sedan,J,injection,regular,6,M1,10
+0.666,343,4,Male,Alone,1,Professional,50,0,95,cabriolet,Q,injection overpowered,regular,9,H,2
+0.542,289,5,Male,Other,50,Private,42,0,52,sedan,P,injection,regular,9,H,6
+0.41,159,6,Male,Other,1,Private+trip to office,33,0,68,other microvan,K,injection,regular,5,M1,19
+1.0,169,0,Male,Alone,66,Professional,32,0,52,station wagon,Q,direct injection overpowered,diesel,9,M2,16
+0.892,190,0,Female,Other,50,Private,35,0,80,microvan,M,direct injection overpowered,diesel,7,M1,15
+0.861,55,3,Female,Alone,50,Private+trip to office,26,0,100,sedan,G,injection,regular,4,B,11
+0.45,215,0,Male,Other,50,Professional,35,0,51,van,J,direct injection overpowered,diesel,3,M1,12
+0.78,652,5,Female,Other,60,Private,74,0,50,sedan,K,injection overpowered,diesel,6,M2,17
+0.305,78,2,Female,Alone,50,Private+trip to office,25,0,100,sedan,I,direct injection overpowered,diesel,6,B,16
+0.494,314,1,Female,Other,50,Private+trip to office,53,0,50,sedan,G,injection,regular,5,B,16
+1.0,369,8,Male,Other,50,Private,63,0,50,sedan,H,injection,regular,6,M1,20
+0.916,260,4,Male,Alone,50,Private+trip to office,40,0,50,sedan,H,injection,regular,7,M1,16
+0.315,73,2,Female,Other,26,Private+trip to office,24,0,76,sedan,F,injection,diesel,5,M1,16
+0.249,154,6,Female,Other,1,Private,47,0,53,sedan,E,injection,regular,3,A,6
+0.75,61,4,Male,Alone,26,Private+trip to office,23,0,95,sedan,K,direct injection overpowered,diesel,6,M1,20
+0.833,174,0,Male,Alone,50,Professional run,32,0,80,station wagon,K,direct injection overpowered,diesel,7,M1,11
+0.097,446,0,Male,Alone,48,Professional,57,0,50,sedan,K,direct injection overpowered,diesel,7,M1,18
+0.833,533,2,Female,Alone,60,Private,65,0,52,sedan,J,injection,regular,7,M1,14
+0.749,362,2,Male,Other,50,Private+trip to office,48,0,71,sedan,L,direct injection overpowered,diesel,6,B,12
+0.424,333,2,Male,Other,50,Private+trip to office,46,0,50,microvan,J,injection,regular,7,M1,16
+0.333,74,1,Male,Alone,26,Private+trip to office,25,0,90,sedan,E,injection,regular,5,A,1
+0.433,276,2,Male,Other,50,Professional,41,0,50,sedan,O,direct injection overpowered,diesel,9,H,17
+0.859,81,1,Male,Alone,50,Professional,25,0,100,sedan,G,direct injection overpowered,diesel,6,B,15
+0.666,141,4,Male,Other,3,Professional,29,0,60,coupe,O,injection,regular,10,M2,16
+0.538,195,6,Male,Alone,50,Private+trip to office,40,0,50,cabriolet,K,injection,regular,8,M1,20
+0.833,244,4,Male,Other,50,Private,39,0,59,sedan,G,injection,diesel,5,B,17
+0.26,269,1,Male,Other,55,Private+trip to office,40,0,53,sedan,J,direct injection overpowered,diesel,6,M1,13
+0.874,296,0,Male,Other,50,Private,43,0,51,microvan,L,direct injection overpowered,diesel,6,M1,20
+1.0,397,4,Male,Other,55,Private+trip to office,59,0,50,station wagon,N,direct injection overpowered,diesel,8,M2,11
+0.485,299,6,Male,Alone,55,Private+trip to office,43,0,50,sedan,J,injection overpowered,diesel,7,M1,14
+0.833,435,3,Male,Other,50,Professional,61,0,60,station wagon,P,direct injection overpowered,diesel,8,H,18
+0.691,129,4,Male,Other,50,Professional run,28,0,58,sedan,N,injection overpowered,regular,9,H,17
+0.666,440,6,Male,Other,55,Professional,55,0,58,sedan,A,injection,regular,2,A,12
+0.749,267,4,Female,Other,1,Professional,44,0,50,microvan,K,injection,regular,7,M1,18
+1.0,335,1,Male,Other,66,Professional,46,0,50,sedan,M,direct injection overpowered,diesel,8,M2,18
+1.0,426,6,Male,Other,1,Private+trip to office,54,0,50,coupe,N,injection overpowered,regular,10,M2,16
+0.086,129,4,Male,Other,50,Private+trip to office,29,0,72,sedan,F,injection,diesel,4,B,15
+0.4,282,2,Female,Other,50,Private,44,1,62,sport utility vehicle,M,injection,regular,6,0,17
+0.823,295,3,Female,Other,50,Professional,43,0,108,other microvan,J,injection,regular,7,M1,18
+0.916,334,6,Male,Other,50,Private+trip to office,47,0,72,sedan,D,injection,regular,4,A,11
+0.5,262,0,Male,Other,50,Private+trip to office,46,0,50,sport utility vehicle,W,injection,regular,10,H,15
+1.0,579,0,Female,Other,60,Private,67,0,50,sedan,K,direct injection overpowered,diesel,7,M1,17
+0.166,288,1,Male,Other,50,Professional,53,0,68,van,L,direct injection overpowered,diesel,3,0,15
+0.333,99,2,Male,Other,55,Private,26,1,76,cabriolet,I,injection,regular,8,B,18
+0.713,241,3,Male,Other,50,Private+trip to office,47,0,50,other microvan,L,direct injection overpowered,diesel,6,M1,19
+0.85,267,3,Male,Other,50,Private,40,0,50,sport utility vehicle,K,injection,regular,5,H,10
+1.0,206,3,Female,Other,50,Private+trip to office,36,0,50,sedan,E,injection,regular,3,A,16
+0.583,476,2,Male,Alone,26,Private+trip to office,61,0,80,sedan,H,injection,regular,7,B,12
+0.083,113,2,Female,Other,50,Private+trip to office,27,0,57,sedan,K,direct injection overpowered,diesel,8,M1,15
+0.666,270,2,Female,Other,50,Professional,41,0,50,station wagon,Q,injection,regular,9,H,16
+0.497,155,4,Female,Other,50,Professional,31,0,90,sedan,I,injection,regular,5,B,5
+0.17,353,4,Male,Other,50,Private+trip to office,48,0,50,sedan,I,injection,diesel,5,M1,20
+0.188,758,4,Male,Other,60,Private,82,0,50,sedan,N,injection,regular,9,H,16
+0.043,244,2,Female,Alone,50,Private+trip to office,38,0,60,sedan,J,injection,regular,7,0,16
+0.852,526,1,Male,Other,60,Private,66,0,50,sedan,K,injection,regular,8,M2,18
+0.75,536,4,Female,Other,37,Private,64,0,50,sedan,F,injection,regular,6,B,8
+0.333,443,1,Female,Other,1,Professional run,59,0,72,sedan,J,injection,regular,5,B,16
+0.5,385,5,Female,Other,50,Private+trip to office,50,0,50,sedan,K,injection overpowered,diesel,6,M2,6
+0.753,524,4,Male,Other,50,Private+trip to office,66,0,55,sedan,M,injection,regular,8,M2,16
+0.249,154,6,Female,Other,1,Private,47,0,53,sedan,E,injection,regular,3,A,6
+0.665,512,8,Male,Other,50,Private+trip to office,61,0,55,sedan,Q,injection,regular,10,M2,18
+0.416,525,6,Female,Alone,55,Private+trip to office,65,0,50,sedan,F,carburation,regular,4,B,19
+0.49,728,3,Female,Other,60,Private,81,1,50,sedan,E,injection,regular,3,A,7
+0.749,311,6,Female,Other,50,Private,48,1,50,sedan,M,injection overpowered,diesel,7,M2,13
+0.598,227,6,Female,Other,50,Private+trip to office,50,0,100,station wagon,N,injection,regular,7,H,20
+0.95,37,6,Female,Alone,50,Private+trip to office,36,1,100,sedan,E,injection,regular,5,B,15
+0.325,424,0,Female,Other,50,Professional,55,0,50,sedan,H,direct injection overpowered,diesel,6,B,8
+0.956,404,2,Male,Other,50,Professional,51,0,50,sedan,R,injection,regular,10,H,17
+0.575,610,3,Male,Other,42,Professional,75,0,50,van,L,direct injection overpowered,diesel,4,0,17
+0.833,533,2,Female,Alone,60,Private,65,0,52,sedan,J,injection,regular,7,M1,14
+0.665,500,6,Male,Other,49,Professional,61,0,50,van,G,injection,diesel,2,M1,11
+0.747,453,1,Male,Other,42,Private+trip to office,68,0,50,sedan,F,injection,regular,5,B,19
+0.749,227,4,Female,Alone,50,Private+trip to office,37,1,50,sport utility vehicle,L,injection,regular,5,M2,16
+0.75,155,6,Male,Alone,50,Private+trip to office,33,0,100,sedan,D,injection overpowered,diesel,4,B,11
+0.75,397,2,Male,Other,50,Private+trip to office,51,0,50,station wagon,R,injection,regular,10,H,7
+0.583,365,0,Male,Alone,55,Private,78,1,68,sedan,F,injection,regular,5,A,15
+0.916,535,0,Male,Other,60,Private,69,0,50,sedan,K,injection,regular,9,M1,16
+0.2,482,2,Male,Other,50,Professional,60,0,50,sedan,M,direct injection overpowered,diesel,8,H,12
+1.0,228,11,Female,Alone,50,Private+trip to office,37,0,50,sedan,D,injection,regular,3,A,13
+0.583,543,2,Female,Alone,60,Private,75,1,50,sedan,I,injection,regular,7,B,15
+0.916,265,0,Male,Other,50,Private+trip to office,40,0,90,sport utility vehicle,N,direct injection overpowered,diesel,5,0,16
+0.666,110,0,Female,Other,50,Private+trip to office,28,0,50,sedan,J,direct injection overpowered,diesel,6,M1,11
+0.908,110,4,Male,Alone,50,Professional,28,0,72,other microvan,K,injection,regular,8,M1,15
+0.243,52,5,Female,Alone,26,Private+trip to office,23,0,100,sedan,E,injection,regular,4,B,16
+0.499,425,1,Male,Other,66,Professional,57,0,63,coupe,X,injection,regular,10,H,2
+0.749,297,0,Male,Alone,66,Professional,47,0,50,sedan,L,injection,regular,8,M1,12
+0.457,422,1,Female,Alone,60,Private,60,0,50,sedan,I,injection,regular,7,B,12
+0.166,586,1,Male,Alone,60,Private,66,0,60,sedan,E,injection,regular,6,A,16
+0.833,272,2,Male,Other,42,Professional,41,0,50,sedan,I,direct injection overpowered,diesel,6,B,20
+0.75,302,4,Male,Other,50,Private+trip to office,43,0,50,microvan,N,direct injection overpowered,diesel,4,H,16
+0.971,393,4,Female,Other,55,Private,50,0,50,sedan,L,direct injection overpowered,diesel,8,M1,11
+0.083,354,3,Female,Other,50,Private,52,0,69,station wagon,K,direct injection overpowered,diesel,8,M1,9
+0.916,343,2,Female,Other,50,Private,51,0,73,station wagon,K,direct injection overpowered,diesel,8,M1,9
+0.677,303,1,Female,Alone,50,Private+trip to office,43,0,50,sedan,G,injection,regular,7,B,11
+0.249,240,0,Female,Other,77,Professional,39,0,56,sedan,G,injection,regular,5,B,14
+0.249,63,2,Female,Alone,50,Private,26,0,90,cabriolet,J,injection,regular,8,B,16
+0.749,393,3,Male,Other,50,Private+trip to office,51,0,64,sedan,F,injection,regular,4,B,12
+0.877,188,5,Male,Alone,55,Private+trip to office,38,0,50,microvan,K,direct injection overpowered,diesel,6,M1,3
+0.583,487,0,Female,Other,46,Professional,60,0,50,sedan,K,injection,regular,8,M1,16
+0.282,233,5,Male,Other,50,Private+trip to office,37,0,86,coupe,P,injection,regular,10,M2,15
+0.499,133,4,Female,Other,50,Professional,29,0,54,sedan,F,injection,regular,5,B,15
+0.916,146,1,Male,Alone,48,Professional,30,0,71,van,H,direct injection overpowered,diesel,3,M1,17
+0.333,181,3,Male,Other,50,Professional,33,0,64,sedan,G,injection,diesel,5,B,5
+0.325,237,1,Male,Other,50,Private+trip to office,38,0,50,microvan,L,direct injection overpowered,diesel,6,M1,17
+0.785,627,1,Male,Other,60,Private,71,0,58,sedan,I,injection,regular,7,M1,7
+0.333,416,2,Male,Other,50,Professional,66,0,50,sedan,U,injection,regular,10,H,8
+0.808,407,0,Male,Other,50,Professional run,56,0,50,station wagon,S,direct injection overpowered,diesel,10,H,4
+0.95,37,6,Female,Alone,50,Private+trip to office,36,1,100,sedan,E,injection,regular,5,B,15
+0.75,117,5,Female,Other,50,Private+trip to office,30,0,62,sedan,G,injection,regular,7,B,14
+0.749,466,1,Female,Other,60,Private,71,0,51,sedan,K,injection,regular,7,M1,16
+0.416,510,0,Male,Other,1,Professional,65,0,50,sedan,P,injection overpowered,regular,10,M2,4
+0.975,334,2,Male,Other,50,Professional,46,0,50,van,F,injection,diesel,5,B,9
+0.5,117,2,Male,Alone,26,Private+trip to office,27,0,62,sedan,G,direct injection overpowered,diesel,5,B,7
+0.916,184,2,Female,Other,50,Private,41,0,50,other microvan,K,injection,regular,6,M1,16
+0.603,119,0,Female,Alone,1,Professional,28,0,72,sedan,G,injection,regular,5,B,5
+0.333,271,3,Female,Alone,50,Private,45,0,50,station wagon,E,injection,regular,5,M1,11
+0.749,90,4,Female,Alone,50,Private+trip to office,26,0,72,sedan,H,injection,regular,8,B,13
+0.333,44,1,Female,Other,50,Private+trip to office,39,0,90,sedan,L,direct injection overpowered,diesel,6,B,11
+0.249,544,3,Male,Other,60,Private,70,0,50,other microvan,J,injection,regular,7,M1,15
+0.419,390,3,Male,Other,50,Private+trip to office,51,0,50,sedan,F,injection,regular,4,B,19
+0.666,243,5,Male,Other,50,Private+trip to office,41,0,50,sedan,G,injection,diesel,4,B,10
+1.0,630,3,Female,Other,60,Private,74,0,50,sedan,F,injection,diesel,4,B,16
+0.749,435,6,Female,Other,77,Professional,54,0,51,sedan,D,injection,regular,5,B,1
+0.142,124,1,Male,Other,50,Private+trip to office,28,0,60,cabriolet,L,injection,regular,8,M1,15
+0.166,513,1,Female,Other,50,Private+trip to office,62,0,50,sedan,L,direct injection overpowered,diesel,9,M1,7
+0.952,418,8,Male,Other,55,Private+trip to office,56,0,71,sedan,J,injection,regular,6,M1,13
+0.5,550,11,Male,Other,50,Professional,65,0,50,sedan,V,injection,regular,10,H,16
+0.56,112,2,Male,Other,50,Private,34,0,95,station wagon,E,injection,regular,5,M1,19
+0.71,212,3,Male,Other,46,Private,35,1,54,coupe,C,injection overpowered,regular,2,A,17
+0.75,92,6,Female,Alone,26,Private+trip to office,25,0,90,sedan,D,injection,regular,3,A,15
+0.78,290,1,Male,Other,50,Professional,44,0,50,sedan,J,direct injection overpowered,diesel,6,B,15
+0.764,275,1,Female,Other,55,Private+trip to office,46,0,55,sedan,L,direct injection overpowered,diesel,9,M1,6
+0.833,312,3,Male,Other,50,Private+trip to office,50,0,52,microvan,J,injection,diesel,4,M1,18
+0.087,305,2,Male,Other,48,Professional,44,0,50,van,L,direct injection overpowered,diesel,5,0,4
+0.177,300,3,Male,Other,46,Professional,49,0,50,van,H,injection,diesel,2,M1,18
+0.666,343,3,Male,Other,60,Private,60,0,50,sedan,J,injection,regular,7,M1,16
+0.271,548,8,Male,Other,60,Private,83,0,50,coupe,O,injection,regular,9,M2,15
+0.75,208,1,Male,Alone,50,Private+trip to office,36,0,95,sedan,G,injection,regular,7,B,19
+0.069,173,0,Male,Other,50,Private,32,0,72,microvan,L,direct injection overpowered,diesel,7,M1,17
+0.853,541,0,Male,Other,60,Private,70,1,50,station wagon,J,direct injection overpowered,diesel,6,M1,19
+0.144,224,8,Male,Other,50,Professional,40,0,68,sedan,F,injection,regular,5,M1,15
+0.577,292,0,Female,Other,50,Private+trip to office,43,0,50,sedan,F,injection,regular,5,B,18
+0.764,222,2,Male,Other,55,Private+trip to office,36,0,50,sedan,I,direct injection overpowered,diesel,6,B,3
+1.0,206,3,Female,Other,50,Private+trip to office,36,0,50,sedan,E,injection,regular,3,A,16
+0.255,199,6,Female,Other,50,Private+trip to office,40,0,50,sedan,H,injection,regular,6,M1,17
+1.0,288,2,Male,Other,50,Professional,44,0,68,van,E,injection,diesel,4,B,19
+0.127,593,1,Male,Other,55,Private,72,0,50,sedan,K,direct injection overpowered,diesel,7,M1,12
+0.249,224,4,Male,Alone,50,Private+trip to office,37,0,57,sedan,E,injection,regular,5,B,12
+0.579,186,3,Female,Other,50,Private,37,0,95,station wagon,C,injection,regular,3,A,16
+0.916,260,4,Male,Alone,50,Private+trip to office,40,0,50,sedan,H,injection,regular,7,M1,16
+0.5,94,4,Male,Alone,50,Private+trip to office,26,0,85,sedan,F,injection,regular,4,B,7
+0.25,770,1,Male,Other,60,Private,81,0,64,station wagon,J,direct injection overpowered,diesel,6,M1,10
+0.881,504,8,Male,Other,50,Private+trip to office,60,0,70,sedan,O,injection,regular,9,M2,5
+0.624,243,11,Female,Other,50,Private+trip to office,41,0,54,sedan,F,injection,regular,4,B,13
+0.583,59,11,Female,Alone,1,Professional,23,0,76,sedan,D,injection,regular,4,B,19
+0.931,18,11,Female,Other,50,Private,40,0,100,sedan,G,injection,regular,6,B,16
+0.554,340,0,Male,Other,50,Professional,48,0,50,sedan,G,injection,regular,5,A,1
+0.641,275,2,Male,Other,50,Private+trip to office,45,1,50,sedan,H,injection,regular,4,B,16
+0.833,314,0,Female,Alone,50,Private+trip to office,49,0,50,sedan,E,injection,regular,5,A,15
+0.75,91,4,Female,Alone,50,Private+trip to office,31,0,80,sport utility vehicle,L,injection,regular,5,M2,15
+0.564,258,0,Male,Other,42,Professional,40,0,55,sedan,L,direct injection overpowered,diesel,7,M1,15
+0.226,161,3,Female,Other,50,Private+trip to office,32,0,85,sedan,E,injection,regular,4,A,9
+0.618,499,3,Male,Other,50,Professional,59,0,50,sedan,Q,injection,regular,10,H,7
+0.658,78,1,Female,Alone,50,Private+trip to office,30,0,95,sedan,D,injection,regular,4,M1,17
+0.547,450,0,Female,Alone,55,Private+trip to office,55,0,50,sedan,F,injection,regular,5,B,16
+0.905,317,0,Male,Other,1,Private+trip to office,45,0,67,microvan,O,injection overpowered,regular,9,H,19
+0.749,334,2,Male,Other,1,Professional,47,0,80,other microvan,N,direct injection overpowered,diesel,6,M2,6
+0.692,561,5,Male,Other,60,Private,74,0,68,sedan,L,injection,regular,6,B,17
+0.083,88,1,Female,Alone,50,Private+trip to office,27,0,95,sedan,I,direct injection overpowered,diesel,6,B,12
+0.825,211,0,Male,Other,50,Private,37,0,57,microvan,K,injection,regular,7,M1,16
+1.0,385,2,Female,Alone,50,Private+trip to office,53,0,53,cabriolet,J,injection,regular,9,B,16
+0.916,753,5,Male,Other,60,Private,83,1,50,sedan,I,injection,regular,6,M1,14
+0.523,214,1,Male,Other,50,Professional,48,0,50,van,F,injection,diesel,2,0,18
+0.683,36,2,Female,Alone,26,Private+trip to office,22,0,90,sedan,E,injection,regular,4,B,17
+0.833,66,3,Male,Alone,50,Professional,27,0,85,sport utility vehicle,P,injection overpowered,regular,10,M1,16
+0.456,229,0,Male,Alone,50,Private+trip to office,38,0,90,sedan,E,injection,regular,5,B,19
+0.499,100,2,Male,Alone,50,Private,28,0,90,sedan,I,direct injection overpowered,diesel,6,B,19
+0.416,333,5,Male,Other,50,Professional,48,0,76,coupe,P,injection,regular,10,M2,9
+0.228,392,4,Female,Other,50,Private+trip to office,56,0,55,sedan,P,injection,regular,10,H,16
+1.0,378,6,Male,Other,42,Professional,49,0,50,sedan,K,injection,regular,8,H,17
+0.323,81,5,Male,Alone,50,Private+trip to office,24,0,85,sedan,G,injection,regular,6,M1,8
+0.931,391,6,Male,Alone,50,Private+trip to office,51,0,50,sedan,G,injection,regular,6,B,20
+0.833,103,5,Male,Other,50,Private+trip to office,36,0,85,cabriolet,J,carburation,regular,5,M1,13
+0.985,220,1,Male,Other,55,Private+trip to office,37,0,54,other microvan,K,injection,regular,6,M1,13
+0.497,301,0,Male,Other,50,Private+trip to office,45,0,90,sport utility vehicle,R,direct injection overpowered,diesel,8,H,11
+0.844,373,6,Male,Other,55,Private+trip to office,49,0,50,cabriolet,K,injection,regular,6,M1,16
+0.666,197,0,Male,Other,55,Private+trip to office,34,0,50,station wagon,P,injection,regular,10,M2,1
+0.583,142,0,Male,Alone,50,Private+trip to office,33,0,95,sedan,M,direct injection overpowered,diesel,9,M1,13
+0.166,104,1,Female,Alone,50,Private+trip to office,28,0,72,sedan,I,direct injection overpowered,diesel,6,B,13
+0.75,633,1,Male,Other,60,Private,77,0,50,bus,K,injection,regular,8,M1,14
+0.019,218,1,Male,Alone,50,Private+trip to office,36,0,59,sedan,H,direct injection overpowered,diesel,6,B,11
+1.0,338,11,Male,Alone,1,Private+trip to office,48,0,50,sedan,A,injection,regular,2,A,15
+0.916,331,1,Male,Other,50,Private+trip to office,45,0,100,coupe,E,injection overpowered,regular,2,A,9
+0.916,184,2,Female,Other,50,Private,41,0,50,other microvan,K,injection,regular,6,M1,16
+0.499,394,3,Male,Other,50,Private,55,0,50,sedan,D,injection,regular,5,B,7
+0.249,299,1,Male,Other,20,Professional,44,0,50,sedan,J,injection,regular,7,B,8
+0.75,397,2,Female,Other,50,Professional,52,0,50,sedan,G,injection,regular,5,B,8
+0.221,528,2,Male,Other,60,Private,62,0,50,sedan,M,direct injection overpowered,diesel,8,M2,5
+0.132,325,8,Female,Other,49,Private+trip to office,45,0,50,sedan,F,injection,regular,3,B,16
+0.564,557,0,Male,Other,60,Private,73,0,50,coupe,Q,injection,regular,10,M2,7
+0.5,182,0,Male,Other,50,Private+trip to office,34,0,85,coupe,O,injection overpowered,regular,10,M2,15
+0.249,303,1,Male,Other,66,Professional,43,0,51,station wagon,L,direct injection overpowered,diesel,5,0,15
+0.916,122,11,Male,Other,50,Private+trip to office,39,0,100,sedan,M,injection,regular,7,H,15
+0.083,421,2,Male,Other,60,Private,78,0,50,sedan,O,direct injection overpowered,diesel,8,M1,6
+0.583,147,1,Male,Alone,50,Professional,33,0,58,sedan,F,injection,regular,5,B,10
+0.749,311,6,Female,Other,50,Private,48,1,50,sedan,M,injection overpowered,diesel,7,M2,13
+0.583,196,1,Female,Other,50,Private+trip to office,36,0,50,cabriolet,F,injection overpowered,regular,2,A,16
+0.811,309,5,Female,Other,1,Professional,49,0,80,microvan,N,injection overpowered,diesel,5,H,8
+0.786,590,0,Male,Other,60,Private,82,0,55,sedan,M,injection,regular,9,M2,14
+0.399,523,3,Male,Other,50,Private+trip to office,63,0,62,sedan,M,injection,regular,9,H,12
+0.333,261,1,Male,Other,50,Professional,40,0,50,microvan,N,direct injection overpowered,diesel,7,H,18
+0.91,438,0,Male,Other,50,Professional,54,0,50,microvan,M,direct injection overpowered,diesel,7,M2,17
+0.412,290,2,Female,Other,50,Private,45,1,58,sedan,H,injection,regular,9,B,3
+0.218,169,6,Male,Other,50,Private+trip to office,32,0,50,sedan,G,injection,diesel,5,B,19
+0.75,227,8,Female,Other,50,Private+trip to office,38,0,50,microvan,M,injection overpowered,diesel,5,H,5
+0.49,127,5,Male,Alone,50,Private+trip to office,28,0,95,sedan,C,injection,regular,4,B,20
+0.916,408,0,Male,Other,1,Professional,64,0,50,sedan,E,injection,regular,5,A,16
+0.166,438,3,Male,Other,50,Private,55,0,64,other microvan,O,direct injection overpowered,diesel,7,H,17
+0.749,591,5,Female,Other,66,Professional,68,0,50,sedan,E,injection,regular,4,B,16
+0.666,310,11,Female,Alone,50,Professional,46,0,50,sedan,I,injection overpowered,diesel,5,M1,9
+0.465,149,0,Male,Other,50,Professional,30,0,80,sedan,G,injection,regular,6,B,16
+1.0,351,5,Male,Other,60,Private,74,0,50,sedan,P,injection,regular,10,H,1
+0.416,432,6,Male,Other,1,Professional,70,0,50,sedan,K,direct injection overpowered,diesel,6,M2,10
+0.472,540,2,Male,Other,55,Private,63,0,50,cabriolet,I,injection,regular,8,B,20
+0.547,453,2,Female,Other,55,Private+trip to office,60,0,50,sport utility vehicle,L,direct injection overpowered,diesel,9,M1,17
+0.55,354,6,Male,Other,60,Private,61,0,50,sedan,J,injection,regular,8,M2,14
+0.333,214,6,Male,Other,50,Private+trip to office,36,0,76,sedan,N,injection,regular,9,H,15
+0.341,341,11,Female,Other,50,Private+trip to office,55,0,50,sedan,J,injection overpowered,diesel,6,M2,11
+0.781,377,0,Female,Other,49,Professional,49,0,50,sedan,G,injection,regular,5,B,16
+0.916,246,1,Male,Other,50,Private+trip to office,53,0,50,microvan,L,direct injection overpowered,diesel,7,M2,14
+1.0,338,11,Male,Alone,1,Private+trip to office,48,0,50,sedan,A,injection,regular,2,A,15
+0.833,95,4,Female,Other,50,Private+trip to office,28,0,76,sedan,E,injection,regular,3,B,17
+0.255,199,6,Female,Other,50,Private+trip to office,40,0,50,sedan,H,injection,regular,6,M1,17
+0.749,165,6,Male,Alone,48,Professional,32,0,67,van,I,injection,regular,3,0,17
+0.255,576,0,Male,Other,1,Professional,66,0,85,sedan,G,injection,regular,5,B,17
+0.75,96,1,Male,Alone,55,Private+trip to office,26,0,68,cabriolet,I,injection,regular,8,B,8
+0.916,331,0,Male,Other,50,Private+trip to office,48,0,50,microvan,L,injection,regular,8,M1,6
+0.25,450,1,Female,Other,60,Private,65,0,62,sedan,A,carburation,regular,3,B,20
+0.499,228,1,Male,Other,50,Private,37,0,50,sedan,K,direct injection overpowered,diesel,6,B,15
+0.307,152,2,Male,Other,50,Private,33,1,67,microvan,L,direct injection overpowered,diesel,6,M1,11
+0.127,126,2,Female,Other,50,Private+trip to office,35,0,85,sedan,I,direct injection overpowered,diesel,6,B,14
+0.718,280,2,Male,Other,50,Professional,41,0,50,sedan,J,injection,regular,8,B,17
+0.75,133,0,Female,Other,1,Private+trip to office,29,0,57,other microvan,L,injection,regular,7,M1,16
+1.0,406,2,Female,Other,66,Professional,52,0,69,sedan,J,injection,regular,8,B,16
+0.333,77,11,Female,Other,50,Private+trip to office,26,0,80,sedan,A,carburation,regular,1,A,19
+0.666,93,1,Female,Other,50,Private+trip to office,27,0,85,sedan,F,injection,regular,5,B,11
+0.5,446,1,Male,Other,50,Private+trip to office,59,0,50,sedan,I,direct injection overpowered,diesel,6,B,20
+0.5,698,0,Male,Other,60,Private,76,0,50,sedan,K,injection,regular,9,M1,16
+0.74,132,2,Male,Alone,50,Private+trip to office,30,0,64,cabriolet,F,injection overpowered,regular,2,A,5
