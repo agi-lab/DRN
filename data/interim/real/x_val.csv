@@ -1,442 +1,442 @@
 Exposure,LicAge,VehAge,Gender,MariStat,SocioCateg,VehUsage,DrivAge,HasKmLimit,BonusMalus,VehBody,VehPrice,VehEngine,VehEnergy,VehMaxSpeed,VehClass,RiskVar,Garage
-0.764,228,0,Male,Other,CSP1,Professional,37,0,64,bus,L,direct injection overpowered,diesel,6,M1,4,None
-0.75,134,0,Male,Other,CSP66,Professional,29,0,76,other microvan,M,direct injection overpowered,diesel,8,M1,8,None
-0.416,174,2,Female,Other,CSP55,Private,33,0,80,sedan,J,direct injection overpowered,diesel,6,M1,17,Private garage
-0.833,527,1,Female,Other,CSP42,Professional,66,0,50,van,F,direct injection overpowered,diesel,5,B,6,None
-0.666,237,1,Female,Alone,CSP50,Private+trip to office,39,1,72,sedan,E,injection,regular,4,B,16,None
-0.749,138,5,Male,Other,CSP50,Private,30,0,68,sedan,N,injection,regular,10,M2,12,None
-0.833,326,4,Male,Other,CSP50,Private+trip to office,56,0,50,sport utility vehicle,K,injection,regular,5,H,19,None
-1.0,651,6,Male,Other,CSP60,Private,76,0,59,sedan,P,injection,regular,10,H,14,Collective garage
-0.916,570,0,Male,Other,CSP60,Private,67,0,50,sedan,S,direct injection overpowered,diesel,10,H,18,Private garage
-0.333,146,5,Female,Other,CSP1,Private,30,0,90,sedan,G,injection,diesel,5,B,9,None
-0.666,130,4,Male,Other,CSP50,Private+trip to office,31,0,112,sedan,I,injection,regular,7,M1,15,None
-0.177,300,3,Male,Other,CSP46,Professional,49,0,50,van,H,injection,diesel,2,M1,18,None
-0.325,130,0,Male,Alone,CSP50,Private+trip to office,29,0,58,sedan,L,injection,regular,9,B,7,None
-0.416,134,2,Male,Alone,CSP50,Private+trip to office,33,0,95,sedan,G,injection,diesel,5,B,12,None
-0.413,238,5,Male,Alone,CSP50,Private,39,1,55,sedan,O,direct injection overpowered,diesel,9,M2,13,None
-1.0,177,4,Male,Alone,CSP50,Private+trip to office,33,0,80,coupe,O,injection overpowered,regular,10,M1,17,None
-0.916,177,3,Female,Alone,CSP50,Professional,36,0,100,sedan,H,direct injection overpowered,diesel,6,B,16,None
-0.442,119,0,Male,Alone,CSP50,Private+trip to office,33,0,85,sedan,L,direct injection overpowered,diesel,8,M1,15,Collective garage
-0.5,145,2,Female,Alone,CSP50,Private+trip to office,31,1,95,sedan,J,injection,regular,8,B,16,None
-0.893,464,1,Male,Other,CSP50,Professional,56,0,50,sedan,J,direct injection overpowered,diesel,6,B,8,None
-0.547,453,2,Female,Other,CSP55,Private+trip to office,60,0,50,sport utility vehicle,L,direct injection overpowered,diesel,9,M1,17,Private garage
-0.916,158,1,Male,Other,CSP50,Private+trip to office,31,0,85,station wagon,H,injection,regular,4,M1,14,None
-0.416,54,11,Female,Alone,CSP1,Professional,22,0,80,sedan,D,injection,regular,4,B,19,None
-0.25,277,0,Male,Other,CSP50,Professional,41,0,50,microvan,P,injection,regular,10,H,9,Collective garage
-0.799,473,11,Male,Other,CSP50,Professional,59,0,50,sedan,P,injection,regular,7,H,12,Collective garage
-0.321,194,3,Male,Other,CSP50,Private+trip to office,34,1,68,microvan,J,injection,regular,7,M1,15,Collective garage
-0.333,354,1,Male,Other,CSP42,Private+trip to office,47,0,100,sedan,E,injection,regular,4,B,14,None
-0.5,550,11,Male,Other,CSP50,Professional,65,0,50,sedan,V,injection,regular,10,H,16,Collective garage
-0.833,396,2,Male,Other,CSP50,Private+trip to office,55,0,58,van,F,injection,diesel,5,B,20,Collective garage
-1.0,228,11,Female,Alone,CSP50,Private+trip to office,37,0,50,sedan,D,injection,regular,3,A,13,None
-0.789,501,6,Male,Other,CSP42,Private+trip to office,60,0,50,van,L,injection,diesel,2,0,1,None
-0.482,150,1,Male,Other,CSP50,Private+trip to office,37,0,90,other microvan,L,direct injection overpowered,diesel,7,M2,7,None
-0.728,626,1,Male,Other,CSP60,Private,71,1,50,sedan,I,injection,regular,6,M1,18,None
-0.916,52,0,Male,Alone,CSP50,Private+trip to office,23,0,100,sedan,E,injection,regular,6,M1,19,None
-0.249,416,1,Male,Other,CSP50,Professional,52,0,50,other microvan,N,direct injection overpowered,diesel,6,H,19,Collective garage
-0.907,342,3,Female,Alone,CSP50,Private+trip to office,50,0,50,sedan,G,injection,regular,4,B,6,None
-0.25,298,0,Female,Other,CSP50,Professional,54,0,50,station wagon,J,injection,regular,8,M1,18,Private garage
-0.911,72,1,Female,Alone,CSP50,Private+trip to office,28,1,72,cabriolet,F,injection overpowered,regular,2,A,16,None
-0.333,247,2,Female,Other,CSP50,Private+trip to office,38,0,90,sedan,Q,injection,regular,10,H,7,Collective garage
-0.467,216,0,Male,Other,CSP50,Private+trip to office,38,0,50,station wagon,N,direct injection overpowered,diesel,9,M2,15,None
-0.178,394,0,Female,Other,CSP50,Private+trip to office,51,0,50,microvan,M,direct injection overpowered,diesel,7,M1,5,None
-0.75,255,2,Male,Other,CSP50,Professional,55,0,125,sedan,O,injection,regular,9,H,14,Collective garage
-0.833,204,1,Male,Alone,CSP50,Private+trip to office,35,0,50,sedan,P,direct injection overpowered,diesel,9,H,10,Collective garage
-0.333,443,1,Female,Other,CSP1,Professional run,59,0,72,sedan,J,injection,regular,5,B,16,None
-0.083,114,1,Female,Other,CSP50,Private+trip to office,27,1,62,sedan,I,direct injection overpowered,diesel,6,M1,12,None
-0.833,438,11,Male,Other,CSP50,Private+trip to office,55,0,50,microvan,N,injection overpowered,diesel,5,H,15,None
-0.28,473,1,Male,Other,CSP50,Professional,58,0,50,sport utility vehicle,R,injection,regular,10,M2,9,Collective garage
-0.297,96,11,Male,Other,CSP50,Professional,32,0,64,sedan,D,injection,regular,3,A,13,None
-0.75,421,2,Female,Other,CSP48,Professional,67,0,76,sedan,D,injection,regular,4,A,16,None
-0.166,513,1,Female,Other,CSP50,Private+trip to office,62,0,50,sedan,L,direct injection overpowered,diesel,9,M1,7,None
-0.708,132,0,Male,Other,CSP50,Private,30,0,54,sedan,I,injection,regular,8,B,14,None
-0.916,145,6,Male,Alone,CSP50,Private+trip to office,31,0,95,sedan,J,injection,regular,7,M2,20,None
-1.0,351,2,Female,Alone,CSP1,Professional,48,0,50,sedan,C,injection,regular,3,B,11,None
-0.333,35,4,Female,Alone,CSP55,Private+trip to office,31,0,95,sedan,G,injection,regular,7,B,19,None
-0.9,350,1,Male,Alone,CSP50,Private+trip to office,56,1,55,sedan,I,injection,regular,7,M1,15,None
-0.916,488,3,Male,Other,CSP50,Private+trip to office,58,0,50,other microvan,K,direct injection overpowered,diesel,4,M2,8,Collective garage
-0.485,299,6,Male,Alone,CSP55,Private+trip to office,43,0,50,sedan,J,injection overpowered,diesel,7,M1,14,Collective garage
-0.35,455,0,Male,Other,CSP42,Private+trip to office,56,0,50,coupe,O,injection,regular,10,M2,11,Private garage
-0.916,437,4,Male,Other,CSP48,Professional,54,0,50,van,I,injection,diesel,2,0,13,None
-0.583,95,5,Male,Other,CSP1,Private,37,0,80,sedan,O,injection,regular,9,H,8,None
-0.916,145,0,Male,Other,CSP1,Professional,30,0,53,sport utility vehicle,R,direct injection overpowered,diesel,5,H,17,Private garage
-0.497,301,0,Male,Other,CSP50,Private+trip to office,45,0,90,sport utility vehicle,R,direct injection overpowered,diesel,8,H,11,Collective garage
-0.749,162,3,Male,Alone,CSP50,Private+trip to office,32,0,80,cabriolet,O,injection overpowered,regular,10,H,16,Private garage
-0.333,317,1,Female,Other,CSP1,Professional,45,0,57,bus,K,injection,regular,8,M1,16,None
-0.825,211,0,Male,Other,CSP50,Private,37,0,57,microvan,K,injection,regular,7,M1,16,Collective garage
-0.347,404,3,Male,Other,CSP50,Private+trip to office,54,0,50,sedan,C,injection,regular,4,A,11,None
-0.75,232,1,Male,Other,CSP50,Professional,38,0,50,sedan,L,injection,regular,6,B,16,None
-0.568,310,6,Female,Other,CSP50,Private+trip to office,45,1,50,sedan,E,injection,regular,4,A,7,None
-0.083,230,0,Male,Other,CSP50,Professional run,39,0,86,sedan,K,direct injection overpowered,diesel,8,M1,10,None
-0.316,275,2,Male,Other,CSP50,Professional,41,0,56,van,P,direct injection overpowered,diesel,4,0,17,None
-0.438,210,4,Female,Other,CSP50,Private+trip to office,42,0,60,sedan,E,injection,regular,4,B,2,None
-0.4,282,2,Female,Other,CSP50,Private,44,1,62,sport utility vehicle,M,injection,regular,6,0,17,Collective garage
-0.916,54,4,Female,Other,CSP50,Private+trip to office,26,0,80,sedan,H,injection,diesel,5,B,17,None
-0.92,15,1,Male,Alone,CSP46,Professional,19,0,95,van,I,direct injection overpowered,diesel,5,0,1,None
-0.166,60,1,Male,Other,CSP50,Private,30,0,90,cabriolet,M,injection,regular,9,M1,16,Private garage
-0.764,599,3,Female,Other,CSP60,Private,78,0,77,sedan,H,injection,regular,7,B,3,None
-0.292,109,3,Male,Alone,CSP50,Private+trip to office,28,0,95,sport utility vehicle,M,injection,regular,6,H,16,None
-0.583,409,11,Male,Other,CSP50,Private,52,1,50,coupe,V,injection,regular,10,H,16,Private garage
-0.508,501,0,Female,Other,CSP60,Private,62,0,50,sedan,G,injection,regular,5,B,13,None
-0.796,353,4,Male,Other,CSP55,Private,48,0,50,other microvan,Q,injection,regular,9,H,8,Collective garage
-0.786,590,0,Male,Other,CSP60,Private,82,0,55,sedan,M,injection,regular,9,M2,14,Private garage
-0.091,115,5,Female,Other,CSP50,Private+trip to office,27,0,60,station wagon,N,injection,regular,8,M2,16,Collective garage
-0.916,511,8,Female,Other,CSP60,Private,61,0,55,sedan,G,injection,regular,6,B,16,None
-0.433,276,2,Male,Other,CSP50,Professional,41,0,50,sedan,O,direct injection overpowered,diesel,9,H,17,Private garage
-0.583,463,0,Male,Other,CSP50,Professional,60,0,50,van,N,direct injection overpowered,diesel,2,0,15,None
-0.969,95,1,Male,Other,CSP50,Private,25,0,95,sedan,K,injection,regular,7,B,6,None
-0.833,174,0,Male,Alone,CSP50,Professional run,32,0,80,station wagon,K,direct injection overpowered,diesel,7,M1,11,None
-0.718,280,2,Male,Other,CSP50,Professional,41,0,50,sedan,J,injection,regular,8,B,17,Collective garage
-1.0,370,2,Male,Other,CSP46,Professional,49,0,50,van,H,injection,diesel,3,M1,17,None
-0.256,155,4,Male,Alone,CSP1,Private+trip to office,32,0,54,cabriolet,Q,injection,regular,10,H,16,Collective garage
-0.083,421,2,Male,Other,CSP60,Private,78,0,50,sedan,O,direct injection overpowered,diesel,8,M1,6,None
-0.916,686,8,Male,Other,CSP60,Private,76,0,50,sedan,G,injection,regular,6,B,16,None
-1.0,500,0,Male,Other,CSP60,Private,66,0,50,other microvan,Q,injection,regular,10,H,20,Collective garage
-0.517,270,2,Female,Other,CSP50,Private+trip to office,42,0,60,other microvan,J,injection,regular,7,M1,15,None
-0.17,393,1,Male,Other,CSP50,Professional,51,0,50,van,G,direct injection overpowered,diesel,3,M1,13,None
-0.102,200,5,Male,Other,CSP50,Private+trip to office,37,0,76,microvan,O,direct injection overpowered,diesel,6,H,20,None
-0.583,142,0,Male,Alone,CSP50,Private+trip to office,33,0,95,sedan,M,direct injection overpowered,diesel,9,M1,13,Collective garage
-0.833,453,0,Male,Other,CSP60,Private,58,0,50,sedan,P,direct injection overpowered,diesel,10,M2,3,Private garage
-0.916,284,6,Male,Other,CSP55,Private+trip to office,51,0,67,coupe,I,direct injection overpowered,diesel,6,M1,15,None
-0.552,330,5,Male,Other,CSP55,Private,54,0,50,sedan,J,injection,regular,7,M2,10,Private garage
-0.602,356,0,Male,Other,CSP55,Private+trip to office,56,0,50,sedan,H,injection,regular,8,B,16,Private garage
-0.416,308,2,Male,Other,CSP50,Private+trip to office,44,0,50,van,E,injection,diesel,4,B,17,Private garage
-1.0,574,2,Female,Other,CSP60,Private,68,0,50,sedan,J,injection,regular,8,B,12,None
-0.358,229,6,Male,Other,CSP55,Private+trip to office,37,0,50,sedan,J,injection,regular,6,M2,8,None
-0.5,156,2,Male,Other,CSP50,Private+trip to office,42,0,54,sport utility vehicle,N,injection overpowered,diesel,5,H,6,Collective garage
-0.666,44,3,Male,Other,CSP50,Private+trip to office,26,0,85,sedan,C,injection,regular,5,B,19,None
-0.554,340,0,Male,Other,CSP50,Professional,48,0,50,sedan,G,injection,regular,5,A,1,None
-0.249,153,5,Male,Alone,CSP55,Private+trip to office,30,0,51,sedan,J,direct injection overpowered,diesel,6,M1,15,None
-0.784,112,0,Male,Other,CSP50,Private+trip to office,27,0,95,cabriolet,K,injection,regular,8,M1,17,Private garage
-0.894,229,1,Male,Other,CSP50,Private+trip to office,37,0,62,sedan,G,injection,diesel,5,B,13,None
-0.499,160,5,Female,Alone,CSP50,Private+trip to office,32,1,51,sedan,K,injection,regular,5,B,11,None
-0.747,480,0,Male,Other,CSP50,Professional,58,0,50,sedan,J,injection,regular,7,B,15,None
-0.497,256,0,Male,Alone,CSP50,Private+trip to office,39,0,51,sedan,J,injection,regular,7,M1,18,None
-0.293,370,1,Male,Other,CSP66,Professional,58,0,52,sedan,R,injection overpowered,regular,10,H,16,Collective garage
-0.499,589,8,Male,Other,CSP60,Private,77,0,52,sedan,I,injection,regular,6,M1,8,None
-0.407,162,5,Female,Other,CSP50,Private,39,1,80,sedan,D,injection,regular,4,A,20,None
-0.666,197,0,Male,Other,CSP55,Private+trip to office,34,0,50,station wagon,P,injection,regular,10,M2,1,None
-0.849,480,3,Female,Other,CSP50,Professional,61,0,65,station wagon,H,injection,regular,4,M1,7,None
-0.416,266,11,Male,Other,CSP55,Professional,42,0,53,sedan,V,injection,regular,10,H,8,Private garage
-0.75,288,4,Male,Other,CSP50,Private+trip to office,43,0,68,sedan,K,injection,regular,9,M2,18,None
-0.564,164,5,Male,Alone,CSP26,Private+trip to office,33,0,64,sedan,G,injection,diesel,4,B,18,None
-0.833,425,2,Male,Other,CSP50,Private,77,1,50,coupe,C,injection overpowered,regular,2,A,7,None
-0.491,357,1,Female,Other,CSP50,Private+trip to office,49,1,50,sedan,F,injection,regular,5,B,19,None
-0.666,476,2,Female,Other,CSP60,Private,58,0,112,coupe,O,direct injection overpowered,diesel,9,M2,5,Collective garage
-0.747,362,1,Female,Other,CSP50,Private+trip to office,51,1,50,microvan,K,injection,regular,7,M1,13,None
-0.499,441,6,Male,Other,CSP1,Professional,56,0,50,sedan,O,injection,regular,10,M2,18,None
-1.0,579,0,Female,Other,CSP60,Private,67,0,50,sedan,K,direct injection overpowered,diesel,7,M1,17,Collective garage
-1.0,446,2,Male,Other,CSP50,Private+trip to office,55,0,50,sedan,D,injection,regular,4,A,20,None
-0.291,143,2,Male,Other,CSP50,Private,38,0,80,sport utility vehicle,M,direct injection overpowered,diesel,8,M1,20,None
-0.469,587,0,Male,Other,CSP60,Private,74,0,50,sedan,S,injection overpowered,regular,10,H,2,Private garage
-0.249,321,2,Female,Alone,CSP50,Private+trip to office,46,0,57,sport utility vehicle,M,direct injection overpowered,diesel,5,H,18,None
-0.107,650,0,Female,Alone,CSP60,Private,76,0,93,sedan,J,injection,regular,8,M1,13,None
-0.416,81,1,Female,Other,CSP50,Professional,31,0,95,sedan,H,injection,regular,7,B,10,None
-1.0,351,5,Male,Other,CSP60,Private,74,0,50,sedan,P,injection,regular,10,H,1,Collective garage
-0.2,482,2,Male,Other,CSP50,Professional,60,0,50,sedan,M,direct injection overpowered,diesel,8,H,12,Collective garage
-0.894,49,5,Female,Alone,CSP50,Private+trip to office,30,0,85,sedan,K,injection,regular,5,B,17,None
-0.439,120,3,Male,Other,CSP1,Professional,31,0,60,sedan,K,injection,regular,7,M1,7,None
-0.705,539,2,Male,Other,CSP60,Private,63,0,50,sedan,L,injection,regular,6,B,16,Private garage
-0.583,214,8,Female,Other,CSP50,Private+trip to office,37,0,50,sedan,D,injection,regular,4,B,17,None
-0.499,296,4,Male,Other,CSP50,Private+trip to office,44,0,51,sedan,P,direct injection overpowered,diesel,10,H,9,Collective garage
-0.753,278,0,Male,Other,CSP50,Private+trip to office,41,0,50,sport utility vehicle,S,direct injection overpowered,diesel,9,H,3,Collective garage
-0.399,523,3,Male,Other,CSP50,Private+trip to office,63,0,62,sedan,M,injection,regular,9,H,12,None
-0.416,86,0,Male,Alone,CSP55,Private,31,0,100,sedan,G,injection,regular,5,A,15,None
-0.499,411,2,Female,Other,CSP50,Private+trip to office,55,0,50,sedan,G,injection,regular,5,A,8,None
-0.453,582,3,Female,Other,CSP60,Private,80,0,77,sedan,H,injection,regular,7,B,16,None
-0.833,328,2,Male,Other,CSP50,Private,46,0,54,other microvan,M,direct injection overpowered,diesel,6,M2,15,None
-0.692,398,3,Male,Other,CSP50,Private+trip to office,54,0,50,sport utility vehicle,L,injection,regular,6,H,9,None
-0.5,583,8,Male,Other,CSP60,Private,76,0,55,sedan,I,injection,regular,6,M1,8,None
-1.0,510,2,Female,Other,CSP42,Private+trip to office,61,1,51,sedan,G,injection,regular,7,B,1,None
-0.583,251,1,Female,Other,CSP50,Professional,39,0,85,sedan,L,direct injection overpowered,diesel,8,M1,11,None
-0.916,473,0,Male,Other,CSP50,Private+trip to office,60,0,50,sedan,I,direct injection overpowered,diesel,7,B,20,None
-0.399,284,4,Male,Other,CSP55,Professional,43,0,50,sedan,K,injection,regular,8,M2,20,None
-0.577,389,1,Male,Other,CSP66,Professional,50,0,54,coupe,O,injection,regular,9,H,16,Collective garage
-0.833,114,2,Male,Alone,CSP50,Private,28,0,68,cabriolet,K,injection,regular,8,B,11,None
-0.666,428,1,Male,Other,CSP55,Private,55,0,118,other microvan,L,direct injection overpowered,diesel,6,M1,16,None
-0.75,173,1,Male,Alone,CSP55,Private,33,0,100,sedan,Q,injection,regular,10,H,8,Collective garage
-0.666,207,4,Male,Other,CSP49,Professional,36,0,68,sport utility vehicle,M,injection,regular,5,H,10,Collective garage
-0.749,163,3,Female,Alone,CSP50,Private,31,0,85,coupe,E,injection overpowered,regular,2,A,9,None
-0.166,288,1,Male,Other,CSP50,Professional,53,0,68,van,L,direct injection overpowered,diesel,3,0,15,None
-0.836,277,1,Male,Alone,CSP55,Private+trip to office,43,0,50,sedan,E,injection,regular,5,B,15,None
-0.714,109,0,Female,Alone,CSP1,Professional,38,0,90,station wagon,D,injection,regular,4,A,17,Private garage
-0.327,241,4,Male,Other,CSP50,Private+trip to office,38,0,50,sport utility vehicle,P,injection overpowered,regular,10,M1,16,Collective garage
-0.782,517,5,Female,Other,CSP60,Private,63,1,50,sedan,D,injection,regular,4,A,4,None
-0.333,280,0,Male,Other,CSP55,Private+trip to office,44,0,68,sedan,H,direct injection overpowered,diesel,5,B,18,None
-0.505,314,2,Male,Other,CSP50,Professional,44,0,50,sedan,J,injection,regular,6,B,16,None
-0.499,100,2,Male,Alone,CSP50,Private,28,0,90,sedan,I,direct injection overpowered,diesel,6,B,19,None
-0.749,316,1,Male,Other,CSP50,Professional,45,0,50,sport utility vehicle,L,injection,regular,7,M2,11,None
-0.244,122,6,Male,Alone,CSP50,Private+trip to office,28,0,76,sedan,H,injection,regular,6,M1,19,None
-0.499,240,2,Male,Other,CSP50,Private+trip to office,44,0,58,sedan,M,injection,regular,8,H,14,None
-0.347,469,8,Female,Other,CSP60,Private,61,0,50,coupe,O,injection,regular,9,M2,18,None
-0.5,74,4,Female,Other,CSP50,Private,24,0,95,sedan,E,injection,regular,4,B,19,None
-1.0,633,2,Male,Other,CSP60,Private,81,0,50,sedan,J,injection,regular,7,M1,16,Private garage
-0.214,188,6,Female,Other,CSP55,Private+trip to office,34,0,63,microvan,J,injection,regular,5,M1,15,Private garage
-0.603,119,0,Female,Alone,CSP1,Professional,28,0,72,sedan,G,injection,regular,5,B,5,None
-0.5,87,6,Male,Alone,CSP50,Private+trip to office,25,0,80,sedan,J,injection overpowered,diesel,6,M1,10,None
-0.833,676,1,Male,Other,CSP60,Private,75,0,50,sedan,K,direct injection overpowered,diesel,8,M2,20,None
-0.805,301,0,Female,Other,CSP1,Professional,45,0,59,sport utility vehicle,M,injection,regular,6,M2,16,None
-0.337,34,8,Female,Alone,CSP50,Private+trip to office,21,0,90,sedan,E,injection,regular,4,B,20,None
-0.517,212,5,Male,Alone,CSP50,Private+trip to office,37,0,51,sedan,H,injection,regular,6,M1,20,None
-0.494,529,0,Male,Other,CSP60,Private,64,0,55,sedan,N,injection,regular,10,H,5,None
-0.166,484,0,Male,Other,CSP60,Private,58,0,50,sport utility vehicle,R,direct injection overpowered,diesel,10,H,16,Private garage
-0.478,3,1,Female,Other,CSP50,Private,37,0,100,sedan,D,injection,regular,4,B,20,None
-0.916,122,11,Male,Other,CSP50,Private+trip to office,39,0,100,sedan,M,injection,regular,7,H,15,None
-0.253,212,4,Male,Alone,CSP50,Private+trip to office,39,0,100,station wagon,K,direct injection overpowered,diesel,6,M1,18,None
-0.989,251,4,Male,Alone,CSP50,Professional,39,0,51,sport utility vehicle,R,injection,regular,6,H,8,Collective garage
-0.499,577,5,Male,Other,CSP60,Private,74,1,50,sport utility vehicle,Q,injection,regular,9,H,17,Collective garage
-0.967,127,6,Male,Other,CSP50,Private+trip to office,30,0,95,sedan,K,direct injection overpowered,diesel,7,M2,15,None
-0.249,162,5,Male,Other,CSP50,Professional,31,0,68,sedan,L,direct injection overpowered,diesel,8,M2,5,None
-0.666,270,2,Female,Other,CSP50,Professional,41,0,50,station wagon,Q,injection,regular,9,H,16,Private garage
-0.035,119,6,Male,Other,CSP50,Private+trip to office,36,0,85,other microvan,K,direct injection overpowered,diesel,6,M1,5,None
-0.681,297,4,Female,Other,CSP50,Private,48,0,62,sedan,F,injection,regular,3,A,20,None
-0.282,213,6,Male,Other,CSP50,Private+trip to office,36,0,52,sedan,G,injection overpowered,diesel,5,B,17,None
-0.388,220,8,Male,Other,CSP55,Private+trip to office,36,0,50,microvan,N,injection overpowered,diesel,4,H,15,None
-0.499,250,6,Female,Other,CSP50,Private+trip to office,39,0,57,sedan,L,injection overpowered,diesel,7,M2,12,None
-0.833,295,0,Female,Other,CSP50,Professional,42,0,50,station wagon,K,direct injection overpowered,diesel,7,M1,8,None
-0.833,323,2,Male,Other,CSP50,Private+trip to office,46,0,66,other microvan,L,direct injection overpowered,diesel,4,M1,13,Collective garage
-0.35,145,3,Female,Alone,CSP50,Professional,30,0,51,sedan,H,direct injection overpowered,diesel,5,B,5,None
-0.25,201,0,Female,Alone,CSP50,Private,35,0,100,bus,L,direct injection overpowered,diesel,5,0,13,Collective garage
-0.833,437,2,Male,Other,CSP50,Professional,56,0,50,sedan,M,injection,regular,9,M2,9,None
-0.501,288,2,Female,Other,CSP50,Private+trip to office,42,0,50,sedan,O,injection,regular,10,M2,16,Private garage
-0.499,160,1,Male,Alone,CSP46,Professional run,34,0,110,van,K,direct injection overpowered,diesel,1,0,6,None
-0.916,285,4,Female,Other,CSP66,Professional,58,0,50,sedan,D,injection,regular,4,A,8,Collective garage
-0.763,390,11,Female,Other,CSP55,Private+trip to office,52,0,50,sedan,P,injection,regular,10,H,17,Private garage
-0.249,540,8,Male,Other,CSP50,Private+trip to office,67,0,50,sedan,U,injection,regular,9,H,16,Collective garage
-0.388,129,1,Male,Alone,CSP66,Private+trip to office,28,0,80,sedan,L,direct injection overpowered,diesel,9,M1,16,None
-0.315,51,3,Female,Alone,CSP46,Private+trip to office,39,0,85,sedan,I,injection,regular,7,B,11,None
-0.583,175,1,Male,Alone,CSP50,Private,32,0,60,sedan,L,direct injection overpowered,diesel,8,M1,12,None
-0.861,55,3,Female,Alone,CSP50,Private+trip to office,26,0,100,sedan,G,injection,regular,4,B,11,None
-0.583,274,2,Male,Other,CSP66,Professional,42,0,95,sedan,L,direct injection overpowered,diesel,6,B,6,None
-0.278,687,1,Male,Other,CSP60,Private,83,0,50,sedan,K,injection,regular,9,M1,13,None
-0.983,21,0,Female,Other,CSP48,Private+trip to office,25,0,100,cabriolet,F,injection overpowered,regular,2,A,12,None
-0.784,361,0,Female,Other,CSP50,Private+trip to office,53,0,50,sedan,F,injection,regular,5,A,16,None
-0.494,522,1,Male,Other,CSP60,Private,62,0,50,sedan,N,direct injection overpowered,diesel,9,M2,10,Private garage
-0.091,435,11,Male,Other,CSP46,Professional,54,0,50,van,G,direct injection overpowered,diesel,5,M1,3,None
-0.471,237,3,Male,Other,CSP50,Private+trip to office,43,0,90,sedan,M,direct injection overpowered,diesel,8,M1,17,None
-0.499,249,2,Male,Other,CSP50,Private+trip to office,42,0,54,other microvan,L,direct injection overpowered,diesel,5,M1,19,Collective garage
-0.249,292,1,Female,Other,CSP37,Private,41,0,95,sedan,F,injection,regular,5,A,10,None
-0.827,622,0,Male,Other,CSP60,Private,71,0,50,sport utility vehicle,R,injection,regular,6,H,8,Collective garage
-0.916,188,2,Female,Other,CSP55,Private+trip to office,35,0,80,sedan,I,injection,regular,7,M1,19,None
-0.166,299,2,Female,Other,CSP55,Private+trip to office,43,0,50,sedan,D,injection,regular,4,A,12,Collective garage
-0.269,71,1,Male,Other,CSP55,Professional,30,0,95,sedan,H,direct injection overpowered,diesel,5,B,13,None
-0.666,135,4,Male,Alone,CSP50,Private+trip to office,29,0,80,sedan,K,injection,regular,6,B,20,Collective garage
-0.094,181,2,Female,Other,CSP50,Private+trip to office,34,0,72,microvan,N,injection overpowered,diesel,6,H,17,None
-0.499,383,0,Male,Other,OTHER,Private+trip to office,50,0,50,microvan,M,direct injection overpowered,diesel,7,M1,16,Collective garage
-0.788,232,1,Male,Other,CSP55,Private+trip to office,37,0,50,other microvan,K,direct injection overpowered,diesel,6,M1,14,None
-0.916,444,8,Female,Other,CSP60,Private,56,0,57,sedan,O,injection,regular,8,H,7,None
-0.926,227,3,Female,Alone,CSP50,Private+trip to office,42,0,90,sedan,J,injection,regular,8,M1,10,None
-0.433,277,2,Male,Other,CSP55,Private+trip to office,46,1,50,other microvan,J,injection,regular,6,M2,14,None
-0.125,316,3,Female,Alone,CSP50,Private+trip to office,47,0,50,sedan,J,direct injection overpowered,diesel,6,M1,20,Private garage
-0.791,542,2,Male,Other,CSP60,Private,68,0,50,other microvan,P,direct injection overpowered,diesel,7,H,20,None
-0.683,190,1,Female,Other,CSP50,Private+trip to office,37,0,50,sedan,H,injection,regular,6,B,15,None
-0.95,567,1,Female,Alone,CSP60,Private,75,0,50,sedan,H,direct injection overpowered,diesel,5,B,15,None
-0.845,306,3,Male,Other,CSP50,Private,59,0,50,microvan,O,injection,regular,7,H,4,Collective garage
-0.56,416,1,Male,Other,CSP50,Professional,53,0,50,sedan,H,direct injection overpowered,diesel,5,B,13,None
-0.692,303,6,Female,Other,CSP50,Private,45,0,50,microvan,N,injection,regular,6,H,12,None
-0.583,124,4,Male,Other,CSP50,Professional,28,0,57,van,G,OTHER,OTHER,1,M1,1,None
-0.764,356,3,Female,Other,CSP50,Private,48,0,58,sedan,L,direct injection overpowered,diesel,8,M1,16,None
-0.5,530,5,Female,Other,CSP60,Private,66,1,50,sedan,J,direct injection overpowered,diesel,7,M2,17,None
-1.0,264,6,Male,Alone,CSP55,Private+trip to office,40,0,50,microvan,M,injection,regular,6,H,13,Private garage
-0.833,135,1,Male,Other,CSP50,Private,39,0,80,sedan,O,injection,regular,10,M2,16,None
-0.485,139,3,Male,Other,CSP50,Private+trip to office,41,0,76,station wagon,M,direct injection overpowered,diesel,8,M2,14,Collective garage
-0.629,134,0,Male,Alone,CSP50,Private+trip to office,29,0,57,sedan,J,direct injection overpowered,diesel,6,M1,16,None
-0.5,137,0,Male,Alone,CSP55,Private+trip to office,29,1,64,sedan,H,direct injection overpowered,diesel,5,B,13,Collective garage
-0.147,365,2,Female,Other,CSP50,Private+trip to office,56,0,82,station wagon,Q,direct injection overpowered,diesel,9,H,7,Collective garage
-0.124,46,8,Female,Alone,CSP26,Private+trip to office,21,0,90,sedan,I,injection,diesel,5,M1,12,None
-0.833,231,8,Male,Other,CSP1,Private+trip to office,37,0,50,other microvan,N,injection overpowered,diesel,6,H,20,None
-1.0,456,0,Male,Other,CSP60,Private,67,0,50,sedan,R,direct injection overpowered,diesel,10,H,19,Collective garage
-0.666,66,2,Male,Other,CSP50,Private+trip to office,23,0,76,sedan,G,direct injection overpowered,diesel,5,B,17,None
-1.0,342,3,Male,Other,CSP48,Professional,47,0,50,other microvan,K,injection,regular,8,M1,11,None
-0.468,515,0,Female,Other,CSP60,Private,69,1,55,sedan,G,injection,regular,4,B,16,None
-0.833,559,0,Male,Other,CSP50,Professional,71,0,95,sedan,L,injection,regular,9,M2,9,Private garage
-0.416,525,6,Female,Alone,CSP55,Private+trip to office,65,0,50,sedan,F,carburation,regular,4,B,19,None
-0.333,435,1,Male,Other,CSP60,Private,78,0,50,sedan,O,injection,regular,10,M2,4,None
-0.833,174,3,Female,Alone,CSP50,Private+trip to office,32,0,68,sport utility vehicle,M,injection,regular,5,H,8,Private garage
-0.841,269,4,Male,Other,CSP50,Professional,40,0,50,sport utility vehicle,OTHER,injection,regular,9,H,9,Collective garage
-0.666,154,2,Female,Alone,CSP50,Private+trip to office,31,0,132,sedan,K,direct injection overpowered,diesel,6,B,5,None
-0.583,216,6,Male,Alone,CSP50,Private+trip to office,36,0,50,sedan,G,injection,regular,7,M1,16,None
-0.143,153,2,Female,Alone,CSP50,Private+trip to office,30,0,132,sedan,I,injection,regular,5,B,11,None
-0.666,185,3,Male,Other,CSP50,Professional,33,0,71,sedan,G,injection,diesel,5,B,5,None
-0.333,510,6,Female,Other,CSP50,Private+trip to office,60,1,68,sedan,E,injection,regular,4,B,20,Collective garage
-1.0,339,2,Male,Alone,CSP50,Professional,51,0,50,van,J,injection,diesel,2,0,11,Private garage
-0.097,218,2,Male,Other,CSP55,Private,37,0,63,sedan,N,injection overpowered,regular,9,M1,11,Private garage
-0.25,72,2,Male,Other,CSP46,Professional,44,0,90,van,H,injection,diesel,3,M1,20,None
-0.327,6,6,Female,Other,CSP50,Private+trip to office,23,0,100,sedan,E,injection,regular,3,A,11,None
-0.553,50,0,Female,Other,CSP55,Private,22,0,80,sedan,J,direct injection overpowered,diesel,6,M1,13,None
-0.163,74,0,Female,Alone,CSP55,Private+trip to office,28,0,100,sedan,E,injection,regular,4,B,18,None
-0.499,334,3,Male,Other,CSP1,Professional,48,0,50,microvan,O,direct injection overpowered,diesel,6,H,18,None
-0.833,379,0,Female,Other,CSP55,Private+trip to office,52,1,50,sedan,E,injection,regular,4,A,13,None
-0.749,52,6,Female,Alone,CSP26,Private+trip to office,23,0,90,sedan,F,injection,regular,6,B,16,None
-0.166,456,5,Male,Other,CSP50,Private,56,0,50,sedan,I,injection,regular,7,M1,6,Private garage
-0.569,293,4,Male,Other,CSP50,Private+trip to office,45,0,93,sedan,J,injection,regular,8,M2,19,None
-0.75,167,2,Male,Other,CSP50,Private+trip to office,33,0,50,coupe,O,injection,regular,10,M2,15,None
-0.52,674,0,Female,Other,CSP60,Private,76,1,50,sedan,K,injection,regular,9,M1,15,None
-0.881,504,8,Male,Other,CSP50,Private+trip to office,60,0,70,sedan,O,injection,regular,9,M2,5,None
-0.249,288,2,Male,Other,CSP50,Professional run,42,0,50,van,I,direct injection overpowered,diesel,5,M1,16,Private garage
-0.544,533,3,Female,Other,CSP60,Private,82,1,50,sedan,G,injection,regular,5,B,15,None
-0.407,70,5,Male,Other,CSP50,Professional,35,0,76,cabriolet,L,injection,regular,8,M1,2,None
-0.413,119,0,Male,Alone,CSP50,Private+trip to office,28,0,100,sedan,H,direct injection overpowered,diesel,5,B,20,None
-0.829,419,1,Male,Other,CSP1,Professional,54,0,50,sport utility vehicle,R,direct injection overpowered,diesel,8,H,17,Collective garage
-0.25,281,4,Male,Alone,CSP48,Private+trip to office,41,0,62,cabriolet,Q,injection,regular,10,H,10,Collective garage
-0.974,252,2,Male,Alone,CSP50,Professional,39,0,50,van,F,injection,diesel,5,B,9,Collective garage
-0.823,219,0,Male,Other,CSP50,Private+trip to office,36,0,54,sedan,G,direct injection overpowered,diesel,5,B,16,None
-0.583,65,1,Male,Alone,CSP50,Private+trip to office,24,0,80,sedan,K,direct injection overpowered,diesel,6,M1,19,Collective garage
-0.833,275,2,Male,Other,CSP66,Private+trip to office,57,0,82,sedan,R,injection,regular,10,H,13,Private garage
-0.333,81,2,Female,Alone,CSP50,Private+trip to office,27,0,100,sedan,F,injection,diesel,4,B,16,None
-0.638,496,3,Female,Other,CSP50,Private+trip to office,61,0,50,sedan,F,injection,regular,5,B,15,None
-0.536,260,2,Female,Other,CSP50,Private+trip to office,44,0,50,sedan,E,injection,regular,5,B,14,None
-0.5,171,2,Male,Alone,CSP50,Professional,35,0,90,sport utility vehicle,N,direct injection overpowered,diesel,4,H,15,None
-0.591,87,3,Male,Other,CSP50,Private+trip to office,25,0,90,sedan,D,injection,regular,4,A,17,Private garage
-0.166,447,3,Male,Other,CSP50,Private+trip to office,56,1,50,sedan,H,injection,regular,8,B,9,None
-0.408,181,4,Female,Other,CSP55,Private+trip to office,42,0,64,sedan,H,injection,regular,6,M1,13,Collective garage
-1.0,178,2,Male,Other,CSP42,Professional,33,0,50,sedan,K,direct injection overpowered,diesel,8,M1,2,None
-0.194,165,4,Male,Alone,CSP50,Private,34,0,72,sedan,H,injection,regular,6,M1,18,None
-0.833,587,0,Male,Other,CSP60,Private,70,0,50,cabriolet,L,injection,regular,8,M1,15,None
-0.916,141,2,Male,Other,CSP50,Professional,39,0,60,van,K,direct injection overpowered,diesel,4,0,5,None
-0.666,200,5,Male,Other,CSP50,Professional,36,0,57,sedan,Q,injection,regular,9,H,16,Collective garage
-1.0,356,5,Female,Other,CSP37,Private,56,0,50,sedan,D,injection,regular,4,A,16,None
-0.916,213,3,Male,Other,CSP48,Private+trip to office,35,0,50,van,I,injection,diesel,3,M1,16,None
-0.978,219,2,Male,Other,CSP50,Private+trip to office,36,0,95,sport utility vehicle,N,direct injection overpowered,diesel,4,H,12,Collective garage
-1.0,112,0,Male,Alone,CSP55,Private,27,0,64,sedan,G,injection,regular,5,A,14,Private garage
-0.74,258,6,Male,Other,CSP50,Private,41,0,118,sedan,G,injection,regular,6,M1,12,None
-0.705,308,4,Female,Alone,CSP1,Professional,47,0,50,sedan,H,injection,regular,7,B,16,None
-0.25,178,2,Male,Other,CSP49,Professional,33,0,90,station wagon,N,injection overpowered,regular,10,M2,16,None
-1.0,498,1,Female,Other,CSP37,Private,60,0,80,sedan,M,direct injection overpowered,diesel,9,M1,7,None
-0.598,72,2,Male,Alone,CSP50,Private+trip to office,28,0,76,station wagon,O,direct injection overpowered,diesel,8,M2,19,Collective garage
-0.583,347,0,Male,Other,CSP42,Professional,47,0,50,microvan,Q,direct injection overpowered,diesel,9,H,15,Collective garage
-0.833,314,0,Female,Alone,CSP50,Private+trip to office,49,0,50,sedan,E,injection,regular,5,A,15,None
-0.461,463,6,Male,Other,CSP50,Private,56,0,57,sport utility vehicle,M,injection,regular,5,H,7,None
-0.75,211,4,Female,Other,CSP50,Private+trip to office,39,0,67,sedan,H,injection,regular,6,M1,17,None
-0.333,182,3,Male,Other,CSP55,Private+trip to office,33,0,85,sedan,D,injection,regular,4,B,13,None
-0.711,445,6,Male,Other,CSP50,Private,72,0,50,sedan,M,injection,regular,8,M2,7,Collective garage
-0.75,602,11,Female,Other,CSP60,Private,82,1,50,sedan,M,injection overpowered,diesel,8,M2,15,Collective garage
-0.706,272,8,Male,Other,CSP50,Private+trip to office,42,0,51,microvan,M,injection overpowered,regular,8,H,18,None
-0.269,403,1,Male,Other,CSP50,Private+trip to office,52,1,50,sedan,H,injection,regular,8,B,18,Collective garage
-0.916,644,2,Male,Other,CSP60,Private,76,0,50,sport utility vehicle,K,injection,regular,4,M2,11,None
-0.583,456,6,Female,Other,CSP48,Private+trip to office,58,0,55,sedan,OTHER,injection,regular,2,A,10,None
-0.25,150,5,Female,Alone,CSP1,Private+trip to office,30,0,85,coupe,D,injection overpowered,regular,2,A,9,None
-0.416,218,11,Female,Other,CSP66,Private+trip to office,36,0,100,coupe,O,injection,regular,9,M2,16,Collective garage
-0.572,497,0,Female,Alone,CSP55,Private+trip to office,59,0,50,sedan,F,injection,regular,6,B,15,None
-0.916,558,3,Female,Other,CSP60,Private,71,1,50,sedan,F,injection,regular,4,B,17,None
-0.5,118,0,Female,Other,CSP50,Private+trip to office,29,0,90,sedan,L,direct injection overpowered,diesel,6,B,20,None
-0.278,252,4,Male,Alone,CSP50,Private+trip to office,39,0,50,sedan,E,injection,regular,5,B,12,None
-0.717,216,8,Male,Other,CSP50,Private+trip to office,36,0,50,sedan,G,injection overpowered,diesel,5,B,17,None
-0.542,289,5,Male,Other,CSP50,Private,42,0,52,sedan,P,injection,regular,9,H,6,None
-0.916,451,6,Male,Other,CSP46,Professional,55,0,50,van,K,injection overpowered,diesel,4,0,13,Collective garage
-0.392,89,4,Male,Alone,CSP50,Private+trip to office,25,0,80,sedan,N,direct injection overpowered,diesel,9,M2,20,None
-0.833,443,1,Male,Other,CSP50,Private,55,0,50,sedan,M,injection,regular,9,H,16,None
-0.166,413,4,Male,Other,CSP50,Private+trip to office,54,0,50,coupe,Q,injection,regular,10,H,4,Collective garage
-1.0,635,2,Male,Other,CSP60,Private,81,0,50,sedan,J,injection,regular,9,M1,7,Collective garage
-0.666,145,1,Female,Alone,CSP50,Private+trip to office,30,0,106,sedan,I,injection,regular,5,B,11,None
-0.916,161,0,Male,Other,CSP50,Private,31,0,68,microvan,M,direct injection overpowered,diesel,8,M1,12,Private garage
-0.916,212,0,Male,Other,CSP50,Professional,36,0,90,sedan,P,direct injection overpowered,diesel,9,M2,17,Private garage
-0.583,300,1,Male,Alone,CSP50,Professional,44,0,57,sedan,O,direct injection overpowered,diesel,9,M2,15,Private garage
-0.31,572,5,Female,Other,CSP60,Private,67,0,50,coupe,P,injection,regular,10,M2,15,Private garage
-0.769,88,1,Male,Other,CSP50,Professional,31,0,140,sedan,K,direct injection overpowered,diesel,7,M1,16,None
-0.68,253,2,Male,Other,CSP50,Private+trip to office,39,0,76,sedan,K,injection,regular,8,M2,15,None
-0.499,518,5,Male,Other,CSP60,Private,71,0,80,sedan,H,injection,regular,7,B,1,Private garage
-0.916,424,1,Male,Other,CSP60,Private,60,0,50,sedan,O,direct injection overpowered,diesel,9,H,16,Collective garage
-0.692,561,5,Male,Other,CSP60,Private,74,0,68,sedan,L,injection,regular,6,B,17,None
-0.483,295,6,Male,Other,CSP60,Private,66,0,67,station wagon,N,injection,regular,7,M2,16,None
-0.899,80,5,Female,Alone,CSP50,Private+trip to office,25,0,90,sedan,D,injection,regular,5,B,19,None
-0.806,157,8,Male,Other,CSP50,Professional,40,0,68,sport utility vehicle,R,injection overpowered,diesel,5,H,17,Collective garage
-0.889,264,0,Male,Other,CSP50,Private,40,0,50,microvan,O,injection,regular,8,H,4,Collective garage
-0.5,425,8,Male,Other,CSP1,Professional,53,0,50,sedan,J,injection,regular,8,M1,17,Private garage
-0.719,129,1,Male,Alone,CSP50,Professional,29,0,100,sedan,H,injection,regular,8,B,18,None
-0.583,303,4,Male,Other,CSP55,Private+trip to office,58,0,50,sedan,H,injection,regular,7,M1,11,None
-0.333,383,11,Male,Other,CSP1,Private+trip to office,55,1,50,sedan,L,injection,regular,9,H,7,Collective garage
-0.833,132,0,Male,Alone,CSP55,Private,30,0,57,sedan,K,direct injection overpowered,diesel,7,M1,13,Collective garage
-0.586,101,2,Female,Alone,CSP50,Private,28,0,90,sedan,E,injection,regular,4,B,12,None
-0.321,196,8,Male,Other,CSP50,Private+trip to office,38,0,58,sedan,F,injection,regular,6,B,13,None
-0.663,291,8,Female,Other,CSP50,Private+trip to office,47,0,90,sedan,E,injection,regular,4,B,18,None
-0.467,305,2,Male,Other,CSP48,Professional,51,0,76,van,N,direct injection overpowered,diesel,4,0,17,None
-0.566,452,3,Male,Other,CSP1,Professional,55,0,50,sedan,I,injection,regular,9,B,14,None
-0.563,222,3,Female,Alone,CSP42,Private+trip to office,36,0,50,sedan,D,injection,regular,4,A,12,Collective garage
-0.467,452,8,Male,Other,CSP50,Professional,56,0,60,cabriolet,J,injection,regular,5,M1,17,None
-0.375,295,3,Male,Other,CSP50,Private+trip to office,42,0,52,microvan,J,injection,regular,5,M1,12,None
-0.756,224,0,Male,Other,CSP50,Private+trip to office,37,0,50,sedan,L,direct injection overpowered,diesel,6,M2,13,None
-0.333,196,1,Male,Other,CSP50,Professional,38,0,62,van,J,injection,diesel,2,0,16,None
-0.791,600,8,Male,Other,CSP60,Private,71,0,50,sedan,H,injection,diesel,5,M1,13,None
-0.916,551,4,Female,Other,CSP60,Private,65,0,50,sedan,F,injection,regular,4,B,17,None
-0.916,166,8,Male,Other,CSP50,Private,41,0,64,other microvan,M,injection overpowered,diesel,4,H,17,None
-1.0,122,8,Female,Other,CSP50,Private+trip to office,28,0,68,sedan,G,injection,regular,5,M1,17,None
-0.796,135,6,Male,Other,CSP50,Private+trip to office,29,0,64,cabriolet,J,injection,regular,5,M1,8,None
-0.274,460,3,Male,Other,CSP60,Private,73,0,58,sedan,D,injection,regular,5,B,13,None
-0.833,76,1,Female,Alone,CSP26,Private+trip to office,24,0,95,sedan,H,direct injection overpowered,diesel,5,B,6,None
-0.333,236,2,Male,Alone,CSP42,Private+trip to office,40,0,100,sport utility vehicle,O,injection,regular,7,H,9,Collective garage
-0.967,121,4,Male,Alone,CSP50,Private+trip to office,28,0,100,sedan,M,injection,regular,9,M2,16,None
-0.849,273,11,Male,Other,CSP48,Professional,40,0,51,sedan,M,injection,regular,10,M1,7,None
-0.749,215,4,Female,Other,CSP66,Private+trip to office,36,1,50,sedan,I,injection,regular,7,B,20,None
-0.916,183,6,Female,Other,CSP1,Professional,40,0,85,sedan,K,injection,regular,8,M2,14,None
-0.825,392,0,Female,Other,CSP50,Private+trip to office,64,0,64,sedan,K,injection,regular,6,M1,13,None
-0.916,93,3,Male,Other,CSP42,Private,59,0,100,cabriolet,V,injection,regular,10,H,4,Private garage
-0.689,345,0,Female,Other,CSP55,Private+trip to office,47,0,68,station wagon,J,direct injection overpowered,diesel,7,M1,15,Collective garage
-0.478,132,2,Male,Other,CSP50,Private+trip to office,29,0,72,station wagon,M,direct injection overpowered,diesel,9,M2,15,None
-0.499,358,2,Male,Other,CSP50,Professional,51,0,50,van,H,direct injection overpowered,diesel,3,M1,18,None
-0.532,447,11,Female,Other,CSP55,Private+trip to office,55,1,54,sedan,G,injection,regular,6,B,17,None
-0.333,403,2,Male,Other,CSP48,Professional,52,0,50,other microvan,P,direct injection overpowered,diesel,7,H,3,Collective garage
-0.497,581,8,Female,Alone,CSP60,Private,67,0,50,sedan,D,injection,regular,3,A,6,None
-0.5,224,3,Male,Other,OTHER,Professional,53,0,72,van,L,direct injection overpowered,diesel,3,0,19,None
-0.163,115,0,Female,Other,CSP50,Private+trip to office,30,0,60,microvan,L,direct injection overpowered,diesel,7,M1,19,Private garage
-0.916,398,1,Male,Other,CSP50,Private+trip to office,51,0,50,sedan,H,injection,regular,8,B,16,None
-0.91,292,3,Male,Other,CSP46,Professional,44,0,50,microvan,L,direct injection overpowered,diesel,6,M1,19,None
-0.416,86,8,Male,Other,CSP50,Private+trip to office,25,0,95,sedan,E,injection,diesel,4,B,13,None
-0.756,161,1,Male,Other,CSP50,Professional,31,0,50,sedan,J,direct injection overpowered,diesel,7,M1,15,None
-0.665,500,6,Male,Other,CSP49,Professional,61,0,50,van,G,injection,diesel,2,M1,11,None
-0.691,129,4,Male,Other,CSP50,Professional run,28,0,58,sedan,N,injection overpowered,regular,9,H,17,None
-0.076,461,2,Male,Other,CSP50,Private+trip to office,56,1,50,sedan,F,injection,regular,4,B,16,None
-0.994,84,0,Male,Alone,CSP50,Private,26,0,100,sedan,I,injection,regular,7,B,15,None
-0.75,121,2,Male,Other,CSP50,Private+trip to office,29,0,64,sport utility vehicle,R,direct injection overpowered,diesel,7,H,12,Collective garage
-0.833,177,11,Male,Alone,CSP50,Private+trip to office,33,0,50,coupe,P,injection,regular,10,M2,8,Collective garage
-0.3,449,1,Female,Other,CSP66,Private+trip to office,55,0,50,sedan,K,direct injection overpowered,diesel,6,B,9,None
-0.151,196,2,Male,Other,CSP50,Professional,34,0,62,station wagon,K,injection,regular,8,M2,9,None
-0.226,161,3,Female,Other,CSP50,Private+trip to office,32,0,85,sedan,E,injection,regular,4,A,9,None
-0.169,492,0,Male,Other,CSP50,Private+trip to office,59,0,54,sedan,G,injection,regular,5,A,16,None
-0.75,430,1,Male,Other,CSP50,Professional,57,0,61,sedan,O,injection,regular,10,M2,7,Private garage
-0.74,448,0,Female,Other,CSP55,Private+trip to office,56,0,50,sedan,G,injection,regular,5,B,13,None
-0.908,110,4,Male,Alone,CSP50,Professional,28,0,72,other microvan,K,injection,regular,8,M1,15,None
-0.499,114,1,Female,Alone,CSP50,Private,42,0,95,sedan,I,direct injection overpowered,diesel,6,B,14,None
-0.814,254,3,Female,Other,CSP50,Private,39,0,59,microvan,Q,injection,regular,9,H,7,Private garage
-0.5,176,4,Female,Other,CSP50,Private,41,0,85,sedan,E,injection,regular,4,B,11,None
-1.0,169,0,Male,Alone,CSP66,Professional,32,0,52,station wagon,Q,direct injection overpowered,diesel,9,M2,16,Private garage
-0.916,357,4,Male,Other,CSP55,Private+trip to office,50,0,50,station wagon,I,direct injection overpowered,diesel,4,M1,16,None
-0.299,154,1,Female,Other,CSP37,Private,34,1,52,sedan,G,injection,regular,5,A,11,Collective garage
-0.833,93,6,Male,Other,CSP1,Professional,26,0,72,sedan,I,injection,regular,7,M1,17,None
-0.583,238,8,Female,Other,CSP50,Private+trip to office,38,0,80,sedan,F,injection,regular,5,B,17,None
-0.456,162,4,Male,Alone,CSP50,Private,37,0,72,sedan,K,direct injection overpowered,diesel,6,M2,20,None
-0.5,385,5,Female,Other,CSP50,Private+trip to office,50,0,50,sedan,K,injection overpowered,diesel,6,M2,6,None
-0.48,160,2,Male,Other,CSP55,Private+trip to office,31,0,60,station wagon,L,direct injection overpowered,diesel,8,M1,14,None
-0.55,354,6,Male,Other,CSP60,Private,61,0,50,sedan,J,injection,regular,8,M2,14,None
-0.916,134,4,Male,Other,CSP50,Private,30,0,76,sedan,H,injection,diesel,4,B,12,None
-0.916,386,0,Male,Other,CSP50,Private+trip to office,50,0,50,sport utility vehicle,N,direct injection overpowered,diesel,5,M2,7,None
-0.299,314,4,Female,Other,CSP55,Private+trip to office,46,0,50,sedan,M,injection,regular,8,M2,7,None
-0.833,635,2,Male,Other,CSP60,Private,80,0,50,sedan,K,injection,regular,9,M2,15,Private garage
-0.833,178,1,Female,Other,CSP50,Private,33,0,58,sedan,L,direct injection overpowered,diesel,7,M1,19,None
-0.833,272,2,Male,Other,CSP42,Professional,41,0,50,sedan,I,direct injection overpowered,diesel,6,B,20,None
-0.882,378,1,Female,Other,CSP60,Private,58,0,50,sedan,J,injection,regular,6,M1,17,None
-0.416,168,2,Female,Other,CSP55,Private,32,0,90,cabriolet,I,injection,regular,8,B,14,None
-0.499,354,6,Male,Other,CSP50,Professional,47,0,55,sedan,U,injection,regular,10,H,16,Collective garage
-1.0,336,4,Male,Other,CSP46,Professional,46,0,50,van,E,injection,diesel,4,B,20,None
-0.349,134,3,Male,Alone,CSP50,Private,31,0,85,sedan,K,injection,regular,8,M1,18,Collective garage
-0.161,443,6,Male,Other,CSP60,Private,65,0,50,sedan,E,injection,regular,4,B,10,Collective garage
-0.166,380,5,Female,Other,CSP50,Private+trip to office,51,0,50,coupe,F,injection overpowered,regular,2,A,20,None
-0.916,446,4,Male,Other,CSP50,Private,55,0,52,sedan,P,injection,regular,10,H,5,Private garage
-0.833,539,5,Male,Other,CSP60,Private,63,0,50,sedan,F,injection,regular,4,B,9,None
-0.75,633,1,Male,Other,CSP60,Private,77,0,50,bus,K,injection,regular,8,M1,14,Private garage
-1.0,502,1,Male,Other,CSP50,Private,61,0,50,sedan,G,injection,regular,6,B,16,None
-1.0,290,4,Female,Other,CSP50,Private+trip to office,45,0,51,station wagon,N,injection,regular,7,M2,11,None
-0.166,355,5,Male,Other,CSP42,Professional run,47,0,61,van,J,injection,diesel,2,0,18,None
-0.444,300,6,Male,Other,CSP55,Private+trip to office,47,0,50,sport utility vehicle,K,injection,regular,6,H,8,None
-0.45,215,0,Male,Other,CSP50,Professional,35,0,51,van,J,direct injection overpowered,diesel,3,M1,12,None
-0.552,556,11,Male,Other,CSP60,Private,67,1,50,sedan,Q,injection,regular,9,H,5,Collective garage
-0.939,195,0,Male,Other,CSP50,Private+trip to office,34,0,68,station wagon,N,direct injection overpowered,diesel,8,M2,14,None
-0.333,277,0,Female,Other,CSP1,Professional,46,0,50,microvan,M,direct injection overpowered,diesel,8,M1,15,None
-0.683,36,2,Female,Alone,CSP26,Private+trip to office,22,0,90,sedan,E,injection,regular,4,B,17,None
-0.666,211,0,Male,Other,CSP50,Private,37,0,90,sedan,L,injection,regular,9,M2,5,Collective garage
-0.394,11,3,Female,Alone,CSP50,Private+trip to office,20,0,100,cabriolet,H,injection overpowered,regular,2,A,11,None
-0.583,157,2,Male,Other,CSP50,Professional,31,0,51,station wagon,I,direct injection overpowered,diesel,7,B,17,None
-0.764,275,1,Female,Other,CSP55,Private+trip to office,46,0,55,sedan,L,direct injection overpowered,diesel,9,M1,6,None
-0.666,134,3,Male,Alone,CSP50,Private+trip to office,29,0,58,sedan,F,injection,regular,6,B,12,None
-0.982,168,0,Male,Alone,CSP50,Private,33,0,51,sedan,F,injection,regular,5,A,15,None
-0.807,190,2,Female,Other,CSP50,Private+trip to office,36,0,58,other microvan,K,direct injection overpowered,diesel,6,M1,17,None
+0.416,213,6,Female,Other,CSP50,Private+trip to office,36,0,50,sedan,I,injection,regular,5,B,16,None
+1.0,112,0,Male,Alone,CSP55,Private,27,0,64,sedan,G,injection,regular,4,A,14,Private garage
+0.833,76,1,Female,Alone,CSP26,Private+trip to office,24,0,95,sedan,H,direct injection overpowered,diesel,4,B,6,None
+0.875,310,0,Female,Alone,CSP50,Private+trip to office,44,0,50,sedan,F,injection,regular,4,B,14,None
+0.75,262,0,Female,Other,CSP50,Private+trip to office,40,0,55,other microvan,H,injection,regular,5,M1,6,None
+0.945,103,0,Female,Alone,CSP50,Private+trip to office,27,0,76,sedan,F,injection,regular,4,A,3,None
+0.583,402,5,Female,Other,CSP55,Private+trip to office,56,0,50,sport utility vehicle,L,injection,regular,4,H,13,None
+0.848,368,3,Male,Other,OTHER,Professional,49,0,50,station wagon,I,injection,diesel,3,M1,11,Collective garage
+0.916,570,0,Male,Other,CSP60,Private,67,0,50,sedan,S,direct injection overpowered,diesel,9,H,18,Private garage
+0.35,145,3,Female,Alone,CSP50,Professional,30,0,51,sedan,H,direct injection overpowered,diesel,4,B,5,None
+0.967,121,4,Male,Alone,CSP50,Private+trip to office,28,0,100,sedan,M,injection,regular,8,M2,16,None
+0.314,519,1,Male,Other,CSP50,Private,62,0,50,sport utility vehicle,U,injection,regular,9,H,7,Private garage
+0.381,319,0,Female,Other,CSP50,Private+trip to office,45,0,50,sedan,L,injection,regular,5,B,17,None
+0.397,156,0,Female,Other,CSP50,Private+trip to office,31,0,54,cabriolet,M,injection,regular,8,M1,8,Collective garage
+0.5,746,6,Male,Other,CSP60,Private,81,0,51,sedan,M,injection,diesel,5,M2,16,Collective garage
+1.0,206,3,Female,Other,CSP50,Private+trip to office,36,0,50,sedan,E,injection,regular,2,A,16,None
+0.916,177,3,Female,Alone,CSP50,Professional,36,0,100,sedan,H,direct injection overpowered,diesel,5,B,16,None
+0.683,81,1,Male,Alone,CSP26,Private+trip to office,26,0,95,sedan,M,direct injection overpowered,diesel,8,M1,13,Collective garage
+0.889,766,0,Female,Other,CSP60,Private,83,1,59,sedan,H,injection,regular,4,B,17,None
+0.405,1,0,Female,Alone,CSP26,Private+trip to office,19,0,100,sedan,F,injection,regular,4,A,11,None
+0.75,121,6,Male,Other,CSP50,Private,29,0,90,other microvan,J,injection,regular,4,M1,19,None
+0.11,49,5,Female,Alone,CSP26,Private+trip to office,23,0,80,sedan,I,injection,regular,3,M2,16,Collective garage
+0.833,446,4,Male,Other,CSP50,Private,55,0,50,sedan,I,injection,regular,6,M1,6,Private garage
+0.25,277,0,Male,Other,CSP50,Professional,41,0,50,microvan,P,injection,regular,9,H,9,Collective garage
+0.2,482,2,Male,Other,CSP50,Professional,60,0,50,sedan,M,direct injection overpowered,diesel,7,H,12,Collective garage
+0.321,194,3,Male,Other,CSP50,Private+trip to office,34,1,68,microvan,J,injection,regular,6,M1,15,Collective garage
+0.333,354,1,Male,Other,CSP42,Private+trip to office,47,0,100,sedan,E,injection,regular,3,B,14,None
+0.583,206,1,Male,Other,CSP1,Private+trip to office,35,0,85,sedan,I,injection,regular,6,B,11,None
+0.689,425,1,Male,Other,CSP50,Professional,68,0,50,other microvan,K,direct injection overpowered,diesel,5,M1,15,None
+0.333,245,1,Female,Alone,CSP50,Private+trip to office,39,1,68,sedan,E,injection,regular,3,B,16,None
+0.789,501,6,Male,Other,CSP42,Private+trip to office,60,0,50,van,L,injection,diesel,1,0,1,None
+0.893,371,6,Female,Alone,CSP50,Private+trip to office,50,0,50,coupe,I,injection,regular,6,M1,15,None
+0.076,230,3,Female,Other,CSP55,Private+trip to office,38,0,147,other microvan,J,injection,regular,5,M1,16,None
+0.688,48,4,Female,Alone,CSP50,Professional,22,0,95,sedan,F,injection,regular,2,A,19,None
+0.249,668,11,Male,Other,CSP60,Private,82,1,50,sedan,N,injection,regular,6,M2,16,Collective garage
+0.829,450,2,Female,Other,CSP1,Professional,55,0,90,sedan,F,injection,regular,3,B,16,None
+0.833,259,0,Male,Other,CSP42,Professional,39,0,50,microvan,P,direct injection overpowered,diesel,6,H,15,Collective garage
+0.102,200,5,Male,Other,CSP50,Private+trip to office,37,0,76,microvan,O,direct injection overpowered,diesel,5,H,20,None
+0.833,156,0,Male,Alone,CSP50,Private+trip to office,31,0,100,sedan,F,injection,regular,2,A,5,Private garage
+0.689,83,5,Male,Other,CSP26,Private+trip to office,25,0,80,sedan,E,injection,diesel,3,B,1,None
+0.583,81,1,Male,Alone,CSP50,Private+trip to office,26,1,95,sedan,K,direct injection overpowered,diesel,6,M1,20,Collective garage
+0.56,112,2,Male,Other,CSP50,Private,34,0,95,station wagon,E,injection,regular,4,M1,19,Collective garage
+0.974,252,2,Male,Alone,CSP50,Professional,39,0,50,van,F,injection,diesel,4,B,9,Collective garage
+0.438,482,8,Male,Other,CSP50,Private+trip to office,60,0,50,sedan,K,injection overpowered,diesel,6,M2,12,None
+0.583,455,3,Female,Other,CSP50,Private,56,0,50,other microvan,K,injection,regular,6,M1,8,None
+0.5,408,11,Male,Other,CSP50,Private+trip to office,54,0,50,sedan,F,injection,diesel,3,B,20,None
+0.3,449,1,Female,Other,CSP66,Private+trip to office,55,0,50,sedan,K,direct injection overpowered,diesel,5,B,9,None
+0.749,166,8,Female,Alone,CSP1,Professional,34,0,57,sedan,I,direct injection overpowered,diesel,5,M1,18,None
+0.907,192,6,Male,Alone,CSP50,Private,34,1,64,sedan,E,injection,regular,3,B,16,None
+0.967,25,0,Female,Alone,CSP50,Private+trip to office,20,0,90,sedan,J,injection,regular,7,B,2,None
+0.625,55,0,Female,Alone,CSP50,Private,37,0,95,sedan,J,direct injection overpowered,diesel,5,B,16,Collective garage
+0.629,134,0,Male,Alone,CSP50,Private+trip to office,29,0,57,sedan,J,direct injection overpowered,diesel,5,M1,16,None
+0.928,509,4,Male,Other,CSP60,Private,62,0,50,sedan,J,injection,regular,5,M1,17,None
+0.333,35,4,Female,Alone,CSP55,Private+trip to office,31,0,95,sedan,G,injection,regular,6,B,19,None
+0.367,235,2,Male,Other,CSP50,Private,37,1,70,sport utility vehicle,N,injection,regular,5,H,19,Collective garage
+0.916,488,3,Male,Other,CSP50,Private+trip to office,58,0,50,other microvan,K,direct injection overpowered,diesel,3,M2,8,Collective garage
+0.502,434,6,Male,Other,CSP50,Private+trip to office,54,0,76,sedan,I,injection,regular,5,M1,7,None
+0.758,400,6,Female,Alone,CSP50,Private+trip to office,57,1,50,sedan,E,injection,regular,2,A,16,None
+0.531,224,6,Female,Other,CSP50,Private+trip to office,38,0,80,sedan,E,injection,regular,3,B,9,None
+0.803,44,1,Male,Alone,CSP26,Private+trip to office,21,0,125,sedan,J,injection,regular,7,B,15,Collective garage
+0.666,78,1,Male,Alone,CSP26,Private+trip to office,25,0,85,sedan,E,injection,regular,4,A,1,None
+0.983,297,3,Female,Other,CSP50,Private+trip to office,56,0,50,sedan,G,injection,regular,4,B,17,None
+0.592,141,3,Male,Other,CSP50,Private+trip to office,34,0,67,other microvan,N,direct injection overpowered,diesel,4,H,10,None
+0.043,244,2,Female,Alone,CSP50,Private+trip to office,38,0,60,sedan,J,injection,regular,6,0,16,Private garage
+0.467,452,8,Male,Other,CSP50,Professional,56,0,60,cabriolet,J,injection,regular,4,M1,17,None
+0.502,103,2,Male,Other,CSP50,Private+trip to office,27,0,85,sedan,D,injection,regular,3,A,13,None
+0.249,162,5,Male,Other,CSP50,Professional,31,0,68,sedan,L,direct injection overpowered,diesel,7,M2,5,None
+0.788,126,4,Male,Alone,CSP1,Professional,30,0,57,sedan,E,injection,regular,4,B,9,None
+0.083,230,0,Male,Other,CSP50,Professional run,39,0,86,sedan,K,direct injection overpowered,diesel,7,M1,10,None
+1.0,446,2,Male,Other,CSP50,Private+trip to office,55,0,50,sedan,D,injection,regular,3,A,20,None
+0.5,379,3,Female,Other,CSP50,Professional,51,0,55,sedan,J,injection,regular,3,M2,15,None
+0.792,760,0,Male,Other,CSP60,Private,82,0,50,sedan,J,injection,regular,7,M1,16,None
+0.545,121,3,Female,Other,CSP50,Private+trip to office,29,0,60,sedan,M,injection,regular,8,M1,8,None
+0.833,418,3,Male,Other,CSP66,Professional,53,0,50,sedan,K,injection,regular,7,B,2,None
+0.5,666,2,Male,Other,CSP60,Private,73,0,50,sedan,N,direct injection overpowered,diesel,8,M2,11,Collective garage
+0.467,312,0,Male,Other,CSP48,Private+trip to office,45,0,54,sedan,S,injection,regular,9,H,13,Private garage
+0.961,231,2,Female,Alone,CSP50,Professional,39,0,50,sedan,E,injection,regular,4,B,15,None
+0.938,375,0,Female,Other,CSP50,Professional,60,0,50,sport utility vehicle,S,injection,regular,8,H,6,Private garage
+0.696,249,5,Male,Other,CSP1,Professional,39,0,102,station wagon,M,injection,regular,7,M2,18,None
+0.525,281,0,Female,Other,CSP50,Private+trip to office,41,0,50,sedan,I,injection,diesel,4,B,12,None
+0.583,224,3,Female,Alone,CSP50,Private+trip to office,36,0,68,sedan,D,injection,regular,4,B,14,None
+0.583,476,2,Male,Alone,CSP26,Private+trip to office,61,0,80,sedan,H,injection,regular,6,B,12,None
+0.5,82,0,Male,Alone,CSP46,Professional,32,0,76,van,I,direct injection overpowered,diesel,4,M1,19,None
+0.705,308,4,Female,Alone,CSP1,Professional,47,0,50,sedan,H,injection,regular,6,B,16,None
+0.483,295,6,Male,Other,CSP60,Private,66,0,67,station wagon,N,injection,regular,6,M2,16,None
+1.0,196,5,Female,Alone,CSP50,Private+trip to office,34,0,57,sedan,E,injection,regular,3,B,18,None
+0.867,128,5,Female,Other,CSP55,Private+trip to office,31,0,90,sedan,D,injection,regular,3,A,14,None
+0.17,393,1,Male,Other,CSP50,Professional,51,0,50,van,G,direct injection overpowered,diesel,2,M1,13,None
+0.833,425,2,Male,Other,CSP50,Private,77,1,50,coupe,C,injection overpowered,regular,1,A,7,None
+0.708,132,0,Male,Other,CSP50,Private,30,0,54,sedan,I,injection,regular,7,B,14,None
+0.71,700,2,Male,Other,CSP60,Private,81,0,50,sedan,F,injection,regular,4,B,15,None
+0.749,406,1,Male,Other,CSP55,Private+trip to office,52,0,95,sedan,K,injection,regular,7,M2,17,None
+0.666,66,2,Male,Other,CSP50,Private+trip to office,23,0,76,sedan,G,direct injection overpowered,diesel,4,B,17,None
+0.166,295,5,Male,Other,CSP49,Professional,42,0,80,sport utility vehicle,R,injection,regular,5,H,15,Collective garage
+0.889,200,2,Male,Other,CSP50,Private+trip to office,36,0,50,sedan,J,injection,regular,4,B,3,None
+0.25,450,1,Female,Other,CSP60,Private,65,0,62,sedan,OTHER,carburation,regular,2,B,20,None
+0.583,142,0,Male,Alone,CSP50,Private+trip to office,33,0,95,sedan,M,direct injection overpowered,diesel,8,M1,13,Collective garage
+1.0,359,2,Male,Alone,CSP50,Professional,50,0,50,cabriolet,OTHER,injection,regular,9,H,7,Collective garage
+0.807,190,2,Female,Other,CSP50,Private+trip to office,36,0,58,other microvan,K,direct injection overpowered,diesel,5,M1,17,None
+0.235,110,4,Male,Alone,CSP55,Private+trip to office,27,0,64,coupe,L,injection,regular,8,M2,8,Collective garage
+0.829,440,1,Male,Other,CSP50,Private+trip to office,56,0,50,cabriolet,I,injection,regular,7,B,8,Collective garage
+0.833,255,1,Male,Other,CSP50,Private+trip to office,39,0,54,cabriolet,P,injection,regular,9,M2,9,Collective garage
+0.482,150,1,Male,Other,CSP50,Private+trip to office,37,0,90,other microvan,L,direct injection overpowered,diesel,6,M2,7,None
+0.416,307,0,Male,Other,CSP50,Professional,44,0,68,sedan,H,direct injection overpowered,diesel,4,B,18,Private garage
+0.499,249,2,Male,Other,CSP50,Private+trip to office,42,0,54,other microvan,L,direct injection overpowered,diesel,4,M1,19,Collective garage
+0.827,232,5,Female,Other,CSP49,Professional,40,0,55,sedan,K,injection,regular,6,B,6,Collective garage
+0.833,297,0,Male,Alone,CSP50,Private,44,0,72,sedan,H,direct injection overpowered,diesel,4,B,20,None
+0.916,52,0,Male,Alone,CSP50,Private+trip to office,23,0,100,sedan,E,injection,regular,5,M1,19,None
+0.499,415,3,Male,Other,CSP55,Private,56,0,72,sedan,G,injection,diesel,4,M1,16,None
+0.833,96,4,Male,Alone,CSP55,Private,27,1,80,sedan,J,direct injection overpowered,diesel,7,M1,19,Collective garage
+0.39,313,2,Male,Alone,CSP50,Private,50,0,50,other microvan,K,injection,regular,5,M1,13,None
+0.289,448,0,Male,Other,CSP1,Professional,57,0,50,sedan,P,direct injection overpowered,diesel,8,H,7,None
+0.577,114,5,Male,Other,CSP50,Professional,32,0,76,van,L,direct injection overpowered,diesel,2,0,10,None
+0.469,360,8,Female,Alone,OTHER,Professional,50,0,50,sedan,D,injection,regular,3,B,16,None
+0.428,616,3,Male,Other,CSP60,Private,69,0,50,coupe,J,injection,regular,7,M1,4,None
+0.583,109,8,Male,Alone,CSP50,Private+trip to office,27,0,72,sedan,F,injection,diesel,3,B,18,None
+0.75,173,1,Male,Alone,CSP55,Private,33,0,100,sedan,Q,injection,regular,9,H,8,Collective garage
+0.729,421,3,Male,Other,CSP50,Private+trip to office,55,0,50,sedan,M,injection,regular,7,M2,16,None
+0.583,90,6,Male,Alone,CSP50,Professional,26,0,76,sedan,E,injection,regular,3,B,15,None
+0.673,480,11,Female,Other,CSP50,Private,60,0,50,sedan,N,injection,diesel,3,M2,20,None
+0.833,410,4,Female,Other,CSP50,Private+trip to office,54,0,62,sport utility vehicle,N,injection overpowered,diesel,4,H,9,None
+0.833,225,1,Female,Other,CSP46,Private,38,0,50,other microvan,K,injection,regular,5,M1,9,None
+0.392,89,4,Male,Alone,CSP50,Private+trip to office,25,0,80,sedan,N,direct injection overpowered,diesel,8,M2,20,None
+0.666,476,2,Female,Other,CSP60,Private,58,0,112,coupe,O,direct injection overpowered,diesel,8,M2,5,Collective garage
+0.663,214,3,Male,Other,CSP50,Private,40,0,76,sport utility vehicle,P,direct injection overpowered,diesel,8,M2,17,Private garage
+0.583,274,6,Male,Other,CSP50,Professional,41,0,71,van,M,injection,diesel,10,0,17,None
+1.0,579,0,Female,Other,CSP60,Private,67,0,50,sedan,K,direct injection overpowered,diesel,6,M1,17,Collective garage
+0.505,314,2,Male,Other,CSP50,Professional,44,0,50,sedan,J,injection,regular,5,B,16,None
+0.416,624,4,Male,Other,CSP42,Private+trip to office,73,0,50,sedan,H,injection,regular,5,M1,2,None
+0.375,295,3,Male,Other,CSP50,Private+trip to office,42,0,52,microvan,J,injection,regular,4,M1,12,None
+0.833,199,1,Male,Other,CSP50,Private+trip to office,35,0,51,station wagon,I,direct injection overpowered,diesel,3,M1,18,None
+0.536,389,3,Male,Other,CSP60,Private,62,0,50,sedan,OTHER,injection,regular,9,H,6,Private garage
+0.166,277,0,Male,Other,CSP42,Professional run,42,0,50,station wagon,K,direct injection overpowered,diesel,3,0,19,None
+0.275,199,2,Male,Other,CSP50,Professional,34,0,54,coupe,C,injection overpowered,regular,1,A,15,None
+0.714,411,3,Male,Other,CSP50,Private,56,0,50,other microvan,L,direct injection overpowered,diesel,5,M2,16,None
+0.818,337,8,Male,Other,CSP50,Private+trip to office,49,0,55,other microvan,N,injection overpowered,diesel,5,H,14,None
+0.845,306,3,Male,Other,CSP50,Private,59,0,50,microvan,O,injection,regular,6,H,4,Collective garage
+0.706,136,0,Male,Alone,CSP1,Professional,29,0,64,cabriolet,K,injection overpowered,regular,5,A,3,Collective garage
+0.226,161,3,Female,Other,CSP50,Private+trip to office,32,0,85,sedan,E,injection,regular,3,A,9,None
+0.456,162,4,Male,Alone,CSP50,Private,37,0,72,sedan,K,direct injection overpowered,diesel,5,M2,20,None
+0.583,313,6,Male,Other,CSP42,Private,47,0,85,station wagon,I,injection,diesel,2,M1,10,None
+0.631,110,2,Female,Alone,CSP50,Private,27,0,95,sedan,E,injection,regular,4,A,15,None
+0.908,110,4,Male,Alone,CSP50,Professional,28,0,72,other microvan,K,injection,regular,7,M1,15,None
+0.823,219,0,Male,Other,CSP50,Private+trip to office,36,0,54,sedan,G,direct injection overpowered,diesel,4,B,16,None
+0.355,263,2,Female,Other,CSP42,Professional run,46,0,72,sedan,J,injection,regular,4,B,6,None
+0.435,159,5,Male,Alone,CSP26,Private+trip to office,33,0,68,sedan,G,injection,diesel,3,B,18,None
+0.833,647,2,Male,Other,CSP60,Private,76,0,50,sedan,C,injection,regular,2,A,17,Private garage
+0.083,88,1,Female,Alone,CSP50,Private+trip to office,27,0,95,sedan,I,direct injection overpowered,diesel,5,B,12,Collective garage
+0.249,292,1,Female,Other,CSP37,Private,41,0,95,sedan,F,injection,regular,4,A,10,None
+0.457,314,1,Female,Other,CSP50,Private+trip to office,45,0,85,sport utility vehicle,M,injection,regular,6,M2,12,None
+0.83,192,3,Male,Alone,CSP50,Professional,35,0,76,cabriolet,R,injection,regular,9,M2,2,Collective garage
+0.428,252,0,Female,Other,CSP50,Private,40,0,54,other microvan,L,injection,regular,6,M1,20,None
+0.564,258,0,Male,Other,CSP42,Professional,40,0,55,sedan,L,direct injection overpowered,diesel,6,M1,15,None
+0.916,386,0,Male,Other,CSP50,Private+trip to office,50,0,50,sport utility vehicle,N,direct injection overpowered,diesel,4,M2,7,None
+0.611,53,0,Female,Alone,CSP50,Private+trip to office,26,0,80,cabriolet,K,injection,regular,8,B,17,None
+0.564,557,0,Male,Other,CSP60,Private,73,0,50,coupe,Q,injection,regular,9,M2,7,Private garage
+0.165,358,6,Female,Alone,CSP50,Professional,47,0,50,sedan,D,injection,regular,3,A,17,None
+0.5,167,4,Female,Other,CSP50,Private+trip to office,34,0,80,sedan,J,injection,regular,7,M1,20,Collective garage
+0.756,224,0,Male,Other,CSP50,Private+trip to office,37,0,50,sedan,L,direct injection overpowered,diesel,5,M2,13,None
+0.836,277,1,Male,Alone,CSP55,Private+trip to office,43,0,50,sedan,E,injection,regular,4,B,15,None
+1.0,373,4,Male,Other,CSP55,Professional,56,0,52,other microvan,K,injection,regular,5,M1,15,None
+1.0,197,2,Female,Other,CSP50,Professional,42,0,50,sedan,F,injection,regular,5,B,16,Private garage
+0.178,394,0,Female,Other,CSP50,Private+trip to office,51,0,50,microvan,M,direct injection overpowered,diesel,6,M1,5,None
+0.333,162,3,Male,Other,CSP50,Private+trip to office,32,0,57,sedan,M,direct injection overpowered,diesel,7,M1,15,Collective garage
+0.75,371,1,Male,Other,CSP50,Professional run,49,0,50,sedan,L,direct injection overpowered,diesel,7,M2,3,None
+0.177,446,6,Male,Other,CSP50,Private,59,0,132,sedan,I,injection,diesel,4,M1,15,None
+0.749,316,1,Male,Other,CSP50,Professional,45,0,50,sport utility vehicle,L,injection,regular,6,M2,11,None
+0.244,122,6,Male,Alone,CSP50,Private+trip to office,28,0,76,sedan,H,injection,regular,5,M1,19,None
+1.0,535,8,Male,Other,CSP1,Private,63,0,50,other microvan,N,injection,regular,4,H,5,None
+0.407,70,5,Male,Other,CSP50,Professional,35,0,76,cabriolet,L,injection,regular,7,M1,2,None
+0.583,72,2,Female,Other,CSP50,Private+trip to office,37,0,95,sedan,G,injection,diesel,4,B,13,Private garage
+0.444,68,2,Female,Alone,CSP26,Private+trip to office,24,0,76,cabriolet,E,injection overpowered,regular,1,A,16,None
+0.95,37,6,Female,Alone,CSP50,Private+trip to office,36,1,100,sedan,E,injection,regular,4,B,15,None
+0.583,443,3,Female,Alone,CSP37,Private,57,0,50,sedan,M,injection,regular,8,M2,11,Private garage
+0.662,117,5,Female,Other,CSP50,Private+trip to office,28,1,60,sedan,J,injection,regular,4,B,13,None
+0.308,93,4,Male,Other,CSP50,Private+trip to office,25,0,85,sedan,L,direct injection overpowered,diesel,5,B,17,None
+0.916,96,1,Male,Other,CSP55,Private,34,0,76,sedan,K,injection,regular,8,M1,8,None
+1.0,588,1,Male,Other,CSP60,Private,67,0,50,sedan,Q,direct injection overpowered,diesel,9,H,16,Private garage
+0.278,252,4,Male,Alone,CSP50,Private+trip to office,39,0,50,sedan,E,injection,regular,4,B,12,None
+0.718,280,2,Male,Other,CSP50,Professional,41,0,50,sedan,J,injection,regular,7,B,17,Collective garage
+0.867,335,0,Female,Other,CSP50,Professional,51,0,50,station wagon,I,direct injection overpowered,diesel,3,M1,20,None
+0.916,308,5,Male,Other,CSP48,Professional,54,0,50,van,H,direct injection overpowered,diesel,2,M1,10,None
+0.75,199,4,Female,Alone,CSP50,Private+trip to office,38,0,90,sedan,E,injection,regular,2,A,13,None
+0.333,567,8,Male,Other,CSP60,Private,65,1,50,sedan,G,injection,regular,5,B,17,None
+0.292,421,0,Male,Other,CSP50,Professional,58,0,66,bus,K,injection,regular,6,M1,4,None
+0.516,244,6,Female,Other,CSP55,Private+trip to office,39,0,51,sedan,D,injection,regular,3,A,10,None
+0.833,174,0,Male,Alone,CSP50,Professional run,32,0,80,station wagon,K,direct injection overpowered,diesel,6,M1,11,None
+0.583,201,4,Male,Alone,CSP55,Private+trip to office,39,0,50,microvan,J,injection,regular,6,M1,8,Collective garage
+0.916,331,0,Male,Other,CSP50,Private+trip to office,48,0,50,microvan,L,injection,regular,7,M1,6,None
+0.333,217,2,Male,Alone,CSP50,Private+trip to office,36,0,95,sedan,J,direct injection overpowered,diesel,6,M1,18,Private garage
+0.491,421,6,Female,Other,CSP50,Private+trip to office,53,0,50,sedan,E,injection,regular,3,A,17,None
+0.75,407,0,Male,Other,CSP50,Professional,52,0,50,other microvan,N,direct injection overpowered,diesel,5,H,19,Collective garage
+0.546,288,3,Female,Other,CSP50,Private+trip to office,43,0,50,coupe,C,injection overpowered,regular,1,A,9,None
+1.0,430,3,Male,Other,CSP60,Private,73,0,50,sedan,P,injection,regular,8,M2,16,Collective garage
+0.882,243,4,Male,Other,CSP1,Professional,50,0,80,sedan,G,injection,regular,4,M1,13,None
+0.349,217,3,Female,Other,CSP50,Private+trip to office,48,0,60,microvan,K,direct injection overpowered,diesel,3,M2,18,Collective garage
+0.583,503,4,Female,Other,CSP60,Private,67,0,54,sedan,G,injection,regular,4,B,4,None
+0.833,204,1,Male,Alone,CSP50,Private+trip to office,35,0,50,sedan,P,direct injection overpowered,diesel,8,H,10,Collective garage
+0.794,165,1,Male,Other,CSP48,Professional,43,0,68,van,J,direct injection overpowered,diesel,2,0,14,None
+0.577,26,0,Male,Alone,OTHER,Private+trip to office,21,0,90,sedan,N,direct injection overpowered,diesel,8,M1,16,Collective garage
+0.994,84,0,Male,Alone,CSP50,Private,26,0,100,sedan,I,injection,regular,6,B,15,None
+0.916,285,4,Female,Other,CSP66,Professional,58,0,50,sedan,D,injection,regular,3,A,8,Collective garage
+0.666,427,4,Female,Other,CSP50,Private+trip to office,54,0,50,sedan,F,injection,regular,4,B,16,None
+0.833,533,2,Female,Alone,CSP60,Private,65,0,52,sedan,J,injection,regular,6,M1,14,None
+0.144,224,8,Male,Other,CSP50,Professional,40,0,68,sedan,F,injection,regular,4,M1,15,None
+0.188,196,2,Female,Other,CSP1,Professional,39,0,68,other microvan,K,injection,regular,5,M1,17,None
+0.549,544,1,Male,Other,CSP60,Private,63,0,50,sedan,L,injection,regular,7,B,8,Collective garage
+0.9,350,1,Male,Alone,CSP50,Private+trip to office,56,1,55,sedan,I,injection,regular,6,M1,15,None
+0.583,274,2,Male,Other,CSP66,Professional,42,0,95,sedan,L,direct injection overpowered,diesel,5,B,6,None
+0.666,415,2,Female,Other,CSP50,Professional,53,0,50,sedan,L,direct injection overpowered,diesel,6,0,6,None
+0.497,256,0,Male,Alone,CSP50,Private+trip to office,39,0,51,sedan,J,injection,regular,6,M1,18,None
+1.0,335,1,Male,Other,CSP66,Professional,46,0,50,sedan,M,direct injection overpowered,diesel,7,M2,18,Private garage
+0.249,356,1,Female,Other,CSP50,Private,48,0,50,sedan,J,injection,regular,6,M1,14,None
+0.833,587,0,Male,Other,CSP60,Private,70,0,50,cabriolet,L,injection,regular,7,M1,15,None
+0.25,261,2,Female,Alone,CSP50,Private,40,0,133,sedan,K,direct injection overpowered,diesel,7,M1,16,None
+0.088,214,2,Male,Other,CSP50,Private+trip to office,38,0,50,sedan,M,direct injection overpowered,diesel,8,M1,15,None
+0.666,238,3,Male,Alone,CSP50,Private,37,0,57,sedan,G,injection,regular,6,B,18,Private garage
+0.469,343,2,Female,Other,CSP50,Professional run,50,0,50,cabriolet,J,injection,regular,7,B,16,Collective garage
+0.371,200,2,Male,Other,CSP48,Private+trip to office,37,0,90,sedan,L,injection,regular,5,B,20,Collective garage
+0.916,286,3,Male,Other,CSP48,Professional,47,0,50,van,G,injection,diesel,2,M1,19,None
+0.269,71,1,Male,Other,CSP55,Professional,30,0,95,sedan,H,direct injection overpowered,diesel,4,B,13,None
+0.446,465,6,Female,Other,CSP50,Professional,59,0,50,sedan,N,injection,regular,6,M2,12,None
+0.796,135,6,Male,Other,CSP50,Private+trip to office,29,0,64,cabriolet,J,injection,regular,4,M1,8,None
+0.666,212,2,Female,Other,CSP50,Private,37,0,95,sedan,I,injection,regular,7,M1,11,None
+0.842,557,2,Male,Other,CSP50,Private+trip to office,67,0,50,cabriolet,OTHER,injection,regular,9,H,8,Collective garage
+0.499,577,5,Male,Other,CSP60,Private,74,1,50,sport utility vehicle,Q,injection,regular,8,H,17,Collective garage
+0.239,650,1,Female,Other,CSP60,Private,73,0,50,sedan,K,injection,regular,6,B,7,None
+0.942,498,0,Male,Other,CSP50,Professional,59,0,58,sedan,O,direct injection overpowered,diesel,8,M1,8,Private garage
+0.094,181,2,Female,Other,CSP50,Private+trip to office,34,0,72,microvan,N,injection overpowered,diesel,5,H,17,None
+0.666,270,2,Female,Other,CSP50,Professional,41,0,50,station wagon,Q,injection,regular,8,H,16,Private garage
+0.154,313,3,Male,Other,CSP55,Private,49,0,50,station wagon,I,direct injection overpowered,diesel,3,M1,13,None
+0.333,226,3,Male,Other,CSP42,Professional,46,0,50,station wagon,I,direct injection overpowered,diesel,4,M1,14,None
+0.583,300,1,Male,Alone,CSP50,Professional,44,0,57,sedan,O,direct injection overpowered,diesel,8,M2,15,Private garage
+0.75,212,1,Male,Other,CSP50,Private,35,0,50,sedan,L,direct injection overpowered,diesel,5,B,16,None
+0.307,152,2,Male,Other,CSP50,Private,33,1,67,microvan,L,direct injection overpowered,diesel,5,M1,11,Collective garage
+0.583,31,6,Male,Alone,CSP26,Private+trip to office,21,0,90,sedan,D,injection,regular,3,B,16,None
+0.833,136,6,Male,Other,CSP50,Private+trip to office,30,0,72,sedan,L,direct injection overpowered,diesel,6,H,13,Collective garage
+0.747,362,1,Female,Other,CSP50,Private+trip to office,51,1,50,microvan,K,injection,regular,6,M1,13,None
+0.916,291,0,Male,Other,CSP55,Private+trip to office,46,0,50,sport utility vehicle,R,injection,regular,7,H,19,Collective garage
+0.166,285,2,Female,Other,CSP50,Professional,50,0,62,sedan,F,injection,regular,5,A,16,None
+0.48,76,0,Female,Other,CSP46,Professional,28,0,85,sport utility vehicle,K,direct injection overpowered,diesel,2,M1,17,Collective garage
+0.666,115,0,Male,Alone,CSP50,Private+trip to office,33,0,60,station wagon,N,direct injection overpowered,diesel,7,M2,15,None
+1.0,511,1,Male,Other,CSP60,Private,75,0,52,sport utility vehicle,N,direct injection overpowered,diesel,3,H,5,None
+0.284,226,4,Female,Alone,CSP50,Private+trip to office,40,0,100,sedan,I,injection,regular,6,M1,10,None
+0.663,291,8,Female,Other,CSP50,Private+trip to office,47,0,90,sedan,E,injection,regular,3,B,18,None
+0.833,231,8,Male,Other,CSP1,Private+trip to office,37,0,50,other microvan,N,injection overpowered,diesel,5,H,20,None
+0.916,158,1,Male,Other,CSP50,Private+trip to office,31,0,85,station wagon,H,injection,regular,3,M1,14,None
+0.848,36,0,Male,Alone,CSP26,Private+trip to office,21,0,85,sedan,I,direct injection overpowered,diesel,5,B,7,None
+0.916,437,4,Male,Other,CSP48,Professional,54,0,50,van,I,injection,diesel,1,0,13,None
+0.25,80,3,Male,Other,CSP50,Professional,31,0,76,van,H,injection,diesel,2,M1,10,Collective garage
+0.749,102,5,Male,Alone,CSP50,Private+trip to office,27,0,76,sedan,I,injection,diesel,3,M1,15,None
+0.258,522,2,Male,Other,CSP55,Private,61,0,50,microvan,N,direct injection overpowered,diesel,6,H,16,Collective garage
+0.333,288,6,Male,Other,CSP48,Private,50,0,95,other microvan,J,injection,regular,4,M1,20,None
+0.122,428,2,Male,Other,CSP1,Professional,55,0,50,sport utility vehicle,R,direct injection overpowered,diesel,7,H,17,Collective garage
+1.0,574,2,Female,Other,CSP60,Private,68,0,50,sedan,J,injection,regular,7,B,12,None
+0.583,95,5,Male,Other,CSP1,Private,37,0,80,sedan,O,injection,regular,8,H,8,None
+0.166,565,11,Male,Other,CSP50,Private+trip to office,66,0,50,sedan,E,injection,regular,2,A,12,None
+0.916,60,3,Female,Other,CSP26,Private+trip to office,28,0,100,sedan,H,direct injection overpowered,diesel,5,B,17,Collective garage
+0.666,185,3,Male,Other,CSP50,Professional,33,0,71,sedan,G,injection,diesel,4,B,5,None
+0.782,517,5,Female,Other,CSP60,Private,63,1,50,sedan,D,injection,regular,3,A,4,None
+0.683,46,0,Female,Other,CSP50,Private,23,0,95,sedan,J,direct injection overpowered,diesel,5,B,12,Collective garage
+0.499,296,4,Male,Other,CSP50,Private+trip to office,44,0,51,sedan,P,direct injection overpowered,diesel,9,H,9,Collective garage
+0.25,72,2,Male,Other,CSP46,Professional,44,0,90,van,H,injection,diesel,2,M1,20,None
+0.299,154,1,Female,Other,CSP37,Private,34,1,52,sedan,G,injection,regular,4,A,11,Collective garage
+0.833,132,0,Male,Alone,CSP55,Private,30,0,57,sedan,K,direct injection overpowered,diesel,6,M1,13,Collective garage
+1.0,126,1,Male,Other,CSP50,Private+trip to office,29,0,57,sedan,E,injection,regular,4,A,13,None
+0.416,684,4,Male,Other,CSP48,Professional,75,0,50,sedan,G,injection,regular,6,B,15,None
+1.0,215,3,Male,Other,CSP50,Private,38,0,50,sport utility vehicle,M,injection overpowered,regular,7,H,16,Collective garage
+0.262,145,2,Male,Other,CSP50,Private+trip to office,32,0,95,other microvan,K,direct injection overpowered,diesel,5,M1,13,None
+0.75,397,2,Male,Other,CSP50,Private+trip to office,51,0,50,station wagon,R,injection,regular,9,H,7,Collective garage
+1.0,143,1,Male,Other,CSP50,Private+trip to office,30,0,68,sport utility vehicle,M,direct injection overpowered,diesel,4,M2,17,None
+0.416,268,3,Male,Other,OTHER,Professional,40,0,50,van,L,injection,diesel,1,0,2,None
+0.833,120,1,Female,Alone,CSP50,Private+trip to office,29,0,95,sedan,J,injection,regular,6,B,7,None
+0.881,504,8,Male,Other,CSP50,Private+trip to office,60,0,70,sedan,O,injection,regular,8,M2,5,None
+0.48,609,0,Male,Other,CSP60,Private,69,1,57,sport utility vehicle,O,direct injection overpowered,diesel,8,M2,16,Collective garage
+0.916,323,3,Male,Other,CSP50,Private+trip to office,45,0,50,coupe,C,injection overpowered,regular,1,A,16,Collective garage
+0.25,558,2,Male,Other,CSP60,Private,66,0,50,cabriolet,S,injection overpowered,regular,9,H,6,Collective garage
+1.0,366,2,Female,Other,CSP60,Private,74,0,58,sedan,H,injection,regular,6,B,12,None
+0.4,282,2,Female,Other,CSP50,Private,44,1,62,sport utility vehicle,M,injection,regular,5,0,17,Collective garage
+0.753,486,0,Female,Other,CSP50,Professional,59,0,100,sedan,F,injection,regular,4,A,13,None
+0.666,240,4,Male,Alone,CSP50,Private,38,0,50,coupe,C,injection overpowered,regular,1,A,10,None
+0.747,87,1,Male,Other,CSP50,Private,42,0,95,microvan,J,direct injection overpowered,diesel,5,M1,16,Private garage
+0.673,364,1,Female,Alone,CSP37,Private,49,0,95,sedan,E,injection,regular,5,B,16,None
+0.217,212,6,Female,Other,OTHER,Private+trip to office,48,0,50,sedan,D,injection,regular,2,B,15,None
+0.439,472,0,Male,Other,CSP50,Professional,61,0,52,cabriolet,M,injection,regular,8,M1,7,None
+0.773,163,4,Female,Other,CSP50,Private+trip to office,33,0,80,sedan,E,injection,regular,3,A,9,None
+0.341,294,8,Male,Other,CSP42,Professional,53,0,50,sedan,P,injection,regular,9,M2,16,None
+0.747,55,1,Female,Other,CSP50,Private,30,0,80,sedan,E,injection,regular,3,B,1,None
+0.525,549,3,Male,Other,CSP60,Private,65,0,51,coupe,P,injection,regular,9,M2,7,Collective garage
+0.75,528,1,Female,Other,CSP60,Private,64,0,50,sedan,K,direct injection overpowered,diesel,7,M2,10,None
+0.75,684,5,Male,Other,CSP60,Private,80,1,50,sedan,O,injection,regular,9,H,16,Collective garage
+1.0,178,2,Male,Other,CSP42,Professional,33,0,50,sedan,K,direct injection overpowered,diesel,7,M1,2,None
+0.499,240,2,Male,Other,CSP50,Private+trip to office,44,0,58,sedan,M,injection,regular,7,H,14,None
+0.416,218,11,Female,Other,CSP66,Private+trip to office,36,0,100,coupe,O,injection,regular,8,M2,16,Collective garage
+0.557,537,0,Female,Other,CSP50,Private+trip to office,63,0,95,sedan,H,injection,regular,5,B,16,None
+0.305,189,6,Female,Other,CSP55,Private,35,0,64,sedan,L,injection,regular,7,M2,18,None
+0.166,299,2,Female,Other,CSP55,Private+trip to office,43,0,50,sedan,D,injection,regular,3,A,12,Collective garage
+0.894,49,5,Female,Alone,CSP50,Private+trip to office,30,0,85,sedan,K,injection,regular,4,B,17,None
+0.478,31,0,Female,Alone,CSP37,Private,36,0,85,sedan,G,injection,regular,4,B,17,None
+0.75,444,4,Male,Other,CSP50,Professional,59,0,58,sedan,K,injection,regular,7,B,7,None
+0.916,161,0,Male,Other,CSP50,Private,31,0,68,microvan,M,direct injection overpowered,diesel,7,M1,12,Private garage
+0.282,233,5,Male,Other,CSP50,Private+trip to office,37,0,86,coupe,P,injection,regular,9,M2,15,Private garage
+0.633,65,2,Male,Other,CSP50,Private+trip to office,25,0,100,sedan,F,injection,regular,4,B,6,None
+0.169,492,0,Male,Other,CSP50,Private+trip to office,59,0,54,sedan,G,injection,regular,4,A,16,None
+0.249,252,0,Male,Other,CSP50,Private+trip to office,52,0,50,microvan,L,direct injection overpowered,diesel,5,M1,20,None
+0.453,582,3,Female,Other,CSP60,Private,80,0,77,sedan,H,injection,regular,6,B,16,None
+0.469,271,3,Male,Other,CSP1,Professional,42,0,50,other microvan,K,injection,regular,6,M2,16,None
+0.982,168,0,Male,Alone,CSP50,Private,33,0,51,sedan,F,injection,regular,4,A,15,None
+0.475,221,2,Male,Other,CSP48,Private,39,1,68,microvan,L,injection,regular,5,M1,18,Collective garage
+0.347,469,8,Female,Other,CSP60,Private,61,0,50,coupe,O,injection,regular,8,M2,18,None
+0.583,456,6,Female,Other,CSP48,Private+trip to office,58,0,55,sedan,OTHER,injection,regular,1,A,10,None
+0.75,602,11,Female,Other,CSP60,Private,82,1,50,sedan,M,injection overpowered,diesel,7,M2,15,Collective garage
+0.217,123,0,Male,Other,CSP50,Private+trip to office,29,0,64,sedan,G,injection,regular,4,B,12,None
+0.249,229,1,Male,Other,CSP50,Professional,38,0,80,sport utility vehicle,N,direct injection overpowered,diesel,4,0,5,None
+0.091,271,11,Male,Alone,CSP1,Professional,44,0,100,sedan,F,carburation,regular,3,B,10,Collective garage
+0.5,192,3,Male,Other,CSP50,Private,35,0,56,sedan,J,injection,regular,4,B,16,None
+0.416,473,2,Male,Other,CSP50,Private+trip to office,57,0,50,sedan,L,injection,regular,8,M2,12,None
+0.25,281,4,Male,Alone,CSP48,Private+trip to office,41,0,62,cabriolet,Q,injection,regular,9,H,10,Collective garage
+0.5,299,1,Male,Other,CSP50,Professional,46,0,55,cabriolet,J,injection,regular,8,B,3,Collective garage
+0.833,452,4,Female,Other,CSP46,Professional,56,0,50,sedan,G,injection,regular,4,B,7,Collective garage
+0.601,149,6,Female,Other,CSP50,Private+trip to office,31,1,60,sedan,D,injection,regular,3,A,16,None
+0.478,174,0,Female,Other,CSP50,Professional,32,0,50,sedan,F,injection,regular,4,A,16,None
+0.271,548,8,Male,Other,CSP60,Private,83,0,50,coupe,O,injection,regular,8,M2,15,Collective garage
+0.781,171,0,Female,Other,CSP50,Private,34,1,51,sedan,G,direct injection overpowered,diesel,3,B,17,None
+0.916,451,6,Male,Other,CSP46,Professional,55,0,50,van,K,injection overpowered,diesel,3,0,13,Collective garage
+1.0,439,0,Male,Alone,CSP50,Professional run,55,0,54,sedan,E,injection,diesel,3,M1,11,None
+0.577,389,1,Male,Other,CSP66,Professional,50,0,54,coupe,O,injection,regular,8,H,16,Collective garage
+0.583,357,5,Female,Other,CSP48,Private,49,0,118,sedan,I,injection,regular,4,B,17,None
+0.499,358,2,Male,Other,CSP50,Professional,51,0,50,van,H,direct injection overpowered,diesel,2,M1,18,None
+0.333,383,11,Male,Other,CSP1,Private+trip to office,55,1,50,sedan,L,injection,regular,8,H,7,Collective garage
+0.666,386,2,Female,Other,CSP50,Private+trip to office,53,0,50,sedan,M,direct injection overpowered,diesel,7,M2,15,Collective garage
+0.583,522,2,Male,Other,OTHER,Private+trip to office,61,0,50,sedan,O,injection,regular,9,M2,16,Collective garage
+0.747,265,0,Male,Other,CSP50,Professional,40,0,54,sedan,H,direct injection overpowered,diesel,5,B,12,None
+0.583,172,6,Female,Other,CSP50,Private+trip to office,34,0,50,sedan,G,injection,regular,5,B,17,Private garage
+0.25,298,5,Male,Other,CSP50,Private,54,0,58,coupe,P,injection,regular,9,M2,8,Collective garage
+0.42,98,1,Male,Other,CSP48,Private,33,0,68,sport utility vehicle,P,direct injection overpowered,diesel,9,M2,16,None
+0.964,173,2,Male,Alone,CSP50,Professional,33,0,80,sedan,H,injection,regular,5,M1,17,None
+0.083,230,5,Female,Other,CSP55,Private,37,0,57,microvan,J,direct injection overpowered,diesel,3,M2,10,None
+0.542,139,0,Male,Other,CSP50,Professional,37,0,57,van,M,direct injection overpowered,diesel,4,0,11,Private garage
+0.249,241,4,Male,Other,CSP50,Private+trip to office,39,0,72,sedan,G,injection,regular,3,B,12,None
+0.73,134,4,Male,Alone,CSP50,Private+trip to office,29,0,57,coupe,N,injection,regular,8,M2,20,None
+0.151,642,5,Female,Alone,CSP60,Private,73,0,50,sedan,G,injection,regular,4,M1,15,None
+0.499,372,1,Male,Other,CSP48,Professional,60,0,50,van,H,injection,diesel,2,M1,9,None
+0.724,109,2,Male,Other,CSP46,Private+trip to office,48,0,76,van,K,direct injection overpowered,diesel,1,0,20,None
+0.416,534,2,Male,Other,CSP66,Professional,63,0,58,sport utility vehicle,N,direct injection overpowered,diesel,4,H,9,None
+0.52,294,0,Female,Other,CSP1,Professional,42,0,50,sedan,J,injection,regular,7,B,16,None
+0.939,408,3,Male,Other,CSP50,Private+trip to office,52,0,50,microvan,M,injection,regular,6,H,12,None
+0.881,509,4,Male,Other,CSP42,Professional,63,0,50,sport utility vehicle,P,injection overpowered,regular,9,M1,17,Private garage
+0.916,39,2,Male,Alone,CSP26,Private+trip to office,24,0,85,sedan,N,direct injection overpowered,diesel,7,M1,15,Collective garage
+0.166,447,3,Male,Other,CSP50,Private+trip to office,56,1,50,sedan,H,injection,regular,7,B,9,None
+0.583,401,4,Male,Other,CSP50,Private+trip to office,55,0,50,sedan,O,injection,regular,9,M2,17,Collective garage
+0.228,392,4,Female,Other,CSP50,Private+trip to office,56,0,55,sedan,P,injection,regular,9,H,16,Collective garage
+0.749,52,6,Female,Alone,CSP26,Private+trip to office,23,0,90,sedan,F,injection,regular,5,B,16,None
+0.916,212,4,Female,Alone,CSP50,Private+trip to office,36,0,50,sedan,D,injection,regular,3,A,15,None
+0.45,278,3,Male,Alone,CSP50,Private+trip to office,41,1,50,sedan,R,direct injection overpowered,diesel,9,H,15,Collective garage
+0.75,161,1,Female,Other,CSP50,Private,40,1,73,other microvan,P,injection overpowered,diesel,3,H,17,Private garage
+0.083,227,8,Female,Other,CSP49,Private+trip to office,37,0,50,sedan,N,injection,regular,6,M2,16,None
+0.333,435,1,Male,Other,CSP60,Private,78,0,50,sedan,O,injection,regular,9,M2,4,None
+0.364,372,3,Female,Other,CSP49,Private+trip to office,49,0,51,cabriolet,O,injection overpowered,regular,9,M1,8,Private garage
+0.749,161,2,Male,Other,CSP50,Professional run,31,0,50,van,N,direct injection overpowered,diesel,1,0,15,None
+0.661,460,2,Male,Other,CSP50,Private+trip to office,60,0,50,microvan,O,direct injection overpowered,diesel,6,H,13,None
+0.916,309,3,Female,Other,CSP50,Private+trip to office,55,0,50,sedan,D,injection,regular,3,B,13,None
+0.517,212,5,Male,Alone,CSP50,Private+trip to office,37,0,51,sedan,H,injection,regular,5,M1,20,None
+0.566,452,3,Male,Other,CSP1,Professional,55,0,50,sedan,I,injection,regular,8,B,14,None
+0.158,243,0,Female,Other,CSP50,Private,41,0,100,sedan,J,injection,regular,6,M1,13,Collective garage
+0.333,236,2,Male,Alone,CSP42,Private+trip to office,40,0,100,sport utility vehicle,O,injection,regular,6,H,9,Collective garage
+0.867,103,8,Male,Alone,CSP50,Professional,31,0,85,sedan,H,injection,regular,4,M1,7,None
+0.333,129,4,Female,Alone,CSP50,Private+trip to office,28,0,55,sedan,G,injection,regular,6,B,17,None
+0.499,266,6,Male,Alone,CSP50,Private+trip to office,40,0,50,sedan,G,injection,regular,5,B,6,None
+0.767,104,3,Female,Other,CSP50,Private+trip to office,28,1,66,sedan,H,direct injection overpowered,diesel,5,B,15,Private garage
+0.166,556,2,Male,Other,CSP50,Private,64,0,50,sedan,O,direct injection overpowered,diesel,9,M2,6,None
+0.416,241,1,Male,Other,CSP1,Private+trip to office,41,0,68,sport utility vehicle,P,injection,regular,5,H,16,Collective garage
+0.218,87,0,Female,Alone,CSP55,Private,25,0,80,sedan,E,injection,diesel,3,B,20,None
+0.166,120,3,Female,Alone,CSP50,Private+trip to office,28,0,100,sedan,F,injection,regular,4,B,14,None
+0.444,508,3,Male,Other,CSP50,Professional,61,0,72,sedan,G,injection,regular,4,A,16,Collective garage
+0.916,92,2,Female,Other,CSP50,Private+trip to office,33,0,100,sedan,D,injection,regular,4,B,15,None
+0.833,394,11,Male,Other,CSP42,Private,51,1,50,sedan,E,injection,regular,2,A,8,None
+0.833,623,1,Male,Other,CSP60,Private,70,0,101,sedan,M,direct injection overpowered,diesel,7,M2,15,Collective garage
+0.5,224,3,Male,Other,OTHER,Professional,53,0,72,van,L,direct injection overpowered,diesel,2,0,19,None
+0.916,107,2,Female,Alone,CSP50,Private+trip to office,29,0,80,sedan,K,injection,regular,7,M1,15,None
+0.666,412,6,Male,Other,CSP55,Private,53,0,50,sedan,D,injection,regular,3,A,14,None
+0.771,616,4,Male,Other,CSP60,Private,73,0,50,sedan,M,injection,regular,7,M2,12,Collective garage
+0.749,476,1,Male,Other,CSP50,Private+trip to office,58,0,50,sedan,J,injection,regular,6,B,18,None
+0.35,455,0,Male,Other,CSP42,Private+trip to office,56,0,50,coupe,O,injection,regular,9,M2,11,Private garage
+0.764,228,0,Male,Other,CSP1,Professional,37,0,64,bus,L,direct injection overpowered,diesel,5,M1,4,None
+0.931,391,6,Male,Alone,CSP50,Private+trip to office,51,0,50,sedan,G,injection,regular,5,B,20,None
+0.467,492,4,Female,Other,CSP60,Private,75,1,112,sedan,F,injection,regular,2,A,16,None
+0.333,443,1,Female,Other,CSP1,Professional run,59,0,72,sedan,J,injection,regular,4,B,16,None
+1.0,393,3,Male,Other,CSP66,Professional,53,0,50,sedan,J,direct injection overpowered,diesel,5,M1,11,Private garage
+0.544,533,3,Female,Other,CSP60,Private,82,1,50,sedan,G,injection,regular,4,B,15,None
+0.627,590,1,Male,Other,CSP60,Private,67,0,50,sedan,K,direct injection overpowered,diesel,5,M2,13,Collective garage
+0.249,544,3,Male,Other,CSP60,Private,70,0,50,other microvan,J,injection,regular,6,M1,15,None
+0.749,122,1,Male,Other,CSP50,Professional,29,0,60,sedan,K,direct injection overpowered,diesel,6,M1,10,Private garage
+0.8,516,5,Female,Other,CSP60,Private,77,0,50,sedan,J,injection,regular,6,M1,7,None
+0.125,271,2,Female,Other,CSP37,Private,40,1,50,sedan,K,injection,regular,4,B,7,Collective garage
+0.419,652,0,Male,Other,CSP60,Private,85,0,60,sedan,OTHER,injection,regular,1,A,13,None
+0.427,300,2,Male,Other,CSP49,Private,43,0,51,sport utility vehicle,N,injection,regular,4,0,16,Private garage
+0.129,198,0,Male,Other,CSP50,Private+trip to office,35,0,76,sedan,J,injection,regular,7,M1,16,None
+0.136,233,3,Female,Other,CSP50,Private+trip to office,52,0,90,sedan,C,injection,regular,3,A,20,None
+0.5,176,4,Female,Other,CSP50,Private,41,0,85,sedan,E,injection,regular,3,B,11,None
+0.833,437,2,Male,Other,CSP50,Professional,56,0,50,sedan,M,injection,regular,8,M2,9,None
+0.25,594,4,Female,Other,CSP60,Private,68,1,50,sedan,I,injection,regular,4,B,16,None
+1.0,169,0,Male,Alone,CSP66,Professional,32,0,52,station wagon,Q,direct injection overpowered,diesel,8,M2,16,Private garage
+0.669,199,3,Male,Other,CSP50,Private+trip to office,54,0,72,sedan,K,direct injection overpowered,diesel,5,M2,11,None
+0.666,111,11,Male,Other,CSP50,Private+trip to office,33,0,80,van,N,injection,diesel,1,0,11,None
+0.527,672,3,Male,Other,CSP60,Private,74,0,90,sedan,M,direct injection overpowered,diesel,7,M2,16,Collective garage
+0.5,385,5,Female,Other,CSP50,Private+trip to office,50,0,50,sedan,K,injection overpowered,diesel,5,M2,6,None
+0.316,275,2,Male,Other,CSP50,Professional,41,0,56,van,P,direct injection overpowered,diesel,3,0,17,None
+0.799,473,11,Male,Other,CSP50,Professional,59,0,50,sedan,P,injection,regular,6,H,12,Collective garage
+0.952,418,8,Male,Other,CSP55,Private+trip to office,56,0,71,sedan,J,injection,regular,5,M1,13,Collective garage
+0.916,173,2,Female,Other,CSP1,Professional run,33,0,58,sedan,G,injection,regular,4,A,17,Collective garage
+0.583,421,3,Male,Other,CSP50,Private+trip to office,57,0,95,sedan,F,injection,regular,3,B,4,None
+0.7,370,4,Male,Other,CSP50,Private,50,0,50,microvan,J,injection,regular,6,M1,11,Collective garage
+0.74,132,2,Male,Alone,CSP50,Private+trip to office,30,0,64,cabriolet,F,injection overpowered,regular,1,A,5,None
+0.833,272,2,Male,Other,CSP42,Professional,41,0,50,sedan,I,direct injection overpowered,diesel,5,B,20,None
+0.803,160,11,Female,Other,CSP55,Private+trip to office,31,0,54,sedan,F,injection,diesel,4,B,10,None
+0.31,572,5,Female,Other,CSP60,Private,67,0,50,coupe,P,injection,regular,9,M2,15,Private garage
+0.465,149,0,Male,Other,CSP50,Professional,30,0,80,sedan,G,injection,regular,5,B,16,None
+0.501,288,2,Female,Other,CSP50,Private+trip to office,42,0,50,sedan,O,injection,regular,9,M2,16,Private garage
+0.485,299,6,Male,Alone,CSP55,Private+trip to office,43,0,50,sedan,J,injection overpowered,diesel,6,M1,14,Collective garage
+0.833,501,11,Female,Other,CSP60,Private,68,1,50,sedan,G,injection,regular,5,M1,4,Private garage
+0.75,355,11,Female,Other,CSP50,Private+trip to office,57,0,57,sedan,J,carburation,regular,4,B,3,None
+0.916,446,4,Male,Other,CSP50,Private,55,0,52,sedan,P,injection,regular,9,H,5,Private garage
+0.269,403,1,Male,Other,CSP50,Private+trip to office,52,1,50,sedan,H,injection,regular,7,B,18,Collective garage
+0.555,173,8,Male,Other,CSP1,Private+trip to office,32,0,54,sedan,K,injection,regular,5,M1,14,None
+0.37,326,3,Female,Alone,CSP42,Private,45,0,50,sedan,G,injection,regular,4,B,11,Collective garage
+0.624,243,11,Female,Other,CSP50,Private+trip to office,41,0,54,sedan,F,injection,regular,3,B,13,Collective garage
+0.236,438,5,Male,Other,CSP50,Private+trip to office,54,0,50,sedan,L,injection,regular,5,B,16,None
+0.695,117,2,Male,Other,CSP55,Private+trip to office,28,0,90,sedan,H,direct injection overpowered,diesel,5,B,11,None
+0.25,770,1,Male,Other,CSP60,Private,81,0,64,station wagon,J,direct injection overpowered,diesel,5,M1,10,None
+0.666,135,1,Male,Other,CSP50,Private+trip to office,29,0,90,sedan,K,injection,regular,6,M1,6,None
+0.586,112,2,Male,Alone,CSP50,Private+trip to office,30,1,80,sedan,G,injection,regular,3,B,19,Private garage
+0.166,413,4,Male,Other,CSP50,Private+trip to office,54,0,50,coupe,Q,injection,regular,9,H,4,Collective garage
+0.78,290,1,Male,Other,CSP50,Professional,44,0,50,sedan,J,direct injection overpowered,diesel,5,B,15,None
+0.666,600,5,Male,Other,CSP60,Private,68,0,50,cabriolet,V,injection,regular,9,H,4,Collective garage
+0.978,219,2,Male,Other,CSP50,Private+trip to office,36,0,95,sport utility vehicle,N,direct injection overpowered,diesel,3,H,12,Collective garage
+0.5,172,4,Male,Alone,CSP50,Private+trip to office,32,0,80,sedan,H,injection,regular,7,M1,11,None
+0.5,129,0,Male,Other,CSP66,Professional,29,0,80,cabriolet,L,injection,regular,8,M1,14,Private garage
+0.333,263,0,Male,Other,CSP50,Professional,40,0,72,other microvan,O,injection,regular,5,H,12,Private garage
+0.767,305,6,Male,Other,CSP50,Private,53,1,51,sedan,J,injection,regular,4,M1,13,None
+1.0,152,5,Male,Alone,CSP50,Private,32,0,85,sedan,D,injection,regular,2,B,20,Collective garage
