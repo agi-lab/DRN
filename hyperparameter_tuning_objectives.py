@@ -1,10 +1,11 @@
+import shutil
 import logging
 
 import lightning as L  # type: ignore
 import numpy as np
 import torch
 from drn import CANN, DDR, DRN, MDN, crps, ddr_cutpoints, drn_cutpoints
-from lightning.pytorch.callbacks import EarlyStopping  # type: ignore
+from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint  # type: ignore
 from torch.utils.data import DataLoader, TensorDataset
 
 logging.getLogger("lightning.pytorch.utilities.rank_zero").addFilter(
@@ -13,18 +14,16 @@ logging.getLogger("lightning.pytorch.utilities.rank_zero").addFilter(
 
 TRAINER_OPTS = {
     "logger": False,
-    "enable_checkpointing": False,
+    "enable_checkpointing": True,
     "devices": 1,
     "deterministic": True,
     "enable_model_summary": False,
     "enable_progress_bar": False,
 }
 
+
 def compute_crps(
-    model: torch.nn.Module,
-    X_val: torch.Tensor,
-    Y_val: torch.Tensor,
-    y_train_max: float,
+    model: torch.nn.Module, X_val: torch.Tensor, Y_val: torch.Tensor, y_train_max: float
 ) -> float:
     """Compute the mean CRPS of model predictions on validation data."""
     grid_size = 3000
@@ -68,16 +67,24 @@ def objective_cann(
         learning_rate=lr,
     )
 
+    early_stop = EarlyStopping(patience=patience, monitor="val_loss", mode="min")
+    checkpoint_callback = ModelCheckpoint(
+        save_top_k=1, monitor="val_loss", mode="min", dirpath="model/checkpoints/cann"
+    )
+
     try:
         trainer = L.Trainer(
             max_epochs=2000,
             accelerator=accelerator,
-            callbacks=[EarlyStopping(monitor="val_loss", patience=patience)],
+            callbacks=[early_stop, checkpoint_callback],
             **TRAINER_OPTS,
         )
         trainer.fit(cann, train_loader, val_loader)
 
+        cann = CANN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        cann.eval()
         cann.update_dispersion(X_train, Y_train)
+
         if not torch.isfinite(cann.dispersion):
             raise ValueError("Dispersion is not finite")
 
@@ -86,6 +93,7 @@ def objective_cann(
         return 1e10, None
 
     crps_score = compute_crps(cann, X_val, Y_val, Y_train.max().item())
+    shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
     return crps_score, cann
 
 
@@ -121,14 +129,22 @@ def objective_mdn(
         learning_rate=lr,
     )
 
+    early_stop = EarlyStopping(patience=patience, monitor="val_loss", mode="min")
+    checkpoint_callback = ModelCheckpoint(
+        save_top_k=1, monitor="val_loss", mode="min", dirpath="model/checkpoints/mdn"
+    )
+
     try:
         trainer = L.Trainer(
             max_epochs=2000,
             accelerator=accelerator,
-            callbacks=[EarlyStopping(monitor="val_loss", patience=patience)],
+            callbacks=[early_stop, checkpoint_callback],
             **TRAINER_OPTS,
         )
         trainer.fit(mdn, train_loader, val_loader)
+
+        mdn = MDN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        mdn.eval()
 
     except Exception as e:
         print(e)
@@ -136,7 +152,7 @@ def objective_mdn(
         return 1e10, None
 
     crps_score = compute_crps(mdn, X_val, Y_val, Y_train.max().item())
-
+    shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
     return crps_score, mdn
 
 
@@ -177,19 +193,29 @@ def objective_ddr(
         learning_rate=lr,
     )
 
+    early_stop = EarlyStopping(patience=patience, monitor="val_loss", mode="min")
+    checkpoint_callback = ModelCheckpoint(
+        save_top_k=1, monitor="val_loss", mode="min", dirpath="model/checkpoints/ddr"
+    )
+
     try:
         trainer = L.Trainer(
             max_epochs=2000,
             accelerator=accelerator,
-            callbacks=[EarlyStopping(monitor="val_loss", patience=patience)],
+            callbacks=[early_stop, checkpoint_callback],
             **TRAINER_OPTS,
         )
         trainer.fit(ddr, train_loader, val_loader)
+
+        ddr = DDR.load_from_checkpoint(checkpoint_callback.best_model_path)
+        ddr.eval()
+
     except Exception as e:
         print(f"Training failed: {e}")
         return 1e10, ddr
 
     crps_score = compute_crps(ddr, X_val, Y_val, Y_train.max().item())
+    shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
     return crps_score, ddr
 
 
@@ -244,26 +270,37 @@ def objective_drn(
         learning_rate=lr,
     )
 
+    early_stop = EarlyStopping(patience=patience, monitor="val_loss", mode="min")
+    checkpoint_callback = ModelCheckpoint(
+        save_top_k=1, monitor="val_loss", mode="min", dirpath="model/checkpoints/drn"
+    )
+
     try:
         trainer = L.Trainer(
             max_epochs=2000,
             accelerator=accelerator,
-            callbacks=[EarlyStopping(monitor="val_loss", patience=patience)],
+            callbacks=[early_stop, checkpoint_callback],
             **TRAINER_OPTS,
         )
         trainer.fit(drn, train_loader, val_loader)
+
+        drn = DRN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        drn.eval()
+
     except Exception as e:
         print(f"Training failed: {e}")
         return 1e10, None
 
     if criteria == "CRPS":
         crps_score = compute_crps(drn, X_val, Y_val, Y_train.max().item())
+        shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
         return crps_score, drn
     elif criteria == "NLL":
         with torch.no_grad():
             dists = drn.distributions(X_val)
             nll_score = -dists.log_prob(Y_val).mean().item()
             nll_score = nll_score if np.exp(-nll_score) > 0 else 1e10
+        shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
         return nll_score, drn
     else:
         raise ValueError(f"Unknown criteria: {criteria}")
