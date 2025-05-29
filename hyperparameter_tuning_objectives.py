@@ -286,9 +286,8 @@ def objective_drn(
     )
 
     drn = DRN(
-        num_features=X_train.shape[1],
-        cutpoints=cutpoints,
         glm=glm,
+        cutpoints=cutpoints,
         hidden_size=hidden_size,
         num_hidden_layers=num_hidden_layers,
         dropout_rate=dropout_rate,
