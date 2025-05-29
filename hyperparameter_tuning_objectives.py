@@ -4,7 +4,7 @@ import logging
 import lightning as L  # type: ignore
 import numpy as np
 import torch
-from drn import CANN, DDR, DRN, MDN, crps, ddr_cutpoints, drn_cutpoints
+from drn import CANN, DDR, DRN, MDN, crps, ddr_cutpoints, drn_cutpoints, train
 from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint  # type: ignore
 from torch.utils.data import DataLoader, TensorDataset
 
@@ -51,13 +51,12 @@ def objective_cann(
     Y_val: torch.Tensor,
     accelerator: str,
     patience: int,
+    lightning: bool = False,
 ):
-    train_loader = DataLoader(
-        TensorDataset(X_train, Y_train), batch_size=int(batch_size), shuffle=True
-    )
-    val_loader = DataLoader(
-        TensorDataset(X_val, Y_val), batch_size=int(batch_size), shuffle=False
-    )
+    train_set = TensorDataset(X_train, Y_train)
+    train_loader = DataLoader(train_set, batch_size=int(batch_size), shuffle=True)
+    val_set = TensorDataset(X_val, Y_val)
+    val_loader = DataLoader(val_set, batch_size=int(batch_size), shuffle=False)
 
     cann = CANN(
         glm,
@@ -73,15 +72,26 @@ def objective_cann(
     )
 
     try:
-        trainer = L.Trainer(
-            max_epochs=2000,
-            accelerator=accelerator,
-            callbacks=[early_stop, checkpoint_callback],
-            **TRAINER_OPTS,
-        )
-        trainer.fit(cann, train_loader, val_loader)
+        if lightning:
+            trainer = L.Trainer(
+                max_epochs=2000,
+                accelerator=accelerator,
+                callbacks=[early_stop, checkpoint_callback],
+                **TRAINER_OPTS,
+            )
+            trainer.fit(cann, train_loader, val_loader)
+            # cann = CANN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        else:
+            train(
+                cann,
+                train_set,
+                val_set,
+                epochs=2000,
+                patience=patience,
+                batch_size=int(batch_size),
+                # device=device,
+            )
 
-        cann = CANN.load_from_checkpoint(checkpoint_callback.best_model_path)
         cann.eval()
         cann.update_dispersion(X_train, Y_train)
 
@@ -92,8 +102,10 @@ def objective_cann(
         print(f"Training failed: {e}")
         return 1e10, None
 
+    if lightning:
+        shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
+
     crps_score = compute_crps(cann, X_val, Y_val, Y_train.max().item())
-    shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
     return crps_score, cann
 
 
@@ -111,13 +123,12 @@ def objective_mdn(
     Y_val: torch.Tensor,
     accelerator: str,
     patience: int,
+    lightning: bool = False,
 ):
-    train_loader = DataLoader(
-        TensorDataset(X_train, Y_train), batch_size=int(batch_size), shuffle=True
-    )
-    val_loader = DataLoader(
-        TensorDataset(X_val, Y_val), batch_size=int(batch_size), shuffle=False
-    )
+    train_set = TensorDataset(X_train, Y_train)
+    train_loader = DataLoader(train_set, batch_size=int(batch_size), shuffle=True)
+    val_set = TensorDataset(X_val, Y_val)
+    val_loader = DataLoader(val_set, batch_size=int(batch_size), shuffle=False)
 
     mdn = MDN(
         X_train.shape[1],
@@ -135,24 +146,34 @@ def objective_mdn(
     )
 
     try:
-        trainer = L.Trainer(
-            max_epochs=2000,
-            accelerator=accelerator,
-            callbacks=[early_stop, checkpoint_callback],
-            **TRAINER_OPTS,
-        )
-        trainer.fit(mdn, train_loader, val_loader)
-
-        mdn = MDN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        if lightning:
+            trainer = L.Trainer(
+                max_epochs=2000,
+                accelerator=accelerator,
+                callbacks=[early_stop, checkpoint_callback],
+                **TRAINER_OPTS,
+            )
+            trainer.fit(mdn, train_loader, val_loader)
+            # mdn = MDN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        else:
+            train(
+                mdn,
+                train_set,
+                val_set,
+                epochs=2000,
+                patience=patience,
+                batch_size=int(batch_size),
+            )
         mdn.eval()
 
     except Exception as e:
-        print(e)
         print(f"Training failed: {e}")
         return 1e10, None
 
+    if lightning:
+        shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
+
     crps_score = compute_crps(mdn, X_val, Y_val, Y_train.max().item())
-    shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
     return crps_score, mdn
 
 
@@ -169,13 +190,12 @@ def objective_ddr(
     Y_val: torch.Tensor,
     accelerator: str,
     patience: int,
+    lightning: bool = False,
 ):
-    train_loader = DataLoader(
-        TensorDataset(X_train, Y_train), batch_size=int(batch_size), shuffle=True
-    )
-    val_loader = DataLoader(
-        TensorDataset(X_val, Y_val), batch_size=int(batch_size), shuffle=False
-    )
+    train_set = TensorDataset(X_train, Y_train)
+    train_loader = DataLoader(train_set, batch_size=int(batch_size), shuffle=True)
+    val_set = TensorDataset(X_val, Y_val)
+    val_loader = DataLoader(val_set, batch_size=int(batch_size), shuffle=False)
 
     cutpoints = ddr_cutpoints(
         c_0=max(Y_train.min().item() * 1.05, 0),
@@ -199,23 +219,34 @@ def objective_ddr(
     )
 
     try:
-        trainer = L.Trainer(
-            max_epochs=2000,
-            accelerator=accelerator,
-            callbacks=[early_stop, checkpoint_callback],
-            **TRAINER_OPTS,
-        )
-        trainer.fit(ddr, train_loader, val_loader)
-
-        ddr = DDR.load_from_checkpoint(checkpoint_callback.best_model_path)
+        if lightning:
+            trainer = L.Trainer(
+                max_epochs=2000,
+                accelerator=accelerator,
+                callbacks=[early_stop, checkpoint_callback],
+                **TRAINER_OPTS,
+            )
+            trainer.fit(ddr, train_loader, val_loader)
+            # ddr = DDR.load_from_checkpoint(checkpoint_callback.best_model_path)
+        else:
+            train(
+                ddr,
+                train_set,
+                val_set,
+                epochs=2000,
+                patience=patience,
+                batch_size=int(batch_size),
+            )
         ddr.eval()
 
     except Exception as e:
         print(f"Training failed: {e}")
-        return 1e10, ddr
+        return 1e10, None
+
+    if lightning:
+        shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
 
     crps_score = compute_crps(ddr, X_val, Y_val, Y_train.max().item())
-    shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
     return crps_score, ddr
 
 
@@ -239,13 +270,12 @@ def objective_drn(
     Y_val: torch.Tensor,
     accelerator: str,
     patience: int,
+    lightning: bool = False,
 ):
-    train_loader = DataLoader(
-        TensorDataset(X_train, Y_train), batch_size=int(batch_size), shuffle=True
-    )
-    val_loader = DataLoader(
-        TensorDataset(X_val, Y_val), batch_size=int(batch_size), shuffle=False
-    )
+    train_set = TensorDataset(X_train, Y_train)
+    train_loader = DataLoader(train_set, batch_size=int(batch_size), shuffle=True)
+    val_set = TensorDataset(X_val, Y_val)
+    val_loader = DataLoader(val_set, batch_size=int(batch_size), shuffle=False)
 
     cutpoints = drn_cutpoints(
         c_0=max(Y_train.min().item() * 1.05, 0),
@@ -276,31 +306,41 @@ def objective_drn(
     )
 
     try:
-        trainer = L.Trainer(
-            max_epochs=2000,
-            accelerator=accelerator,
-            callbacks=[early_stop, checkpoint_callback],
-            **TRAINER_OPTS,
-        )
-        trainer.fit(drn, train_loader, val_loader)
-
-        drn = DRN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        if lightning:
+            trainer = L.Trainer(
+                max_epochs=2000,
+                accelerator=accelerator,
+                callbacks=[early_stop, checkpoint_callback],
+                **TRAINER_OPTS,
+            )
+            trainer.fit(drn, train_loader, val_loader)
+            # drn = DRN.load_from_checkpoint(checkpoint_callback.best_model_path)
+        else:
+            train(
+                drn,
+                train_set,
+                val_set,
+                epochs=2000,
+                patience=patience,
+                batch_size=int(batch_size),
+            )
         drn.eval()
 
     except Exception as e:
         print(f"Training failed: {e}")
         return 1e10, None
 
-    if criteria == "CRPS":
-        crps_score = compute_crps(drn, X_val, Y_val, Y_train.max().item())
+    if lightning:
         shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
-        return crps_score, drn
+
+    if criteria == "CRPS":
+        score = compute_crps(drn, X_val, Y_val, Y_train.max().item())
     elif criteria == "NLL":
         with torch.no_grad():
             dists = drn.distributions(X_val)
-            nll_score = -dists.log_prob(Y_val).mean().item()
-            nll_score = nll_score if np.exp(-nll_score) > 0 else 1e10
-        shutil.rmtree(checkpoint_callback.dirpath, ignore_errors=True)
-        return nll_score, drn
+            score = -dists.log_prob(Y_val).mean().item()
+            score = score if np.exp(-score) > 0 else 1e10
     else:
         raise ValueError(f"Unknown criteria: {criteria}")
+
+    return score, drn
