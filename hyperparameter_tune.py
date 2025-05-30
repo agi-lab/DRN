@@ -93,4 +93,19 @@ def hyperparameter_tune(
     print(f"Best parameters: {res.x}")
     print(f"Best loss: {res.fun}")
 
+    # Save the best models to files
+    prefix = result_path.stem
+    if prefix.endswith("_hp"):
+        prefix = prefix[:-3]
+
+    for rank, mdl in enumerate(best_models, start=1):
+        if mdl is None:
+            continue
+        if top_n == 1:
+            fname = f"{prefix}.pkl"
+        else:
+            fname = f"{prefix}_{rank}.pkl"
+        torch.save(mdl, result_path.parent / fname)
+        print(f"Saved top-{rank} model to {fname}")
+
     return best_models
