@@ -612,7 +612,6 @@ def plot_metrics_grid(data_dicts, metrics, models, process_fn, keys=[1000, 3000,
         ax.tick_params(axis="x", labelsize=16, width=2)
 
     plt.tight_layout()
-    plt.show()
 
 
 def generate_latex_table_more_runs(data_dicts, metrics, models, keys):
