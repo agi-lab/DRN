@@ -1,14 +1,15 @@
 from typing import Callable
+
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import scipy
 import statsmodels.api as sm
 import torch
-
 from drn import crps, rmse
 from scipy.stats import wilcoxon
 from tqdm.auto import trange
-import pandas as pd
+
 
 # Quantile Residuals and Calibration
 def quantile_residuals(y, F_, interval):
@@ -60,7 +61,6 @@ def quantile_points(cdfs, response, grid):
     return (GLM_points, MDN_points, DDR_points, DRN_points, CANN_points)
 
 
-
 def quantile_residuals_plots(model_points):
     quantiles = [0] * len(model_points)
     for i in range(len(model_points)):
@@ -71,12 +71,11 @@ def quantile_residuals_plots(model_points):
     sm.qqplot(quantiles[1], line="45", ax=axes[0, 1])
     sm.qqplot(quantiles[2], line="45", ax=axes[1, 0])
     sm.qqplot(quantiles[3], line="45", ax=axes[1, 1])
-    
+
     # sm.qqplot(quantiles[4], line="45", ax=axes[0, 0])
     # lines = axes[0, 0].get_lines()
     # lines[-2].set_color('red')  # Q-Q points
     # lines[-1].set_color('red')  # 45-degree line (optional)
-
 
     axes[0, 0].set_title("GLM", fontsize=45, color="black")
     axes[0, 0].set_ylim(-5, 5)
@@ -90,7 +89,6 @@ def quantile_residuals_plots(model_points):
     axes[1, 1].set_title("DRN", fontsize=45, color="black")
     axes[1, 1].set_ylim(-5, 5)
     axes[1, 1].set_xlim(-5, 5)
-
 
     # Set font size for all axes labels and tick labels
     for ax in axes.flat:
@@ -142,6 +140,7 @@ def calibration_plot_stats(cdfs_, grid, responses):
     print(sorted_F_y_given_x.shape, empirical_probs.shape)
     return (sorted_F_y_given_x, empirical_probs)
 
+
 def calibration_plot(cdfs_, y, grid):
 
     responses = np.array(y)
@@ -151,7 +150,9 @@ def calibration_plot(cdfs_, y, grid):
     predictions = []
 
     for model in model_names:
-        Q_pred, Q_emp = calibration_plot_stats(cdfs_[model].detach().numpy(), grid.detach().numpy(), responses)
+        Q_pred, Q_emp = calibration_plot_stats(
+            cdfs_[model].detach().numpy(), grid.detach().numpy(), responses
+        )
         stats = np.sum((np.array(Q_pred) - np.array(Q_emp)) ** 2) / len(responses)
         predictions.append((model, Q_pred, Q_emp, stats))
 
@@ -159,17 +160,23 @@ def calibration_plot(cdfs_, y, grid):
     axes = axes.flatten()
 
     for i, (model, Q_pred, Q_emp, stats) in enumerate(predictions):
-        axes[i].scatter(Q_pred, Q_emp, s=14, color=colors[i],
-                        label=f"{model} \n $\sum_j (p_j-\hat p_j)^2/n= {round(stats*len(responses), 4)}$")
+        axes[i].scatter(
+            Q_pred,
+            Q_emp,
+            s=14,
+            color=colors[i],
+            label=f"{model} \n $\sum_j (p_j-\hat p_j)^2/n= {round(stats*len(responses), 4)}$",
+        )
         axes[i].plot([0, 1], [0, 1], ls="--", color="red")
         axes[i].set_xlabel("Predicted: $\hat{p}$", fontsize=30)
         axes[i].set_ylabel("Empirical: $p$", fontsize=30)
         axes[i].set_title(f"Calibration Plot: {model}", fontsize=36)
         legend = axes[i].legend(prop={"size": 22}, scatterpoints=1)
         for handle in legend.legend_handles:
-            handle.set_sizes([40]) 
+            handle.set_sizes([40])
 
     plt.tight_layout()
+
 
 # Wilcoxon Test
 
@@ -545,7 +552,7 @@ def process_data_with_std(data_dict, remove_outliers=False, z_thresh=2.0):
     y, y_std, y_min, y_max = [], [], [], []
 
     for k in x:
-        values = np.array(data_dict[str(k)])
+        values = np.array(data_dict[k])
 
         if remove_outliers:
             mean = np.mean(values)
@@ -565,7 +572,7 @@ def process_data_with_std(data_dict, remove_outliers=False, z_thresh=2.0):
 
 
 # Function to compute mean and standard deviation
-def compute_mean_std(data_dict, keys_to_extract=["1000", "3000", "6000"]):
+def compute_mean_std(data_dict, keys_to_extract=[1000, 3000, 6000]):
     mean_std_dict = {}
     for model, values in data_dict.items():
         mean_std_dict[model] = {}
@@ -641,7 +648,7 @@ def generate_latex_table_more_runs(data_dicts, metrics, models, keys):
     return latex_table
 
 
-def rank_models_per_seed(metric_dicts, metric_name, model_names, size="1000"):
+def rank_models_per_seed(metric_dicts, metric_name, model_names, size=1000):
     results = {name: metric_dicts[name][size] for name in model_names}
 
     # Convert to DataFrame: rows = seeds, columns = models
