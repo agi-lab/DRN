@@ -1,5 +1,6 @@
 import pickle
 import random
+import time
 from pathlib import Path
 
 import numpy as np
@@ -50,6 +51,7 @@ def hyperparameter_tune(
     List
         The top_n models, in ascending order of loss.
     """
+    start_time = time.time()
     seed_everything(seed)
 
     # Prepare storage for trained models
@@ -74,7 +76,13 @@ def hyperparameter_tune(
 
     # Run gp_minimize
     gp_minimize_opts = gp_minimize_opts or {}
-    res = skopt.gp_minimize(_wrapped_obj, space, **gp_minimize_opts)
+    res: skopt.utils.OptimizeResult = skopt.gp_minimize(
+        _wrapped_obj, space, **gp_minimize_opts
+    )  # type: ignore
+
+    elapsed_time = time.time() - start_time
+    print(f"Optimization completed in {elapsed_time:.2f} seconds")
+    res.elapsed_time = elapsed_time
 
     # Save the full result (minus the function pointer)
     result_path.parent.mkdir(parents=True, exist_ok=True)
