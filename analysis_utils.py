@@ -1,8 +1,10 @@
+from typing import Callable
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy
 import statsmodels.api as sm
 import torch
+
 from drn import crps, rmse
 from scipy.stats import wilcoxon
 from tqdm.auto import trange
@@ -58,6 +60,7 @@ def quantile_points(cdfs, response, grid):
     return (GLM_points, MDN_points, DDR_points, DRN_points, CANN_points)
 
 
+
 def quantile_residuals_plots(model_points):
     quantiles = [0] * len(model_points)
     for i in range(len(model_points)):
@@ -68,19 +71,26 @@ def quantile_residuals_plots(model_points):
     sm.qqplot(quantiles[1], line="45", ax=axes[0, 1])
     sm.qqplot(quantiles[2], line="45", ax=axes[1, 0])
     sm.qqplot(quantiles[3], line="45", ax=axes[1, 1])
-    # sm.qqplot(quantiles[4], line="45", ax=axes[2, 0])
+    
+    # sm.qqplot(quantiles[4], line="45", ax=axes[0, 0])
+    # lines = axes[0, 0].get_lines()
+    # lines[-2].set_color('red')  # Q-Q points
+    # lines[-1].set_color('red')  # 45-degree line (optional)
+
+
     axes[0, 0].set_title("GLM", fontsize=45, color="black")
-    axes[0, 0].set_ylim(-4, 4)
-    axes[0, 0].set_xlim(-4, 4)
+    axes[0, 0].set_ylim(-5, 5)
+    axes[0, 0].set_xlim(-5, 5)
     axes[0, 1].set_title("MDN", fontsize=45, color="black")
-    axes[0, 1].set_ylim(-4, 4)
-    axes[0, 1].set_xlim(-4, 4)
+    axes[0, 1].set_ylim(-5, 5)
+    axes[0, 1].set_xlim(-5, 5)
     axes[1, 0].set_title("DDR", fontsize=45, color="black")
-    axes[1, 0].set_ylim(-4, 4)
-    axes[1, 0].set_xlim(-4, 4)
+    axes[1, 0].set_ylim(-5, 5)
+    axes[1, 0].set_xlim(-5, 5)
     axes[1, 1].set_title("DRN", fontsize=45, color="black")
-    axes[1, 1].set_ylim(-4, 4)
-    axes[1, 1].set_xlim(-4, 4)
+    axes[1, 1].set_ylim(-5, 5)
+    axes[1, 1].set_xlim(-5, 5)
+
 
     # Set font size for all axes labels and tick labels
     for ax in axes.flat:
@@ -132,88 +142,34 @@ def calibration_plot_stats(cdfs_, grid, responses):
     print(sorted_F_y_given_x.shape, empirical_probs.shape)
     return (sorted_F_y_given_x, empirical_probs)
 
-
 def calibration_plot(cdfs_, y, grid):
+
     responses = np.array(y)
 
-    Q_predicted_GLM, Q_empirical_GLM = calibration_plot_stats(
-        cdfs_["GLM"].detach().numpy(), grid.detach().numpy(), responses
-    )
-    Q_predicted_CANN, Q_empirical_CANN = calibration_plot_stats(
-        cdfs_["CANN"].detach().numpy(), grid.detach().numpy(), responses
-    )
-    Q_predicted_MDN, Q_empirical_MDN = calibration_plot_stats(
-        cdfs_["MDN"].detach().numpy(), grid.detach().numpy(), responses
-    )
-    Q_predicted_DDR, Q_empirical_DDR = calibration_plot_stats(
-        cdfs_["DDR"].detach().numpy(), grid.detach().numpy(), responses
-    )
-    Q_predicted_DRN, Q_empirical_DRN = calibration_plot_stats(
-        cdfs_["DRN"].detach().numpy(), grid.detach().numpy(), responses
-    )
+    model_names = ["GLM", "MDN", "DDR", "DRN"]
+    colors = ["gray", "green", "black", "blue"]
+    predictions = []
 
-    GLM_STATS = np.sum(
-        (np.array(Q_predicted_GLM) - np.array(Q_empirical_GLM)) ** 2
-    ) / len(responses)
-    CANN_STATS = np.sum(
-        (np.array(Q_predicted_CANN) - np.array(Q_empirical_CANN)) ** 2
-    ) / len(responses)
-    MDN_STATS = np.sum(
-        (np.array(Q_predicted_MDN) - np.array(Q_empirical_MDN)) ** 2
-    ) / len(responses)
-    DDR_STATS = np.sum(
-        (np.array(Q_predicted_DDR) - np.array(Q_empirical_DDR)) ** 2
-    ) / len(responses)
-    DRN_STATS = np.sum(
-        (np.array(Q_predicted_DRN) - np.array(Q_empirical_DRN)) ** 2
-    ) / len(responses)
+    for model in model_names:
+        Q_pred, Q_emp = calibration_plot_stats(cdfs_[model].detach().numpy(), grid.detach().numpy(), responses)
+        stats = np.sum((np.array(Q_pred) - np.array(Q_emp)) ** 2) / len(responses)
+        predictions.append((model, Q_pred, Q_emp, stats))
 
-    figure, axes = plt.subplots(1, 1, figsize=(10, 10))
+    fig, axes = plt.subplots(2, 2, figsize=(16, 16))
+    axes = axes.flatten()
 
-    plt.scatter(
-        Q_predicted_GLM,
-        Q_empirical_GLM,
-        s=6,
-        color="gray",
-        label=f"GLM \n $\sum_j (p_j-\hat p_j)^2/n= {round(GLM_STATS*len(responses), 4)}$",
-    )
-    plt.scatter(
-        Q_predicted_CANN,
-        Q_empirical_CANN,
-        s=6,
-        color="green",
-        label=f"CANN \n $\sum_j (p_j-\hat p_j)^2/n= {round(CANN_STATS*len(responses), 4)}$",
-    )
-    plt.scatter(
-        Q_predicted_MDN,
-        Q_empirical_MDN,
-        s=6,
-        color="black",
-        label=f"MDN \n $\sum_j (p_j-\hat p_j)^2/n= {round(MDN_STATS*len(responses), 4)}$",
-    )
-    plt.scatter(
-        Q_predicted_DDR,
-        Q_empirical_DDR,
-        s=6,
-        label=f"DDR \n $\sum_j (p_j-\hat p_j)^2/n= {round(DDR_STATS*len(responses), 4)}$",
-    )
-    plt.scatter(
-        Q_predicted_DRN,
-        Q_empirical_DRN,
-        s=6,
-        color="red",
-        label=f"DRN  \n $\sum_j (p_j-\hat p_j)^2/n={round(DRN_STATS*len(responses), 4)}$",
-    )
-    plt.plot([0, 1], [0, 1], ls="--", color="red")
-    plt.xlabel("Predicted: $\hat{p}$", fontsize=30)
-    plt.ylabel("Empirical: $p$", fontsize=30)
-    plt.title("Calibration Plot", fontsize=30)
-    legend = plt.legend(
-        prop={"size": 15}, scatterpoints=1
-    )  # Increase scatterpoints for larger marker
-    for handle in legend.legend_handles:
-        handle.set_sizes([40])
+    for i, (model, Q_pred, Q_emp, stats) in enumerate(predictions):
+        axes[i].scatter(Q_pred, Q_emp, s=14, color=colors[i],
+                        label=f"{model} \n $\sum_j (p_j-\hat p_j)^2/n= {round(stats*len(responses), 4)}$")
+        axes[i].plot([0, 1], [0, 1], ls="--", color="red")
+        axes[i].set_xlabel("Predicted: $\hat{p}$", fontsize=30)
+        axes[i].set_ylabel("Empirical: $p$", fontsize=30)
+        axes[i].set_title(f"Calibration Plot: {model}", fontsize=36)
+        legend = axes[i].legend(prop={"size": 22}, scatterpoints=1)
+        for handle in legend.legend_handles:
+            handle.set_sizes([40]) 
 
+    plt.tight_layout()
 
 # Wilcoxon Test
 
