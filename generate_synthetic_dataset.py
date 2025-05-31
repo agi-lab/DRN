@@ -80,7 +80,8 @@ def generate_synthetic_gaussian(n=1000, seed=1, specific_instance=None):
         dispersion,
     )
 
-def generate_synthetic_gamma(n=1000, seed=1, specific_instance = None):
+
+def generate_synthetic_gamma(n=1000, seed=1, specific_instance=None):
     rng = np.random.default_rng(seed)
     # Parameters
     mu = [0, 0]  # means
@@ -97,21 +98,30 @@ def generate_synthetic_gamma(n=1000, seed=1, specific_instance = None):
     x = rng.multivariate_normal(mu, covariance, n)
 
     # Create a non-linear and non-stationary relationship between X_1, X_2 and Y
-    means = np.exp(- x[:, 0]/2 +  x[:, 1]/2) + np.abs(np.sin((x[:, 0]+x[:, 1])*np.pi)) * 0.5#np.exp(- x[:, 0] +  x[:, 1]) + (x[:, 0]*x[:, 1])**2#np.abs(np.sin(x[:, 0]*x[:, 1]*np.pi*5))
-    dispersion = np.exp(x[:, 0]/3)  / (1 + np.exp((x[:, 0]) * (x[:, 1])))# + np.abs(np.cos(1/x[:, 0]))*0.5
+    means = (
+        np.exp(-x[:, 0] / 2 + x[:, 1] / 2)
+        + np.abs(np.sin((x[:, 0] + x[:, 1]) * np.pi)) * 0.5
+    )
+    dispersion = np.exp(x[:, 0] / 3) / (1 + np.exp((x[:, 0]) * (x[:, 1])))
 
     if specific_instance is not None:
         x_1 = specific_instance[0]
         x_2 = specific_instance[1]
-        means = (np.exp(-x_1/2 + x_2/2) + np.abs(np.sin((x_1+x_2)*np.pi)) * 0.5).repeat(n)
-        means += means*0.25
-        dispersion = (np.exp(x_1/3) / (1 + np.exp(x_1 * x_2))).repeat(n)
+        means = (
+            np.exp(-x_1 / 2 + x_2 / 2) + np.abs(np.sin((x_1 + x_2) * np.pi)) * 0.5
+        ).repeat(n)
+        means += means * 0.25
+        dispersion = (np.exp(x_1 / 3) / (1 + np.exp(x_1 * x_2))).repeat(n)
 
     # Calculate the gamma and lognormal parts of the Y
-    y_gamma = rng.gamma(1 / dispersion, scale = dispersion * means)
+    y_gamma = rng.gamma(1 / dispersion, scale=dispersion * means)
 
     # Combine the components
-    y = y_gamma+means*0.25
+    y = y_gamma + means * 0.25
 
-    return pd.DataFrame(x, columns=["X_1", "X_2"]), pd.Series(y, name="Y"), means, dispersion
-
+    return (
+        pd.DataFrame(x, columns=["X_1", "X_2"]),
+        pd.Series(y, name="Y"),
+        means,
+        dispersion,
+    )
