@@ -7,9 +7,6 @@ from drn import crps
 from scipy.stats import wilcoxon
 from tqdm.auto import trange
 
-# from drn import *
-
-
 # Quantile Residuals and Calibration
 def quantile_residuals(y, F_, interval):
     if y < interval[0]:
@@ -125,15 +122,14 @@ def calibration_plot_stats(cdfs_, grid, responses):
 
     for k in trange(len(responses)):
         y = responses[k]
-        Q_predicted[k] = np.array(cdfs_[k])[closest_index(y, grid)]
-        all_quantiles = [
-            np.array(cdfs_[j])[closest_index(responses[j], grid)] <= Q_predicted[k]
-            for j in range(len(responses))
-        ]
-        Q_empirical[k] = np.sum(all_quantiles) / len(responses)
+        Q_predicted[k] = np.array(cdfs_[k])[closest_index(y, grid)].item()
 
-    return (Q_predicted, Q_empirical)
+    sorted_indices = np.argsort(Q_predicted)
+    sorted_F_y_given_x = np.array(Q_predicted)[sorted_indices]
+    empirical_probs = (np.arange(1, len(responses) + 1) -0.5) / len(responses) 
 
+    print(sorted_F_y_given_x.shape, empirical_probs.shape)
+    return (sorted_F_y_given_x, empirical_probs)
 
 def calibration_plot(cdfs_, y, grid):
     responses = np.array(y)

@@ -24,8 +24,15 @@ train-regularisation:
 # Aggregate training
 train: train-synthetic train-real train-regularisation
 
-# Run all the compilation notebooks
-compile-results:
+# Compile results from training notebooks
+compile-results-synthetic:
 	jupyter nbconvert --to notebook --execute 04-compile-results-synthetic-data.ipynb
+
+compile-results-real:
 	jupyter nbconvert --to notebook --execute 05-compile-results-real-data.ipynb
+
+compile-results-regularisation:
 	jupyter nbconvert --to notebook --execute 06-compile-results-regularisation-demo.ipynb
+
+# Run all the compilation notebooks
+compile-results: compile-results-synthetic compile-results-real compile-results-regularisation
