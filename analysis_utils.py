@@ -3,9 +3,10 @@ import numpy as np
 import scipy
 import statsmodels.api as sm
 import torch
-from drn import crps
+from drn import crps, rmse
 from scipy.stats import wilcoxon
 from tqdm.auto import trange
+import pandas as pd
 
 # Quantile Residuals and Calibration
 def quantile_residuals(y, F_, interval):
@@ -70,16 +71,16 @@ def quantile_residuals_plots(model_points):
     # sm.qqplot(quantiles[4], line="45", ax=axes[2, 0])
     axes[0, 0].set_title("GLM", fontsize=45, color="black")
     axes[0, 0].set_ylim(-4, 4)
-    axes[0, 0].set_xlim(-3.2, 3.2)
+    axes[0, 0].set_xlim(-4, 4)
     axes[0, 1].set_title("MDN", fontsize=45, color="black")
     axes[0, 1].set_ylim(-4, 4)
-    axes[0, 1].set_xlim(-3.2, 3.2)
+    axes[0, 1].set_xlim(-4, 4)
     axes[1, 0].set_title("DDR", fontsize=45, color="black")
     axes[1, 0].set_ylim(-4, 4)
-    axes[1, 0].set_xlim(-3.2, 3.2)
+    axes[1, 0].set_xlim(-4, 4)
     axes[1, 1].set_title("DRN", fontsize=45, color="black")
     axes[1, 1].set_ylim(-4, 4)
-    axes[1, 1].set_xlim(-3.2, 3.2)
+    axes[1, 1].set_xlim(-4, 4)
 
     # Set font size for all axes labels and tick labels
     for ax in axes.flat:
@@ -126,10 +127,11 @@ def calibration_plot_stats(cdfs_, grid, responses):
 
     sorted_indices = np.argsort(Q_predicted)
     sorted_F_y_given_x = np.array(Q_predicted)[sorted_indices]
-    empirical_probs = (np.arange(1, len(responses) + 1) -0.5) / len(responses) 
+    empirical_probs = (np.arange(1, len(responses) + 1) - 0.5) / len(responses)
 
     print(sorted_F_y_given_x.shape, empirical_probs.shape)
     return (sorted_F_y_given_x, empirical_probs)
+
 
 def calibration_plot(cdfs_, y, grid):
     responses = np.array(y)
@@ -173,34 +175,34 @@ def calibration_plot(cdfs_, y, grid):
         Q_empirical_GLM,
         s=6,
         color="gray",
-        label=f"GLM \n $\sum_j (p_j-\hat p_j)^2= {round(GLM_STATS*len(responses), 4)}$",
+        label=f"GLM \n $\sum_j (p_j-\hat p_j)^2/n= {round(GLM_STATS*len(responses), 4)}$",
     )
     plt.scatter(
         Q_predicted_CANN,
         Q_empirical_CANN,
         s=6,
         color="green",
-        label=f"CANN \n $\sum_j (p_j-\hat p_j)^2= {round(CANN_STATS*len(responses), 4)}$",
+        label=f"CANN \n $\sum_j (p_j-\hat p_j)^2/n= {round(CANN_STATS*len(responses), 4)}$",
     )
     plt.scatter(
         Q_predicted_MDN,
         Q_empirical_MDN,
         s=6,
         color="black",
-        label=f"MDN \n $\sum_j (p_j-\hat p_j)^2= {round(MDN_STATS*len(responses), 4)}$",
+        label=f"MDN \n $\sum_j (p_j-\hat p_j)^2/n= {round(MDN_STATS*len(responses), 4)}$",
     )
     plt.scatter(
         Q_predicted_DDR,
         Q_empirical_DDR,
         s=6,
-        label=f"DDR \n $\sum_j (p_j-\hat p_j)^2= {round(DDR_STATS*len(responses), 4)}$",
+        label=f"DDR \n $\sum_j (p_j-\hat p_j)^2/n= {round(DDR_STATS*len(responses), 4)}$",
     )
     plt.scatter(
         Q_predicted_DRN,
         Q_empirical_DRN,
         s=6,
         color="red",
-        label=f"DRN  \n $\sum_j (p_j- p_j)^2={round(DRN_STATS*len(responses), 4)}$",
+        label=f"DRN  \n $\sum_j (p_j-\hat p_j)^2/n={round(DRN_STATS*len(responses), 4)}$",
     )
     plt.plot([0, 1], [0, 1], ls="--", color="red")
     plt.xlabel("Predicted: $\hat{p}$", fontsize=30)
@@ -308,7 +310,7 @@ def rmse_wilcoxon_test(dists_, Y_target, dataset="Test"):
 # +
 
 
-def quantile_score_raw(y_true, y_pred, p):
+def quantile_score(y_true, y_pred, p):
     """
     Compute the quantile score for predictions at a specific quantile.
 
@@ -325,10 +327,10 @@ def quantile_score_raw(y_true, y_pred, p):
     # Reshape y_pred to match y_true if necessary and compute the error
     e = y_true - y_pred.reshape(y_true.shape)
     # Compute the quantile score
-    return torch.where(y_true >= y_pred, p * e, (1 - p) * -e)
+    return torch.where(y_true >= y_pred, p * e, (1 - p) * -e).mean()
 
 
-def quantile_losses_raw(
+def quantile_losses(
     p,
     model,
     model_name,
@@ -356,17 +358,21 @@ def quantile_losses_raw(
     :return: The quantile loss as a PyTorch tensor.
     """
     # Predict quantiles based on the model name
-    if model_name in ["GLM", "MDN", "CANN"]:
-        predicted_quantiles = model.quantiles(
-            X, [p * 100], max_iter=max_iter, tolerance=tolerance, l=l, u=u
-        )
-    elif model_name in ["DDR", "DRN"]:
+    if model_name.startswith(("DRN", "DDR")):
         predicted_quantiles = model.distributions(X).quantiles(
             [p * 100], max_iter=max_iter, tolerance=tolerance, l=l, u=u
         )
+    else:
+        predicted_quantiles = model.quantiles(
+            X, [p * 100], max_iter=max_iter, tolerance=tolerance, l=l, u=u
+        )
 
     # Compute the quantile score
-    score = quantile_score_raw(y, predicted_quantiles, p)
+    score = quantile_score(y, predicted_quantiles, p)
+
+    # Print the score if requested
+    if print_score:
+        print(f"{model_name}: {score:.5f}")
 
     return score
 
@@ -376,7 +382,7 @@ def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
 
     # 90% QL data
     ql_glm = (
-        quantile_losses_raw(
+        quantile_losses(
             0.9,
             glm,
             "GLM",
@@ -392,7 +398,7 @@ def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
         .numpy()
     )
     ql_cann = (
-        quantile_losses_raw(
+        quantile_losses(
             0.9,
             cann,
             "CANN",
@@ -408,7 +414,7 @@ def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
         .numpy()
     )
     ql_mdn = (
-        quantile_losses_raw(
+        quantile_losses(
             0.9,
             mdn,
             "MDN",
@@ -424,7 +430,7 @@ def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
         .numpy()
     )
     ql_ddr = (
-        quantile_losses_raw(
+        quantile_losses(
             0.9,
             ddr,
             "DDR",
@@ -440,7 +446,7 @@ def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
         .numpy()
     )
     ql_drn = (
-        quantile_losses_raw(
+        quantile_losses(
             0.9,
             drn,
             "DRN",
@@ -461,6 +467,7 @@ def ql90_wilcoxon_test(models, X_features, Y_target, y_train, dataset="Test"):
     print("--------------------------------------------")
 
     print_wilcoxon_test(ql_glm, ql_cann, ql_mdn, ql_ddr, ql_drn)
+
 
 def generate_latex_table(
     nlls_val,
@@ -516,3 +523,177 @@ def generate_latex_table(
         + "\n\end{center}"
     )
     return table
+
+
+def get_nll_crps_rmse_ql(models, names, X_test_data, Y_test_data, y_train):
+
+    print("Generating distributional forecasts")
+    dists_test = {}
+
+    for name, model in zip(names, models):
+        print(f"- {name}")
+        dists_test[name] = model.distributions(X_test_data)
+
+    print("Calculating CDF over a grid")
+    GRID_SIZE = 3000  # Increase this to get more accurate CRPS estimates
+    grid = torch.linspace(0.0001, np.max(y_train) * 1.1, GRID_SIZE).unsqueeze(-1)
+    cdfs_test = {}
+    for name, model in zip(names, models):
+        print(f"- {name}")
+        cdfs_test[name] = dists_test[name].cdf(grid)
+
+    print("Calculating negative loglikelihoods")
+    nlls_test = {}
+
+    for name, model in zip(names, models):
+        nlls_test[name] = -dists_test[name].log_prob(Y_test_data).mean()
+        print(f"{name}: {nlls_test[name]:.4f}")
+
+    print("Calculating CRPS")
+    grid = grid.squeeze()
+    crps_test = {}
+
+    for name, model in zip(names, models):
+        crps_test[name] = crps(Y_test_data, grid, cdfs_test[name]).mean()
+        print(f"{name}: {crps_test[name]:.4f}")
+
+    print("Calculating RMSE")
+    rmse_test = {}
+
+    for name, model in zip(names, models):
+        means_test = model.distributions(X_test_data).mean
+        rmse_test[name] = rmse(Y_test_data.detach(), means_test)
+        print(f"{name}: {rmse_test[name]:.4f}")
+
+    print("Calculating QL90")
+    ql_90_test = {}
+
+    for model, model_name in zip(models, names):
+        ql_90_test[model_name] = quantile_losses(
+            0.9,
+            model,
+            model_name,
+            X_test_data,
+            Y_test_data,
+            max_iter=1000,
+            tolerance=1e-4,
+            l=torch.Tensor([0]),
+            u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
+        )
+
+    return (nlls_test, crps_test, rmse_test, ql_90_test)
+
+
+def process_data_with_std(data_dict, remove_outliers=False, z_thresh=2.0):
+    x = sorted(map(int, data_dict.keys()))
+    y, y_std, y_min, y_max = [], [], [], []
+
+    for k in x:
+        values = np.array(data_dict[str(k)])
+
+        if remove_outliers:
+            mean = np.mean(values)
+            std = np.std(values)
+            z_scores = (values - mean) / std
+            values = values[np.abs(z_scores) <= z_thresh]
+
+        mean = np.mean(values)
+        std = np.std(values)
+
+        y.append(mean)
+        y_std.append(std)
+        y_min.append(mean - std)
+        y_max.append(mean + std)
+
+    return x, y, y_min, y_max
+
+
+# Function to compute mean and standard deviation
+def compute_mean_std(data_dict, keys_to_extract=["1000", "3000", "6000"]):
+    mean_std_dict = {}
+    for model, values in data_dict.items():
+        mean_std_dict[model] = {}
+        for key in keys_to_extract:
+            data = np.array(values[key])
+            mean_std_dict[model][key] = (np.mean(data), np.std(data))
+    return mean_std_dict
+
+
+def plot_metrics_grid(data_dicts, metrics, models, process_fn, keys=[1000, 3000, 6000]):
+    fig, axes = plt.subplots(2, 2, figsize=(18, 14))
+    axes = axes.flatten()
+
+    colors = ["red", "orange", "blue", "black"]
+
+    for i, metric in enumerate(metrics):
+        ax = axes[i]
+
+        for model, color in zip(models, colors):
+            data_subset = data_dicts[metric][model]
+            x, y, y_min, y_max = process_fn(data_subset)
+
+            ax.plot(x, y, color=color, label=model, linewidth=2)
+            ax.fill_between(x, y_min, y_max, color=color, alpha=0.1)
+
+        ax.set_title(
+            f"{metric} Comparison Across Different Baseline Models", fontsize=22
+        )
+        ax.set_xlabel("Training Size", fontsize=18)
+        ax.set_ylabel(metric, fontsize=18)
+        ax.legend(fontsize=16)
+        ax.grid(True, linestyle="--", alpha=0.7)
+
+        ax.set_xticks([1000, 3000, 6000])
+        ax.set_xticklabels([600, 1800, 3600], fontsize=16)
+        ax.tick_params(axis="y", labelsize=16, width=2)
+        ax.tick_params(axis="x", labelsize=16, width=2)
+
+    plt.tight_layout()
+    plt.show()
+
+
+def generate_latex_table_more_runs(data_dicts, metrics, models, keys):
+
+    computed_stats = {
+        metric: compute_mean_std(data_dicts[metric]) for metric in metrics
+    }
+
+    latex_table = """
+\\begin{table}[h]
+    \\centering
+    \\caption{Mean and Standard Deviation of Evaluation Metrics}
+    \\begin{tabular}{lcccc}
+        \\toprule
+        \\textbf{Model} & \\textbf{Metric} & \\textbf{1000} & \\textbf{3000} & \\textbf{6000} \\
+        \\midrule
+"""
+    for metric in metrics:
+        for model in models:
+            if model in computed_stats[metric]:
+                mean_std_values = computed_stats[metric][model]
+                row = f"        {model} & {metric} "
+                for key in keys:
+                    mean, std = mean_std_values[key]
+                    row += f"& {mean:.4f} $\\pm$ {std:.4f} "
+                row += "\\\\\n"
+                latex_table += row
+
+    latex_table += """        \\bottomrule
+    \\end{tabular}
+\\end{table}
+"""
+    return latex_table
+
+
+def rank_models_per_seed(metric_dicts, metric_name, model_names, size="1000"):
+    results = {name: metric_dicts[name][size] for name in model_names}
+
+    # Convert to DataFrame: rows = seeds, columns = models
+    df = pd.DataFrame(results)
+
+    # For metrics where lower is better (like NLL, CRPS, RMSE, QL), rank ascending
+    ranks = df.rank(axis=1, method="min", ascending=True)
+
+    print(f"\n===== Ranks for {metric_name.upper()} =====")
+    display(ranks)
+    return ranks
