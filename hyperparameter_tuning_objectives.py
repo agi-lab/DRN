@@ -197,12 +197,9 @@ def objective_ddr(
     val_set = TensorDataset(X_val, Y_val)
     val_loader = DataLoader(val_set, batch_size=int(batch_size), shuffle=False)
 
-    cutpoints = ddr_cutpoints(
-        c_0=max(Y_train.min().item() * 1.05, 0),
-        c_K=Y_train.max().item() * 1.05,
-        proportion=proportion,
-        n=X_train.shape[0],
-    )
+    c_0 = min(Y_train.min().item() * 1.05, 0)
+    c_K = Y_train.max().item() * 1.05
+    cutpoints = ddr_cutpoints(c_0, c_K, proportion=proportion, n=X_train.shape[0])
 
     ddr = DDR(
         X_train.shape[1],
@@ -277,12 +274,10 @@ def objective_drn(
     val_set = TensorDataset(X_val, Y_val)
     val_loader = DataLoader(val_set, batch_size=int(batch_size), shuffle=False)
 
+    c_0 = min(Y_train.min().item() * 1.05, 0)
+    c_K = Y_train.max().item() * 1.05
     cutpoints = drn_cutpoints(
-        c_0=max(Y_train.min().item() * 1.05, 0),
-        c_K=Y_train.max().item() * 1.05,
-        y=Y_train.cpu().numpy(),
-        proportion=proportion,
-        min_obs=min_obs,
+        c_0, c_K, y=Y_train.cpu().numpy(), proportion=proportion, min_obs=min_obs
     )
 
     drn = DRN(
