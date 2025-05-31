@@ -1,7 +1,4 @@
-.PHONY: all setup clean train-synthetic train-real train-regularisation train compile-results
-
-# Default: clean, install deps, train, then compile results
-all: clean setup train compile-results
+.PHONY: setup clean preprocess train compile-results splitting-test kl-test baseline-test all
 
 # Install project dependencies
 setup:
@@ -9,7 +6,10 @@ setup:
 
 # Remove previous outputs
 clean:
-	rm -rf models plots __pycache__
+	rm -rf data/interim data/processed models plots __pycache__
+
+preprocess:
+	jupyter nbconvert --to notebook --execute 00-preprocess-data.ipynb
 
 # Train targets
 train-synthetic:
@@ -36,3 +36,14 @@ compile-results-regularisation:
 
 # Run all the compilation notebooks
 compile-results: compile-results-synthetic compile-results-real compile-results-regularisation
+
+splitting-test:
+	jupyter nbconvert --to notebook --execute 07-dataset-splitting-sensitivity-test.ipynb
+
+kl-test:
+	jupyter nbconvert --to notebook --execute 08-kl-regularisation-sensitivity-test.ipynb
+
+baseline-test:
+	jupyter nbconvert --to notebook --execute 09-baseline-sensitivity-test.ipynb
+
+all: clean preprocess train compile-results splitting-test kl-test baseline-test
