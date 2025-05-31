@@ -509,7 +509,7 @@ def get_nll_crps_rmse_ql(models, names, X_test_data, Y_test_data, y_train):
     nlls_test = {}
 
     for name, model in zip(names, models):
-        nlls_test[name] = -dists_test[name].log_prob(Y_test_data).mean()
+        nlls_test[name] = -dists_test[name].log_prob(Y_test_data).mean().item()
         print(f"{name}: {nlls_test[name]:.4f}")
 
     print("Calculating CRPS")
@@ -517,7 +517,7 @@ def get_nll_crps_rmse_ql(models, names, X_test_data, Y_test_data, y_train):
     crps_test = {}
 
     for name, model in zip(names, models):
-        crps_test[name] = crps(Y_test_data, grid, cdfs_test[name]).mean()
+        crps_test[name] = crps(Y_test_data, grid, cdfs_test[name]).mean().item()
         print(f"{name}: {crps_test[name]:.4f}")
 
     print("Calculating RMSE")
@@ -525,7 +525,7 @@ def get_nll_crps_rmse_ql(models, names, X_test_data, Y_test_data, y_train):
 
     for name, model in zip(names, models):
         means_test = model.distributions(X_test_data).mean
-        rmse_test[name] = rmse(Y_test_data.detach(), means_test)
+        rmse_test[name] = rmse(Y_test_data.detach(), means_test).item()
         print(f"{name}: {rmse_test[name]:.4f}")
 
     print("Calculating QL90")
@@ -542,7 +542,7 @@ def get_nll_crps_rmse_ql(models, names, X_test_data, Y_test_data, y_train):
             tolerance=1e-4,
             l=torch.Tensor([0]),
             u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
-        )
+        ).item()
 
     return (nlls_test, crps_test, rmse_test, ql_90_test)
 
@@ -582,22 +582,40 @@ def compute_mean_std(data_dict, keys_to_extract=[1000, 3000, 6000]):
     return mean_std_dict
 
 
-def plot_metrics_grid(data_dicts, metrics, models, process_fn, keys=[1000, 3000, 6000]):
+def plot_metrics_grid(df: pd.DataFrame):
     fig, axes = plt.subplots(2, 2, figsize=(18, 14))
     axes = axes.flatten()
 
+    sizes = df["train_size"].unique()
+    metric_names = list(df["metric"].unique())
+    model_names = list(df["model"].unique())
+
+    # A fixed color palette (as before)
     colors = ["red", "orange", "blue", "black"]
 
-    for i, metric in enumerate(metrics):
+    for i, metric in enumerate(metric_names):
         ax = axes[i]
+        metric_lower = metric.lower()
 
-        for model, color in zip(models, colors):
-            data_subset = data_dicts[metric][model]
-            x, y, y_min, y_max = process_fn(data_subset)
+        for model_name, color in zip(model_names, colors):
+            # 1) Filter df for this (metric, model)
+            subset = df[(df["metric"] == metric_lower) & (df["model"] == model_name)]
 
-            ax.plot(x, y, color=color, label=model, linewidth=2)
-            ax.fill_between(x, y_min, y_max, color=color, alpha=0.1)
+            # 2) Group by size, collect a list of all “value” entries for each size
+            #    This yields a Series indexed by size, whose values are LISTS of floats.
+            grouped: pd.Series = subset.groupby("train_size")["value"].apply(list)
 
+            # 3) Convert that into a plain dict: { size: [val1, val2, ...], ... }
+            data_subset: dict[int, list[float]] = grouped.to_dict()
+
+            # 4) Pass that dict into process_fn to get (x, y, y_min, y_max)
+            x_vals, y_mean, y_min, y_max = process_data_with_std(data_subset)
+
+            # 5) Plot the central line + shaded band, exactly as before
+            ax.plot(x_vals, y_mean, color=color, label=model_name, linewidth=2)
+            ax.fill_between(x_vals, y_min, y_max, color=color, alpha=0.1)
+
+        # Formatting (same as your original)
         ax.set_title(
             f"{metric} Comparison Across Different Baseline Models", fontsize=22
         )
@@ -606,43 +624,71 @@ def plot_metrics_grid(data_dicts, metrics, models, process_fn, keys=[1000, 3000,
         ax.legend(fontsize=16)
         ax.grid(True, linestyle="--", alpha=0.7)
 
-        ax.set_xticks([1000, 3000, 6000])
+        ax.set_xticks(sizes)
+        # If you want to relabel them as [600, 1800, 3600], do so here:
         ax.set_xticklabels([600, 1800, 3600], fontsize=16)
+
         ax.tick_params(axis="y", labelsize=16, width=2)
         ax.tick_params(axis="x", labelsize=16, width=2)
 
     plt.tight_layout()
 
 
-def generate_latex_table_more_runs(data_dicts, metrics, models, keys):
+def generate_latex_table_more_runs(df: pd.DataFrame) -> str:
+    # 1) Precompute (mean, std) for every combination (metric_lower, model, size)
+    #    We'll store them in a nested dict: stats[metric_upper][model][size] = (mean, std)
+    stats: dict[str, dict[str, dict[int, tuple[float, float]]]] = {}
 
-    computed_stats = {
-        metric: compute_mean_std(data_dicts[metric]) for metric in metrics
-    }
+    sizes = df["train_size"].unique()
+    metric_names = list(df["metric"].unique())
+    model_names = list(df["model"].unique())
 
-    latex_table = """
-\\begin{table}[h]
-    \\centering
-    \\caption{Mean and Standard Deviation of Evaluation Metrics}
-    \\begin{tabular}{lcccc}
-        \\toprule
-        \\textbf{Model} & \\textbf{Metric} & \\textbf{1000} & \\textbf{3000} & \\textbf{6000} \\
-        \\midrule
+    for metric in metric_names:
+        stats[metric] = {}
+        for model_name in model_names:
+            stats[metric][model_name] = {}
+            for size in sizes:
+                subset = df[
+                    (df["metric"] == metric)
+                    & (df["model"] == model_name)
+                    & (df["train_size"] == size)
+                ]["value"]
+
+                if len(subset) > 0:
+                    mean_val = subset.mean()
+                    std_val = subset.std(
+                        ddof=0
+                    )  # population std; use ddof=1 for sample‐std
+                    stats[metric][model_name][size] = (mean_val, std_val)
+                else:
+                    # If there are no rows (e.g. missing), fill with zero or NaN:
+                    stats[metric][model_name][size] = (float("nan"), float("nan"))
+
+    # 2) Build the LaTeX table string exactly as before
+    latex_table = r"""
+    \begin{table}[h]
+        \centering
+        \caption{Mean and Standard Deviation of Evaluation Metrics}
+        \begin{tabular}{lcccc}
+            \toprule
+            \textbf{Model} & \textbf{Metric} & \textbf{600} & \textbf{1800} & \textbf{3600} \\
+            \midrule
 """
-    for metric in metrics:
-        for model in models:
-            if model in computed_stats[metric]:
-                mean_std_values = computed_stats[metric][model]
-                row = f"        {model} & {metric} "
-                for key in keys:
-                    mean, std = mean_std_values[key]
-                    row += f"& {mean:.4f} $\\pm$ {std:.4f} "
-                row += "\\\\\n"
+    for metric in metric_names:
+        for model_name in model_names:
+            if model_name in stats[metric]:
+                row = f"        {model_name} & {metric} "
+                for size in sizes:
+                    mean_val, std_val = stats[metric][model_name].get(
+                        size, (float("nan"), float("nan"))
+                    )
+                    row += f"& {mean_val:.4f} $\\pm$ {std_val:.4f} "
+                row += r"\\" + "\n"
                 latex_table += row
 
-    latex_table += """        \\bottomrule
-    \\end{tabular}
-\\end{table}
+    latex_table += r"""        \bottomrule
+    \end{tabular}
+\end{table}
 """
     return latex_table
 

@@ -6,7 +6,7 @@ setup:
 
 # Remove previous outputs
 clean:
-	rm -rf data/interim data/processed models plots __pycache__
+	rm -rf data/interim data/processed models plots tables __pycache__
 
 preprocess:
 	jupyter nbconvert --to notebook --execute 00-preprocess-data.ipynb
