@@ -488,51 +488,46 @@ def generate_latex_table(
     return table
 
 
-def get_nll_crps_rmse_ql(models, names, X_test_data, Y_test_data, y_train):
+def calculate_metrics(
+    models, names, X_test_data, Y_test_data, y_train, train_size, seed_index
+):
+    """
+    Compute NLL, CRPS, RMSE, and QL(0.9) for each model, and return a tidy DataFrame
+    with columns ['train_size', 'seed_index', 'model', 'metric', 'value'].
 
-    print("Generating distributional forecasts")
-    dists_test = {}
+    This version builds the DataFrame rows on-the-fly and uses a loop to avoid
+    repeating `rows.append` for each metric.
+    """
+    # 1) Precompute a common grid for CRPS
+    GRID_SIZE = 3000
+    max_y = float(np.max(y_train)) * 1.1
+    grid = torch.linspace(0.0001, max_y, GRID_SIZE).unsqueeze(-1)  # (GRID_SIZE, 1)
+    grid_flat = grid.squeeze()  # (GRID_SIZE,)
 
-    for name, model in zip(names, models):
-        print(f"- {name}")
-        dists_test[name] = model.distributions(X_test_data)
-
-    print("Calculating CDF over a grid")
-    GRID_SIZE = 3000  # Increase this to get more accurate CRPS estimates
-    grid = torch.linspace(0.0001, np.max(y_train) * 1.1, GRID_SIZE).unsqueeze(-1)
-    cdfs_test = {}
-    for name, model in zip(names, models):
-        print(f"- {name}")
-        cdfs_test[name] = dists_test[name].cdf(grid)
-
-    print("Calculating negative loglikelihoods")
-    nlls_test = {}
-
-    for name, model in zip(names, models):
-        nlls_test[name] = -dists_test[name].log_prob(Y_test_data).mean().item()
-        print(f"{name}: {nlls_test[name]:.4f}")
-
-    print("Calculating CRPS")
-    grid = grid.squeeze()
-    crps_test = {}
-
-    for name, model in zip(names, models):
-        crps_test[name] = crps(Y_test_data, grid, cdfs_test[name]).mean().item()
-        print(f"{name}: {crps_test[name]:.4f}")
-
-    print("Calculating RMSE")
-    rmse_test = {}
-
-    for name, model in zip(names, models):
-        means_test = model.distributions(X_test_data).mean
-        rmse_test[name] = rmse(Y_test_data.detach(), means_test).item()
-        print(f"{name}: {rmse_test[name]:.4f}")
-
-    print("Calculating QL90")
-    ql_90_test = {}
+    rows = []
 
     for model, model_name in zip(models, names):
-        ql_90_test[model_name] = quantile_losses(
+        # 2) Get predictive distribution on test set
+        dist = model.distributions(X_test_data)
+
+        # 3) Compute CDF over grid for CRPS
+        cdf_vals = dist.cdf(grid)  # (N_test, GRID_SIZE)
+
+        # 4) Negative Log‐Likelihood
+        nll_val = -dist.log_prob(Y_test_data).mean().item()
+
+        # 5) CRPS
+        crps_val = crps(Y_test_data, grid_flat, cdf_vals).mean().item()
+
+        # 6) RMSE
+        rmse_val = rmse(Y_test_data.detach(), dist.mean).item()
+
+        # 7) Quantile Loss at α = 0.9
+        lower_bound = torch.tensor([0.0])
+        upper_bound = torch.tensor(
+            [np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]
+        )
+        ql90_val = quantile_losses(
             0.9,
             model,
             model_name,
@@ -540,11 +535,32 @@ def get_nll_crps_rmse_ql(models, names, X_test_data, Y_test_data, y_train):
             Y_test_data,
             max_iter=1000,
             tolerance=1e-4,
-            l=torch.Tensor([0]),
-            u=torch.Tensor([np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]),
+            l=lower_bound,
+            u=upper_bound,
         ).item()
 
-    return (nlls_test, crps_test, rmse_test, ql_90_test)
+        # 8) Collect metric names and values in a list, then loop to append rows
+        metric_items = [
+            ("NLL", nll_val),
+            ("CRPS", crps_val),
+            ("RMSE", rmse_val),
+            ("QL90", ql90_val),
+        ]
+        for metric_name, metric_value in metric_items:
+            rows.append(
+                {
+                    "train_size": train_size,
+                    "seed_index": seed_index,
+                    "model": model_name,
+                    "metric": metric_name,
+                    "value": metric_value,
+                }
+            )
+
+    tidy_df = pd.DataFrame(
+        rows, columns=["train_size", "seed_index", "model", "metric", "value"]
+    )
+    return tidy_df
 
 
 def process_data_with_std(data_dict, remove_outliers=False, z_thresh=2.0):
@@ -595,11 +611,10 @@ def plot_metrics_grid(df: pd.DataFrame):
 
     for i, metric in enumerate(metric_names):
         ax = axes[i]
-        metric_lower = metric.lower()
 
         for model_name, color in zip(model_names, colors):
             # 1) Filter df for this (metric, model)
-            subset = df[(df["metric"] == metric_lower) & (df["model"] == model_name)]
+            subset = df[(df["metric"] == metric) & (df["model"] == model_name)]
 
             # 2) Group by size, collect a list of all “value” entries for each size
             #    This yields a Series indexed by size, whose values are LISTS of floats.
@@ -693,15 +708,23 @@ def generate_latex_table_more_runs(df: pd.DataFrame) -> str:
     return latex_table
 
 
-def rank_models_per_seed(metric_dicts, metric_name, model_names, size=1000):
-    results = {name: metric_dicts[name][size] for name in model_names}
+def rank_models_per_seed(tidy_df: pd.DataFrame, metric_name: str):
+    """
+    Given a long/tidy DataFrame with columns
+      ['train_size', 'seed_index', 'model', 'metric', 'value'],
+    filter to (metric==metric_name), pivot to
+    (index=seed_index, columns=model, values=value), then rank each row
+    (ascending=True since lower is better). Returns a DataFrame of ranks
+    (shape: n_seeds × n_models).
+    """
+    df_sub = tidy_df[(tidy_df["metric"] == metric_name)].copy()
 
-    # Convert to DataFrame: rows = seeds, columns = models
-    df = pd.DataFrame(results)
+    # Pivot so that each row is one seed_index, columns are model names
+    pivot = df_sub.pivot(index="seed_index", columns="model", values="value")
 
-    # For metrics where lower is better (like NLL, CRPS, RMSE, QL), rank ascending
-    ranks = df.rank(axis=1, method="min", ascending=True)
+    # Rank each row (axis=1) — “method='min'” and ascending=True means smaller value → rank 1
+    ranks = pivot.rank(axis=1, method="min", ascending=True).astype(int)
 
-    print(f"\n===== Ranks for {metric_name.upper()} =====")
+    print(f"\n===== Ranks for {metric_name} =====")
     display(ranks)
     return ranks
