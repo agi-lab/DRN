@@ -46,4 +46,4 @@ kl-test: preprocess train-synthetic
 baseline-test: preprocess
 	jupyter nbconvert --to notebook --execute 09-baseline-sensitivity-test.ipynb
 
-all: clean preprocess train compile-results splitting-test kl-test
+all: clean preprocess train compile-results splitting-test kl-test baseline-test
