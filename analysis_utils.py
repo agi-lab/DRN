@@ -24,71 +24,40 @@ def quantile_residuals(y, F_, interval):
             return 0.5 * (F_[idx_low] + F_[idx_up])
 
 
-def quantile_points(cdfs, response, grid):
+def quantile_points(cdfs, response, grid, model_names=None):
+    if model_names is None:
+        model_names = list(cdfs.keys())  # fallback if not provided
+
     response = np.array(response)
-    GLM_points = [[0]] * len(response)
-    CANN_points = [[0]] * len(response)
-    MDN_points = [[0]] * len(response)
-    DDR_points = [[0]] * len(response)
-    DRN_points = [[0]] * len(response)
+    all_points = {name: [[0]] * len(response) for name in model_names}
 
     for k in trange(len(response)):
-        # GLM
-        GLM_points[k] = quantile_residuals(
-            response[k], cdfs["GLM"][:, k].detach().numpy(), grid.detach().numpy()
-        )
+        for name in model_names:
+            all_points[name][k] = quantile_residuals(
+                response[k],
+                cdfs[name][:, k].detach().numpy(),
+                grid.detach().numpy()
+            )
 
-        # CANN
-        CANN_points[k] = quantile_residuals(
-            response[k], cdfs["CANN"][:, k].detach().numpy(), grid.detach().numpy()
-        )
+    return all_points
 
-        # MDN
-        MDN_points[k] = quantile_residuals(
-            response[k], cdfs["MDN"][:, k].detach().numpy(), grid.detach().numpy()
-        )
-
-        # DDR
-        DDR_points[k] = quantile_residuals(
-            response[k], cdfs["DDR"][:, k].detach().numpy(), grid.detach().numpy()
-        )
-
-        # DRN
-        DRN_points[k] = quantile_residuals(
-            response[k], cdfs["DRN"][:, k].detach().numpy(), grid.detach().numpy()
-        )
-
-    return (GLM_points, MDN_points, DDR_points, DRN_points, CANN_points)
 
 
 def quantile_residuals_plots(model_points):
+    model_names = list(model_points.keys())
     quantiles = [0] * len(model_points)
     for i in range(len(model_points)):
-        quantiles[i] = np.array(scipy.stats.norm.ppf(model_points[i]))
+        quantiles[i] = np.array(scipy.stats.norm.ppf(model_points[model_names[i]]))
 
-    figure, axes = plt.subplots(2, 2, figsize=(26, 26))
-    sm.qqplot(quantiles[0], line="45", ax=axes[0, 0])
-    sm.qqplot(quantiles[1], line="45", ax=axes[0, 1])
-    sm.qqplot(quantiles[2], line="45", ax=axes[1, 0])
-    sm.qqplot(quantiles[3], line="45", ax=axes[1, 1])
+    num_rows = int(np.ceil(len(model_names)/2))
+    figure, axes = plt.subplots(num_rows, 2, figsize=(26, 26))
+    axes = axes.flatten()
 
-    # sm.qqplot(quantiles[4], line="45", ax=axes[0, 0])
-    # lines = axes[0, 0].get_lines()
-    # lines[-2].set_color('red')  # Q-Q points
-    # lines[-1].set_color('red')  # 45-degree line (optional)
-
-    axes[0, 0].set_title("GLM", fontsize=45, color="black")
-    axes[0, 0].set_ylim(-5, 5)
-    axes[0, 0].set_xlim(-5, 5)
-    axes[0, 1].set_title("MDN", fontsize=45, color="black")
-    axes[0, 1].set_ylim(-5, 5)
-    axes[0, 1].set_xlim(-5, 5)
-    axes[1, 0].set_title("DDR", fontsize=45, color="black")
-    axes[1, 0].set_ylim(-5, 5)
-    axes[1, 0].set_xlim(-5, 5)
-    axes[1, 1].set_title("DRN", fontsize=45, color="black")
-    axes[1, 1].set_ylim(-5, 5)
-    axes[1, 1].set_xlim(-5, 5)
+    for i in range(len(model_names)):
+        sm.qqplot(quantiles[i], line="45", ax=axes[i])
+        axes[i].set_title(model_names[i], fontsize=45, color="black")
+        axes[i].set_ylim(-5, 5)
+        axes[i].set_xlim(-5, 5)
 
     # Set font size for all axes labels and tick labels
     for ax in axes.flat:
@@ -141,12 +110,14 @@ def calibration_plot_stats(cdfs_, grid, responses):
     return (sorted_F_y_given_x, empirical_probs)
 
 
-def calibration_plot(cdfs_, y, grid):
+def calibration_plot(cdfs_, y, grid, model_names=None):
+    if model_names is None:
+        model_names = list(cdfs_.keys())  # fallback if not provided
 
     responses = np.array(y)
 
-    model_names = ["GLM", "MDN", "DDR", "DRN"]
-    colors = ["gray", "green", "black", "blue"]
+    cmap = plt.get_cmap("tab10")  # or "tab20", "Set1", etc.
+    colors = [cmap(i % cmap.N) for i in range(len(model_names))]
     predictions = []
 
     for model in model_names:
@@ -156,7 +127,8 @@ def calibration_plot(cdfs_, y, grid):
         stats = np.sum((np.array(Q_pred) - np.array(Q_emp)) ** 2) / len(responses)
         predictions.append((model, Q_pred, Q_emp, stats))
 
-    fig, axes = plt.subplots(2, 2, figsize=(16, 16))
+    num_rows = int(np.ceil(len(model_names)/2))
+    fig, axes = plt.subplots(num_rows, 2, figsize=(16, 16)) 
     axes = axes.flatten()
 
     for i, (model, Q_pred, Q_emp, stats) in enumerate(predictions):
@@ -728,3 +700,67 @@ def rank_models_per_seed(tidy_df: pd.DataFrame, metric_name: str):
     print(f"\n===== Ranks for {metric_name} =====")
     display(ranks)
     return ranks
+
+def generate_latex_table_all(
+    nlls_train,
+    crps_train,
+    rmse_train,
+    ql_90_train,
+    nlls_val,
+    crps_val,
+    rmse_val,
+    ql_90_val,
+    nlls_test,
+    crps_test,
+    rmse_test,
+    ql_90_test,
+    model_names,
+    label_txt="Evaluation Metrics Table",
+    caption_txt="Evaluation Metrics Table.",
+    scaling_factor=1.0,
+):
+    header_row = (
+        "\\begin{center}\n"
+        + "\captionof{table}{"
+        + f"{caption_txt}"
+        + "}\n"
+        + "\label{"
+        + f"{label_txt}"
+        + "}\n"
+        + "\scalebox{"
+        + f"{scaling_factor}"
+        + "}{\n"
+        + "\\begin{tabular}{l|cccc|cccc|cccc}\n\\toprule\n\\toprule\n"
+        + "&  \multicolumn{4}{c}{$\mathcal{D}_{\\text{Train}}$}"
+        + "&  \multicolumn{4}{c}{$\mathcal{D}_{\\text{Validation}}$}"
+        + "& \multicolumn{4}{c}{ $\mathcal{D}_{\\text{Test}}$}\\\\ \n"
+        + " \cmidrule{2-5}  \cmidrule{6-9} \cmidrule{10-13}$\\text{Model}$ $\\backslash$ $\\text{Metrics}$"
+        + " & NLL & CRPS & RMSE & 90\% QL & NLL & CRPS & RMSE & 90\% QL & NLL & CRPS & RMSE & 90\% QL \\\\ \\midrule"
+    )
+    rows = [header_row]
+
+    for name in model_names:
+        row = (
+            f"{name} &  {(nlls_train[name].mean()):.4f}"
+            f" &  {(crps_train[name].mean()):.4f} "
+            f" & {(rmse_train[name].mean()):.4f} "
+            f" & {(ql_90_train[name].mean()):.4f} "
+            f" & {(nlls_val[name].mean()):.4f} "
+            f" & {(crps_val[name].mean()):.4f} "
+            f" & {(rmse_val[name].mean()):.4f} "
+            f" & {(ql_90_val[name].mean()):.4f} "
+            f" & {(nlls_test[name].mean()):.4f} "
+            f" & {(crps_test[name].mean()):.4f} "
+            f" & {(rmse_test[name].mean()):.4f} "
+            f" & {(ql_90_test[name].mean()):.4f} \\\\ "
+        )
+        rows.append(row)
+
+    table = (
+        "\n".join(rows)
+        + "\n\\bottomrule\n\\bottomrule"
+        + "\n\\end{tabular}"
+        + "\n}"
+        + "\n\end{center}"
+    )
+    return table
