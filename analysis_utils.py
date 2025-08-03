@@ -1,4 +1,4 @@
-from typing import Callable
+from typing import Callable, Sequence, Mapping
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -762,3 +762,87 @@ def generate_latex_table_all(
         + "\n\end{center}"
     )
     return table
+
+def generate_latex_table_from_tidy(
+    df_val: pd.DataFrame,
+    df_test: pd.DataFrame,
+    model_names: list[str],
+    label_txt: str = "Evaluation Metrics",
+    caption_txt: str = "Model comparisons based on various evaluation metrics.",
+    scaling_factor: float = 1.0,
+) -> str:
+    """
+    Build the same two‐block (Validation | Test) LaTeX table
+    from tidy DataFrames produced by calculate_metrics().
+    """
+    def df_to_array_dict(df, metric: str):
+        sub = df[df.metric == metric]
+        # group by model, collect all 'value's into numpy arrays
+        grouped = (
+            sub
+            .groupby("model")["value"]
+            .apply(lambda s: s.values.astype(float))
+            .to_dict()
+        )
+        return grouped
+
+    nlls_val   = df_to_array_dict(df_val,   "NLL")
+    crps_val   = df_to_array_dict(df_val,   "CRPS")
+    rmse_val   = df_to_array_dict(df_val,   "RMSE")
+    ql_90_val  = df_to_array_dict(df_val,   "QL90")
+
+    nlls_test  = df_to_array_dict(df_test,  "NLL")
+    crps_test  = df_to_array_dict(df_test,  "CRPS")
+    rmse_test  = df_to_array_dict(df_test,  "RMSE")
+    ql_90_test = df_to_array_dict(df_test,  "QL90")
+
+    return generate_latex_table(
+        nlls_val,
+        crps_val,
+        rmse_val,
+        ql_90_val,
+        nlls_test,
+        crps_test,
+        rmse_test,
+        ql_90_test,
+        model_names,
+        label_txt=label_txt,
+        caption_txt=caption_txt,
+        scaling_factor=scaling_factor,
+    )
+
+
+def wilcoxon_by_metric(
+    splits: Mapping[str, pd.DataFrame],
+    baseline: str,
+    metrics: Sequence[str],
+    alternative: str = "less",
+) -> None:
+    """
+    For each metric in `metrics` and each split in `splits`,
+    perform a Wilcoxon signed‐rank test comparing
+      baseline vs. each other model.
+
+    Parameters
+    ----------
+    splits : dict of (split_name -> tidy DataFrame with columns
+             ['train_size','seed_index','model','metric','value'])
+    baseline : the model name to use as the reference
+    metrics : list of metric names to test, e.g. ["NLL","CRPS","RMSE","QL90"]
+    alternative : passed to scipy.stats.wilcoxon; default "less"
+    """
+    for metric in metrics:
+        print(f"\n===== Metric: {metric} =====")
+        for split_name, df in splits.items():
+            sub = df[df.metric == metric]
+            pivot = sub.pivot(
+                index="seed_index", columns="model", values="value"
+            )
+            base = pivot[baseline].values
+            print(f"--- {split_name} ---")
+            for model_name in pivot.columns:
+                if model_name == baseline:
+                    continue
+                other = pivot[model_name].values
+                stat, p = wilcoxon(base, other, alternative=alternative)
+                print(f"{baseline} < {model_name}? stat={stat:.3f}, p={p:.3e}")
