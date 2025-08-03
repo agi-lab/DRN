@@ -34,13 +34,10 @@ def quantile_points(cdfs, response, grid, model_names=None):
     for k in trange(len(response)):
         for name in model_names:
             all_points[name][k] = quantile_residuals(
-                response[k],
-                cdfs[name][:, k].detach().numpy(),
-                grid.detach().numpy()
+                response[k], cdfs[name][:, k].detach().numpy(), grid.detach().numpy()
             )
 
     return all_points
-
 
 
 def quantile_residuals_plots(model_points):
@@ -49,7 +46,7 @@ def quantile_residuals_plots(model_points):
     for i in range(len(model_points)):
         quantiles[i] = np.array(scipy.stats.norm.ppf(model_points[model_names[i]]))
 
-    num_rows = int(np.ceil(len(model_names)/2))
+    num_rows = int(np.ceil(len(model_names) / 2))
     figure, axes = plt.subplots(num_rows, 2, figsize=(26, 26))
     axes = axes.flatten()
 
@@ -127,8 +124,8 @@ def calibration_plot(cdfs_, y, grid, model_names=None):
         stats = np.sum((np.array(Q_pred) - np.array(Q_emp)) ** 2) / len(responses)
         predictions.append((model, Q_pred, Q_emp, stats))
 
-    num_rows = int(np.ceil(len(model_names)/2))
-    fig, axes = plt.subplots(num_rows, 2, figsize=(16, 16)) 
+    num_rows = int(np.ceil(len(model_names) / 2))
+    fig, axes = plt.subplots(num_rows, 2, figsize=(16, 16))
     axes = axes.flatten()
 
     for i, (model, Q_pred, Q_emp, stats) in enumerate(predictions):
@@ -495,8 +492,8 @@ def calculate_metrics(
         rmse_val = rmse(Y_test_data.detach(), dist.mean).item()
 
         # 7) Quantile Loss at α = 0.9
-        lower_bound = torch.tensor([0.0])
-        upper_bound = torch.tensor(
+        lower_bound = torch.Tensor([0.0])
+        upper_bound = torch.Tensor(
             [np.max(y_train) + 3 * (np.max(y_train) - np.min(y_train))]
         )
         ql90_val = quantile_losses(
@@ -700,6 +697,7 @@ def rank_models_per_seed(tidy_df: pd.DataFrame, metric_name: str):
     print(f"\n===== Ranks for {metric_name} =====")
     display(ranks)
     return ranks
+
 
 def generate_latex_table_all(
     nlls_train,
