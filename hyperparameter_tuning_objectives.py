@@ -22,18 +22,18 @@ def compute_crps(model: torch.nn.Module, **args) -> float:
 
 
 def objective_cann(
+    baseline,
     num_hidden_layers: int,
     hidden_size: int,
     dropout_rate: float,
     lr: float,
-    glm,
     **fit_kwargs,
 ) -> tuple[float, CANN | None]:
     """Objective for training and evaluating a CANN model."""
     fit_kwargs["batch_size"] = int(fit_kwargs["batch_size"])
 
     cann = CANN(
-        glm,
+        baseline=baseline,
         num_hidden_layers=num_hidden_layers,
         hidden_size=hidden_size,
         dropout_rate=dropout_rate,
@@ -64,7 +64,6 @@ def objective_mdn(
     fit_kwargs["batch_size"] = int(fit_kwargs["batch_size"])
 
     mdn = MDN(
-        fit_kwargs["X_train"].shape[1],
         num_components=num_components,
         hidden_size=hidden_size,
         num_hidden_layers=num_hidden_layers,
@@ -96,7 +95,6 @@ def objective_ddr(
     fit_kwargs["batch_size"] = int(fit_kwargs["batch_size"])
 
     ddr = DDR(
-        fit_kwargs["X_train"].shape[1],
         num_hidden_layers=num_hidden_layers,
         hidden_size=hidden_size,
         dropout_rate=dropout_rate,
@@ -116,6 +114,7 @@ def objective_ddr(
 
 
 def objective_drn(
+    baseline,
     num_hidden_layers: int,
     hidden_size: int,
     dropout_rate: float,
@@ -125,7 +124,6 @@ def objective_drn(
     dv_alpha: float,
     proportion: float,
     min_obs: int,
-    glm,
     kl_direction: str,
     criteria: str,
     **fit_kwargs,
@@ -134,7 +132,7 @@ def objective_drn(
     fit_kwargs["batch_size"] = int(fit_kwargs["batch_size"])
 
     drn = DRN(
-        glm=glm,
+        baseline=baseline,
         hidden_size=hidden_size,
         num_hidden_layers=num_hidden_layers,
         dropout_rate=dropout_rate,
