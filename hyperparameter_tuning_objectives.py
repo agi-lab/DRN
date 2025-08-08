@@ -15,7 +15,7 @@ def compute_crps(model: torch.nn.Module, **args) -> float:
     grid = torch.linspace(0, y_train.max().item() * 1.1, grid_size).unsqueeze(-1)
 
     with torch.no_grad():
-        dists = model.distributions(X_val)
+        dists = model.predict(X_val)
         cdfs = dists.cdf(grid)
         grid = grid.squeeze()
         return crps(y_val, grid, cdfs).mean().item()
@@ -160,7 +160,7 @@ def objective_drn(
         X_val = fit_kwargs["X_val"]
         y_val = fit_kwargs["y_val"]
         with torch.no_grad():
-            dists = drn.distributions(X_val)
+            dists = drn.predict(X_val)
             nll = -dists.log_prob(y_val).mean().item()
             score = nll if np.exp(-nll) > 0 else 1e10
     else:

@@ -291,7 +291,7 @@ def quantile_losses(
     """
     # Predict quantiles based on the model name
     if model_name.startswith(("DRN", "DDR")):
-        predicted_quantiles = model.distributions(X).quantiles(
+        predicted_quantiles = model.predict(X).quantiles(
             [p * 100], max_iter=max_iter, tolerance=tolerance, l=l, u=u
         )
     else:
@@ -477,7 +477,7 @@ def calculate_metrics(
 
     for model, model_name in zip(models, names):
         # 2) Get predictive distribution on test set
-        dist = model.distributions(X_test_data)
+        dist = model.predict(X_test_data)
 
         # 3) Compute CDF over grid for CRPS
         cdf_vals = dist.cdf(grid)  # (N_test, GRID_SIZE)
