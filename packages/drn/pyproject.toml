@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "drn"
+version = "0.0.1"
+dependencies = [
+    "lightning",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "seaborn",
+    "shap",
+    "statsmodels",
+    "torch",
+    "tqdm"
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Eric Dong", email = "tiandong1999@gmail.com"},
+  {name = "Patrick Laub", email = "patrick.laub@gmail.com"},
+]
+maintainers = [
+  {name = "Eric Dong", email = "tiandong1999@gmail.com"}
+]
+description = "Distributional regression modelling using PyTorch"
+readme = "README.md"
+classifiers=[
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: MIT License',
+]
+
+[project.optional-dependencies]
+dev = ["black", "ipykernel", "isort", "jupytext", "mypy", "pre-commit", "pytest"]

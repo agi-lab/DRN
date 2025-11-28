@@ -1,4 +1,4 @@
-drn @ git+https://github.com/EricTianDong/drn.git
+-e ./packages/drn
 numpy
 pandas
 scipy
