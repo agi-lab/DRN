@@ -2,7 +2,8 @@ from typing import Union
 import torch
 import numpy as np
 import pandas as pd
-from drn import CANN, DDR, DRN, MDN, crps
+from drn import DDR, DRN, MDN, CANN, crps
+import drn
 
 
 def compute_crps(model: torch.nn.Module, **args) -> float:
@@ -39,7 +40,7 @@ def objective_cann(
         dropout_rate=dropout_rate,
         learning_rate=lr,
     )
-
+    
     try:
         cann.fit(**fit_kwargs)
         cann.eval()
@@ -95,11 +96,45 @@ def objective_ddr(
     fit_kwargs["batch_size"] = int(fit_kwargs["batch_size"])
 
     ddr = DDR(
+            num_hidden_layers=num_hidden_layers,
+            hidden_size=hidden_size,
+            dropout_rate=dropout_rate,
+            learning_rate=lr,
+            proportion=proportion,
+        )
+        
+    try:
+        ddr.fit(**fit_kwargs)
+        ddr.eval()
+    except Exception as e:
+        print(f"Training failed: {e}")
+        return 1e10, None
+
+    score = compute_crps(ddr, **fit_kwargs)
+    return score, ddr
+
+def objective_ddr_new(
+    num_hidden_layers: int,
+    hidden_size: int,
+    dropout_rate: float,
+    lr: float,
+    proportion: float,
+    min_obs: int,
+    **fit_kwargs,
+) -> tuple[float, DDR | None]:
+    """Objective for training and evaluating a DDR model."""
+    fit_kwargs["batch_size"] = int(fit_kwargs["batch_size"])
+
+    # y_train is part of fixed kwargs (not a hyperparameter)
+    y_train = fit_kwargs["y_train"]
+    min_obs = int(min_obs)
+
+    ddr = DDR(
         num_hidden_layers=num_hidden_layers,
         hidden_size=hidden_size,
         dropout_rate=dropout_rate,
         learning_rate=lr,
-        proportion=proportion,
+        cutpoints=drn.default_drn_cutpoints(y_train, proportion, min_obs),
     )
 
     try:
@@ -111,6 +146,7 @@ def objective_ddr(
 
     score = compute_crps(ddr, **fit_kwargs)
     return score, ddr
+
 
 
 def objective_drn(

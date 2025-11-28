@@ -8,12 +8,42 @@ import skopt
 import torch
 
 
-def seed_everything(seed):
+# reproducibility.py
+import os
+
+def seed_everything(seed: int = 42, deterministic: bool = True, strict_cublas: bool = True):
+    # 0) OS / Python hash (must be set before many libs are used)
+    os.environ["PYTHONHASHSEED"] = str(seed)
+
+    # 1) Python / NumPy / Torch RNGs
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
+    # 2) Make PyTorch pick deterministic kernels where possible
+    if deterministic:
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+        # Raise (or warn) if you hit a non-deterministic op
+        torch.use_deterministic_algorithms(True, warn_only=False)
+
+    # 3) cuBLAS GEMM determinism (set before first CUDA matmul)
+    if strict_cublas:
+        # Either value works; :4096:8 uses a bit more workspace than :16:8
+        os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+
+    # # 4) Optional: cap thread counts to reduce run-to-run variation on CPU BLAS
+    # # (you can comment these for max speed)
+    # os.environ.setdefault("OMP_NUM_THREADS", "1")
+    # os.environ.setdefault("MKL_NUM_THREADS", "1")
+    # try:
+    #     import torch
+    #     torch.set_num_threads(int(os.environ["OMP_NUM_THREADS"]))
+    #     torch.set_num_interop_threads(2)
+    # except Exception:
+    #     pass
 
 def hyperparameter_tune(
     objective_fn,
